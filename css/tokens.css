@@ -1,0 +1,16 @@
+:root {
+    color-scheme: light;
+    font-family: Inter, Arial, sans-serif;
+    color: #1e1e1e;
+    background: #fff;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    --primario: #2e94f1;
+    --secundario: #faa927;
+    --terciario: #13263e;
+    --fondo: #FFFFFF;
+    --fondo2: #D9D9D9;
+    --texto: #000000;
+    --fracaso: #EB0000;
+    --exito: #17C800;
+}
