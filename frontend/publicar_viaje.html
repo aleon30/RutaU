@@ -3,118 +3,188 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
     <title>RutaU | Publicar un viaje</title>
     <link rel="stylesheet" href="../css/tokens.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/help.css">
+    <link rel="stylesheet" href="../css/publish-trip.css">
   </head>
-  <body class="app-page">
-    <header class="app-header">
-      <div class="app-header__inner">
-        <a class="app-brand" href="../index.html" aria-label="RutaU inicio">
-          <img src="../assets/ruta-u-mark.png" alt="RutaU">
-          <span>RutaU</span>
+  <body class="help-page publish-trip-page">
+    <header class="site-header help-header">
+      <a class="brand-mark" href="../index.html" aria-label="RutaU, volver al inicio">
+        <img src="../assets/ruta-u-mark.png" alt="">
+      </a>
+      <a class="help-link" href="ayuda.html" aria-label="Centro de ayuda">
+        <img src="../assets/logo-icon.svg" alt="">
+      </a>
+      <nav class="help-nav" aria-label="Navegación principal">
+        <a class="button button-primary" href="buscar_viaje.html">Buscar viaje</a>
+        <a class="button button-primary" href="viajes_planeados.html">Viajes planeados</a>
+        <a class="button button-primary" href="publicar_viaje.html" aria-current="page">Publicar viaje</a>
+      </nav>
+      <div class="help-user-actions">
+        <a class="help-notifications" href="notificaciones.html" aria-label="Notificaciones">
+          <img src="../assets/help-bell.svg" alt="">
         </a>
-        <nav class="app-nav" aria-label="Navegación principal">
-          <a href="buscar_viaje.html">Buscar viajes</a>
-          <a href="publicar_viaje.html">Publicar viaje</a>
-          <a href="viajes_planeados.html">Viajes planeados</a>
-          <a href="notificaciones.html">Notificaciones</a>
-        </nav>
-        <a class="button button-primary" href="perfil.html">Mi perfil</a>
+        <span class="help-greeting">¡Hola, Paula!</span>
+        <a class="help-avatar" href="perfil.html" aria-label="Ver perfil de Paula">
+          <img src="../assets/help-user-avatar.png" alt="">
+        </a>
       </div>
     </header>
 
-    <main class="app-shell">
-      <h1 class="page-title">Publica tu próximo viaje</h1>
-      <p class="page-subtitle">Comparte tu ruta y ayuda a otros estudiantes a llegar más fácil a la universidad.</p>
+    <main class="publish-main">
+      <h1 class="publish-title">Publica tu viaje</h1>
 
-      <section class="panel form-card" aria-label="Formulario de publicación">
-        <form data-validate="true" novalidate>
-          <div class="form-grid">
-            <div class="two-col">
-              <div class="field">
-                <label for="publicar-origen">Lugar de salida</label>
-                <input id="publicar-origen" type="text" required aria-invalid="false" placeholder="Ej. San Isidro">
-              </div>
-              <div class="field">
-                <label for="publicar-destino">Destino</label>
-                <input id="publicar-destino" type="text" required aria-invalid="false" placeholder="Ej. UPC San Isidro">
-              </div>
+      <form class="publish-form" id="publish-form" novalidate>
+        <div class="publish-form-card">
+          <div class="publish-fields">
+            <div class="publish-field">
+              <label for="vehicle-model">Modelo del vehículo</label>
+              <input
+                id="vehicle-model"
+                name="vehicleModel"
+                type="text"
+                placeholder="Ejm: TOYOTA"
+                required
+                aria-invalid="false"
+              >
             </div>
 
-            <div class="two-col">
-              <div class="field">
-                <label for="publicar-fecha">Fecha</label>
-                <input id="publicar-fecha" type="date" required aria-invalid="false">
-              </div>
-              <div class="field">
-                <label for="publicar-hora">Hora</label>
-                <input id="publicar-hora" type="time" required aria-invalid="false">
-              </div>
+            <div class="publish-field">
+              <label for="vehicle-plate">Placa</label>
+              <input
+                id="vehicle-plate"
+                name="vehiclePlate"
+                type="text"
+                placeholder="Ejm: MK3-O67"
+                required
+                aria-invalid="false"
+              >
             </div>
 
-            <div class="two-col">
-              <div class="field">
-                <label for="publicar-asientos">Asientos disponibles</label>
-                <select id="publicar-asientos" required aria-invalid="false">
-                  <option value="">Selecciona</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="publicar-costo">Precio por estudiante</label>
-                <input id="publicar-costo" type="text" required aria-invalid="false" placeholder="S/ 18">
-              </div>
+            <div class="publish-field">
+              <label for="trip-origin">Punto de partida</label>
+              <input
+                id="trip-origin"
+                name="origin"
+                type="text"
+                placeholder="Ejm: Mz Aw Lote"
+                required
+                aria-invalid="false"
+              >
             </div>
 
-            <div class="field">
-              <label for="publicar-detalles">Detalles de la ruta</label>
-              <textarea id="publicar-detalles" required aria-invalid="false" placeholder="Indica puntos de encuentro, horarios, descripción del vehículo o recomendaciones de seguridad."></textarea>
+            <div class="publish-field">
+              <label for="trip-destination">Destino</label>
+              <input
+                id="trip-destination"
+                name="destination"
+                type="text"
+                placeholder="Ejm: Monterrico"
+                required
+                aria-invalid="false"
+              >
+            </div>
+
+            <div class="publish-field">
+              <label for="trip-time">Hora de salida</label>
+              <input
+                id="trip-time"
+                name="departureTime"
+                type="text"
+                placeholder="Ejm: 12:00 PM"
+                pattern="(0?[1-9]|1[0-2]):[0-5][0-9]\s?(AM|PM)"
+                title="Ingresa la hora en formato de 12 horas, por ejemplo 12:00 PM."
+                required
+                aria-invalid="false"
+              >
+            </div>
+
+            <div class="publish-field-row">
+              <div class="publish-field">
+                <label for="available-seats">Asientos</label>
+                <input
+                  id="available-seats"
+                  name="availableSeats"
+                  type="number"
+                  min="1"
+                  step="1"
+                  placeholder="Ejm: 5"
+                  required
+                  aria-invalid="false"
+                >
+              </div>
+              <div class="publish-field">
+                <label for="seat-price">Precio por asiento</label>
+                <input
+                  id="seat-price"
+                  name="seatPrice"
+                  type="number"
+                  min="0"
+                  step="0.01"
+                  placeholder="Ejm: S/ 10 - S/ 100"
+                  required
+                  aria-invalid="false"
+                >
+              </div>
             </div>
           </div>
 
-          <div class="inline-row" style="margin-top: 18px;">
-            <p class="small-note">Todas las publicaciones requieren una verificación previa con correo institucional.</p>
-          </div>
-          <button class="primary-btn" type="submit" style="margin-top: 16px;">Publicar viaje</button>
-          <div class="form-status" aria-live="polite"></div>
-        </form>
-      </section>
+          <label class="publish-terms" for="accept-terms">
+            <input id="accept-terms" name="acceptTerms" type="checkbox" required>
+            <span>Acepto los Terminos y condiciones</span>
+          </label>
+        </div>
+
+        <div class="publish-actions">
+          <button class="publish-cancel-button" type="reset">Cancelar</button>
+          <button class="publish-submit-button" type="submit">Publicar</button>
+        </div>
+        <p class="publish-status" id="publish-status" role="status" hidden>
+          Tu viaje fue publicado correctamente.
+        </p>
+      </form>
     </main>
 
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('[data-validate]').forEach((form) => {
-          form.addEventListener('submit', (event) => {
-            event.preventDefault();
-            const status = form.querySelector('.form-status');
-            const fields = form.querySelectorAll('input[required], select[required], textarea[required]');
-            let valid = true;
+      const publishForm = document.getElementById('publish-form');
+      const publishStatus = document.getElementById('publish-status');
+      const publishFields = [...publishForm.querySelectorAll('input:not([type="checkbox"])')];
 
-            fields.forEach((field) => {
-              const value = field.value.trim();
-              if (!value) {
-                field.setAttribute('aria-invalid', 'true');
-                valid = false;
-              } else {
-                field.setAttribute('aria-invalid', 'false');
-              }
-            });
-
-            if (!valid) {
-              status.textContent = 'Completa todos los campos para publicar el viaje.';
-              status.classList.remove('success');
-              return;
-            }
-
-            status.textContent = 'Tu viaje fue publicado correctamente.';
-            status.classList.add('success');
-            form.reset();
-          });
+      publishFields.forEach((field) => {
+        field.addEventListener('input', () => {
+          field.setAttribute('aria-invalid', String(!field.checkValidity()));
+          publishStatus.hidden = true;
         });
+      });
+
+      publishForm.querySelector('#accept-terms').addEventListener('change', () => {
+        publishStatus.hidden = true;
+      });
+
+      publishForm.addEventListener('reset', () => {
+        publishStatus.hidden = true;
+        publishFields.forEach((field) => {
+          field.setAttribute('aria-invalid', 'false');
+        });
+      });
+
+      publishForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const valid = publishForm.checkValidity();
+        publishFields.forEach((field) => {
+          field.setAttribute('aria-invalid', String(!field.checkValidity()));
+        });
+
+        if (!valid) {
+          publishForm.reportValidity();
+          return;
+        }
+
+        publishForm.reset();
+        publishStatus.hidden = false;
       });
     </script>
   </body>
