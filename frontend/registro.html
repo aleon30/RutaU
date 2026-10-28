@@ -3,122 +3,187 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
     <title>RutaU | Registro</title>
     <link rel="stylesheet" href="../css/tokens.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/register.css">
   </head>
-  <body class="app-page">
-    <header class="app-header">
-      <div class="app-header__inner">
-        <a class="app-brand" href="../index.html" aria-label="RutaU inicio">
-          <img src="../assets/ruta-u-mark.png" alt="RutaU">
-          <span>RutaU</span>
-        </a>
-        <nav class="app-nav" aria-label="Navegación principal">
-          <a href="buscar_viaje.html">Buscar viajes</a>
-          <a href="publicar_viaje.html">Publicar viaje</a>
-          <a href="ayuda.html">Ayuda</a>
-        </nav>
-        <a class="button button-primary" href="login.html">Iniciar sesión</a>
-      </div>
-    </header>
+  <body class="register-page">
+    <main class="register-main">
+      <a class="register-logo" href="../index.html" aria-label="RutaU, volver al inicio">
+        <img src="../assets/register-rutau-logo.png" alt="RutaU">
+      </a>
 
-    <main class="auth-shell">
-      <section class="auth-card" aria-label="Registrarse">
-        <div class="auth-visual">
-          <div class="auth-visual__content">
-            <h2>Crea tu perfil universitario.</h2>
-            <p>Únete a una comunidad verificada por correo institucional y comparte viajes con estudiantes de confianza.</p>
+      <form class="register-form" id="register-form" novalidate>
+        <div class="register-card">
+          <div class="register-fields">
+            <div class="register-field">
+              <label for="register-first-name">Nombres</label>
+              <input
+                id="register-first-name"
+                name="firstName"
+                type="text"
+                placeholder="Ejm: Camilo"
+                autocomplete="given-name"
+                required
+                aria-invalid="false"
+              >
+            </div>
+
+            <div class="register-field">
+              <label for="register-last-name">Apellidos</label>
+              <input
+                id="register-last-name"
+                name="lastName"
+                type="text"
+                placeholder="Ejm: Calderon"
+                autocomplete="family-name"
+                required
+                aria-invalid="false"
+              >
+            </div>
+
+            <div class="register-field">
+              <label for="register-dni">DNI</label>
+              <input
+                id="register-dni"
+                name="dni"
+                type="text"
+                inputmode="numeric"
+                pattern="[0-9]{8}"
+                minlength="8"
+                maxlength="8"
+                placeholder="Ejm: 62345198"
+                required
+                aria-invalid="false"
+              >
+            </div>
+
+            <div class="register-field">
+              <label for="register-phone">Teléfono</label>
+              <input
+                id="register-phone"
+                name="phone"
+                type="tel"
+                inputmode="tel"
+                pattern="9[0-9]{2}\s?[0-9]{3}\s?[0-9]{3}"
+                placeholder="Ejm: 999 555 444"
+                autocomplete="tel"
+                required
+                aria-invalid="false"
+              >
+            </div>
+
+            <div class="register-field">
+              <label for="register-email">Correo universitario</label>
+              <input
+                id="register-email"
+                name="email"
+                type="email"
+                placeholder="Ejm: u002002@upc.edu.pe"
+                autocomplete="email"
+                required
+                aria-invalid="false"
+                aria-describedby="register-email-error"
+              >
+              <span class="register-field-error" id="register-email-error">
+                Usa tu correo institucional de UPC, ULima o PUCP.
+              </span>
+            </div>
+
+            <div class="register-field">
+              <label for="register-password">Contraseña</label>
+              <input
+                id="register-password"
+                name="password"
+                type="password"
+                minlength="8"
+                placeholder="Ejm: Carlitos6714"
+                autocomplete="new-password"
+                required
+                aria-invalid="false"
+              >
+            </div>
           </div>
+
+          <label class="register-terms" for="register-terms">
+            <input
+              id="register-terms"
+              name="terms"
+              type="checkbox"
+              required
+              aria-invalid="false"
+            >
+            <span>Acepto los Terminos y condiciones</span>
+          </label>
         </div>
-        <div class="auth-form-wrap">
-          <form class="auth-form" data-validate="true" novalidate>
-            <h1>Registrarse</h1>
-            <div class="form-grid">
-              <div class="two-col">
-                <div class="field">
-                  <label for="registro-nombre">Nombres</label>
-                  <input id="registro-nombre" name="nombre" type="text" required aria-invalid="false">
-                </div>
-                <div class="field">
-                  <label for="registro-apellido">Apellidos</label>
-                  <input id="registro-apellido" name="apellido" type="text" required aria-invalid="false">
-                </div>
-              </div>
-              <div class="field">
-                <label for="registro-universidad">Universidad</label>
-                <select id="registro-universidad" name="universidad" required aria-invalid="false">
-                  <option value="">Selecciona</option>
-                  <option>UPC</option>
-                  <option>ULima</option>
-                  <option>PUCP</option>
-                  <option>Otra</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="registro-email">Correo institucional</label>
-                <input id="registro-email" name="email" type="email" required aria-invalid="false" placeholder="nombre@upc.edu.pe">
-              </div>
-              <div class="two-col">
-                <div class="field">
-                  <label for="registro-password">Contraseña</label>
-                  <input id="registro-password" name="password" type="password" required aria-invalid="false" placeholder="Mínimo 8 caracteres">
-                </div>
-                <div class="field">
-                  <label for="registro-confirm">Confirmar</label>
-                  <input id="registro-confirm" name="confirm" type="password" required aria-invalid="false" placeholder="Repite la contraseña">
-                </div>
-              </div>
-            </div>
-            <div class="inline-row" style="margin-top: 14px;">
-              <label><input type="checkbox" required> Acepto los términos</label>
-            </div>
-            <button class="primary-btn" type="submit" style="width:100%; margin-top:8px;">Crear cuenta</button>
-            <div class="form-status" aria-live="polite"></div>
-            <p class="auth-meta">¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
-          </form>
-        </div>
-      </section>
+
+        <button class="register-submit" type="submit">Registrarse</button>
+        <p class="register-status" id="register-status" role="status" hidden></p>
+      </form>
     </main>
 
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('[data-validate]').forEach((form) => {
-          form.addEventListener('submit', (event) => {
-            event.preventDefault();
-            const status = form.querySelector('.form-status');
-            const fields = form.querySelectorAll('input[required], select[required], textarea[required]');
-            let valid = true;
+      const registerForm = document.getElementById('register-form');
+      const registerStatus = document.getElementById('register-status');
+      const registerFields = [...registerForm.querySelectorAll('input[required]')];
+      const universityEmail = registerForm.querySelector('#register-email');
+      const institutionalDomains = new Set(['upc.edu.pe', 'ulima.edu.pe', 'pucp.edu.pe']);
 
-            const password = form.querySelector('#registro-password');
-            const confirm = form.querySelector('#registro-confirm');
+      function validateEmailDomain() {
+        const domain = universityEmail.value.trim().toLowerCase().split('@').pop();
+        const hasInstitutionalDomain = institutionalDomains.has(domain);
+        universityEmail.setCustomValidity(
+          universityEmail.value && !hasInstitutionalDomain
+            ? 'Usa tu correo institucional de UPC, ULima o PUCP.'
+            : ''
+        );
+      }
 
-            fields.forEach((field) => {
-              const value = field.value.trim();
-              if (!value) {
-                field.setAttribute('aria-invalid', 'true');
-                valid = false;
-                return;
-              }
-              field.setAttribute('aria-invalid', 'false');
-            });
+      registerFields.forEach((field) => {
+        field.addEventListener('input', () => {
+          if (field === universityEmail) validateEmailDomain();
+          field.setAttribute('aria-invalid', String(!field.checkValidity()));
+          registerStatus.hidden = true;
+        });
 
-            if (password && confirm && password.value && confirm.value && password.value !== confirm.value) {
-              password.setAttribute('aria-invalid', 'true');
-              confirm.setAttribute('aria-invalid', 'true');
-              valid = false;
-            }
+        field.addEventListener('change', () => {
+          if (field === universityEmail) validateEmailDomain();
+        });
+      });
 
-            if (!valid) {
-              status.textContent = 'Completa correctamente todos los datos.';
-              status.classList.remove('success');
-              return;
-            }
+      registerForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        validateEmailDomain();
 
-            status.textContent = 'Cuenta creada con éxito.';
-            status.classList.add('success');
-            form.reset();
-          });
+        const valid = registerForm.checkValidity();
+        registerFields.forEach((field) => {
+          field.setAttribute('aria-invalid', String(!field.checkValidity()));
+        });
+
+        if (!valid) {
+          registerStatus.textContent = 'Completa correctamente todos los datos.';
+          registerStatus.classList.remove('success');
+          registerStatus.hidden = false;
+          registerForm.reportValidity();
+          return;
+        }
+
+        registerForm.reset();
+        registerFields.forEach((field) => {
+          field.setAttribute('aria-invalid', 'false');
+        });
+        registerStatus.textContent = 'Cuenta creada con éxito.';
+        registerStatus.classList.add('success');
+        registerStatus.hidden = false;
+      });
+
+      registerForm.addEventListener('reset', () => {
+        universityEmail.setCustomValidity('');
+        registerStatus.hidden = true;
+        registerFields.forEach((field) => {
+          field.setAttribute('aria-invalid', 'false');
         });
       });
     </script>
