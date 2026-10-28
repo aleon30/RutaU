@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ffffff">
     <title>RutaU | Viajes planeados</title>
-    <link rel="stylesheet" href="../css/tokens.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/help.css">
-    <link rel="stylesheet" href="../css/planned-trips.css">
+    <link rel="stylesheet" href="../../css/tokens.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/help.css">
+    <link rel="stylesheet" href="../../css/planned-trips.css">
   </head>
   <body class="help-page planned-trips-page">
     <header class="site-header help-header">
-      <a class="brand-mark" href="../index.html" aria-label="RutaU, volver al inicio">
+      <a class="brand-mark" href="../../index.html" aria-label="RutaU, volver al inicio">
         <img src="../../img/ruta-u-mark.png" alt="">
       </a>
-      <a class="help-link" href="ayuda.html" aria-label="Centro de ayuda">
+      <a class="help-link" href="../help/ayuda.html" aria-label="Centro de ayuda">
         <img src="../../img/logo-icon.svg" alt="">
       </a>
       <nav class="help-nav" aria-label="Navegación principal">
@@ -24,11 +24,11 @@
         <a class="button button-primary" href="publicar_viaje.html">Publicar viaje</a>
       </nav>
       <div class="help-user-actions">
-        <a class="help-notifications" href="notificaciones.html" aria-label="Notificaciones">
+        <a class="help-notifications" href="../user/notificaciones.html" aria-label="Notificaciones">
           <img src="../../img/help-bell.svg" alt="">
         </a>
         <span class="help-greeting">¡Hola, Paula!</span>
-        <a class="help-avatar" href="perfil.html" aria-label="Ver perfil de Paula">
+        <a class="help-avatar" href="../user/perfil.html" aria-label="Ver perfil de Paula">
           <img src="../../img/help-user-avatar.png" alt="">
         </a>
       </div>
@@ -168,132 +168,11 @@
           <section class="trip-help-card" aria-labelledby="trip-help-title">
             <h2 id="trip-help-title">¿Necesitas ayuda?</h2>
             <p>Revisa nuestras preguntas frecuentes o contactanos.</p>
-            <a href="ayuda.html">Ir al Centro de Ayuda</a>
+            <a href="../help/ayuda.html">Ir al Centro de Ayuda</a>
           </section>
         </aside>
       </div>
     </main>
 
-    <script>
-      const tripTabs = [...document.querySelectorAll('[data-trip-filter]')];
-      const tripCards = [...document.querySelectorAll('.planned-trip-card')];
-      const tripList = document.getElementById('trip-list');
-      const emptyState = document.getElementById('trip-empty-state');
-      const monthSelect = document.getElementById('calendar-month');
-      const yearSelect = document.getElementById('calendar-year');
-      const calendarDays = document.getElementById('calendar-days');
-      const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-      let selectedCalendarDate = '';
-
-      function selectTripTab(selectedTab) {
-        const statusByFilter = {
-          upcoming: ['confirmed', 'pending'],
-          past: ['past'],
-          canceled: ['canceled']
-        };
-        const allowedStatuses = statusByFilter[selectedTab.dataset.tripFilter];
-        let visibleTrips = 0;
-
-        tripTabs.forEach((tab) => {
-          const isSelected = tab === selectedTab;
-          tab.classList.toggle('is-active', isSelected);
-          tab.setAttribute('aria-selected', String(isSelected));
-          tab.tabIndex = isSelected ? 0 : -1;
-        });
-
-        tripCards.forEach((card) => {
-          const isVisible = allowedStatuses.includes(card.dataset.tripStatus);
-          card.hidden = !isVisible;
-          if (isVisible) visibleTrips += 1;
-        });
-
-        const activeTab = selectedTab.id;
-        tripList.setAttribute('aria-labelledby', activeTab);
-        tripList.classList.toggle('is-empty', visibleTrips === 0);
-        emptyState.hidden = visibleTrips > 0;
-      }
-
-      tripTabs.forEach((tab, index) => {
-        tab.addEventListener('click', () => selectTripTab(tab));
-        tab.addEventListener('keydown', (event) => {
-          if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
-          event.preventDefault();
-          const nextIndex = event.key === 'Home'
-            ? 0
-            : event.key === 'End'
-              ? tripTabs.length - 1
-              : (index + (event.key === 'ArrowRight' ? 1 : -1) + tripTabs.length) % tripTabs.length;
-          tripTabs[nextIndex].focus();
-          selectTripTab(tripTabs[nextIndex]);
-        });
-      });
-
-      function renderCalendar() {
-        const year = Number(yearSelect.value);
-        const month = Number(monthSelect.value);
-        const firstWeekday = new Date(year, month, 1).getDay();
-        const daysInMonth = new Date(year, month + 1, 0).getDate();
-        const daysInPreviousMonth = new Date(year, month, 0).getDate();
-        const totalCells = Math.max(35, Math.ceil((firstWeekday + daysInMonth) / 7) * 7);
-        const cells = [];
-
-        for (let index = 0; index < totalCells; index += 1) {
-          const dayOffset = index - firstWeekday + 1;
-          let day = dayOffset;
-          let date = new Date(year, month, dayOffset);
-          let isOutsideMonth = false;
-
-          if (dayOffset < 1) {
-            day = daysInPreviousMonth + dayOffset;
-            isOutsideMonth = true;
-          } else if (dayOffset > daysInMonth) {
-            day = dayOffset - daysInMonth;
-            isOutsideMonth = true;
-          }
-
-          const dateValue = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
-          const isSelected = dateValue === selectedCalendarDate;
-          cells.push(
-            `<button class="calendar-day${isOutsideMonth ? ' is-outside' : ''}${isSelected ? ' is-selected' : ''}" type="button" role="gridcell" data-calendar-date="${dateValue}" aria-pressed="${isSelected}"${isOutsideMonth ? ' disabled' : ''}>${day}</button>`
-          );
-        }
-
-        calendarDays.innerHTML = cells.join('');
-      }
-
-      calendarDays.addEventListener('click', (event) => {
-        const dayButton = event.target.closest('[data-calendar-date]');
-        if (!dayButton || dayButton.classList.contains('is-outside')) return;
-        selectedCalendarDate = dayButton.dataset.calendarDate;
-        renderCalendar();
-        calendarDays.querySelector(`[data-calendar-date="${selectedCalendarDate}"]`).focus();
-      });
-
-      monthSelect.addEventListener('change', () => {
-        selectedCalendarDate = '';
-        renderCalendar();
-      });
-
-      yearSelect.addEventListener('change', () => {
-        selectedCalendarDate = '';
-        renderCalendar();
-      });
-
-      document.querySelectorAll('[data-calendar-step]').forEach((button) => {
-        button.addEventListener('click', () => {
-          const nextDate = new Date(
-            Number(yearSelect.value),
-            Number(monthSelect.value) + Number(button.dataset.calendarStep),
-            1
-          );
-          monthSelect.value = String(nextDate.getMonth());
-          yearSelect.value = String(nextDate.getFullYear());
-          selectedCalendarDate = '';
-          renderCalendar();
-        });
-      });
-
-      renderCalendar();
-    </script>
   </body>
 </html>

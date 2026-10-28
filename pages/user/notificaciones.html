@@ -5,26 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ffffff">
     <title>RutaU | Notificaciones</title>
-    <link rel="stylesheet" href="../css/tokens.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/help.css">
-    <link rel="stylesheet" href="../css/notifications.css">
+    <link rel="stylesheet" href="../../css/tokens.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/help.css">
+    <link rel="stylesheet" href="../../css/notifications.css">
   </head>
   <body class="help-page notifications-page">
     <header class="site-header help-header">
-      <a class="brand-mark" href="../index.html" aria-label="RutaU, volver al inicio">
+      <a class="brand-mark" href="../../index.html" aria-label="RutaU, volver al inicio">
         <img src="../../img/ruta-u-mark.png" alt="">
       </a>
-      <a class="help-link" href="ayuda.html" aria-label="Centro de ayuda">
+      <a class="help-link" href="../help/ayuda.html" aria-label="Centro de ayuda">
         <img src="../../img/logo-icon.svg" alt="">
       </a>
       <nav class="help-nav" aria-label="Navegación principal">
-        <a class="button button-primary" href="buscar_viaje.html">
+        <a class="button button-primary" href="../viajes/buscar_viaje.html">
           <img class="notification-search-icon" src="../../img/profile-search.svg" alt="">
           <span>Buscar viaje</span>
         </a>
-        <a class="button button-primary" href="viajes_planeados.html">Viajes planeados</a>
-        <a class="button button-primary" href="publicar_viaje.html">Publicar viaje</a>
+        <a class="button button-primary" href="../viajes/viajes_planeados.html">Viajes planeados</a>
+        <a class="button button-primary" href="../viajes/publicar_viaje.html">Publicar viaje</a>
       </nav>
       <div class="help-user-actions">
         <a class="help-notifications" href="notificaciones.html" aria-label="Notificaciones" aria-current="page">
@@ -47,42 +47,42 @@
               <h2>Nueva solicitud de asiento</h2>
               <time datetime="2026-09-28">Septiembre 28, 2026</time>
             </div>
-            <a class="notification-trip-link" href="detalles_viaje.html">Ir al viaje</a>
+            <a class="notification-trip-link" href="../viajes/detalles_viaje.html">Ir al viaje</a>
           </li>
           <li class="notification-item">
             <div class="notification-copy">
               <h2>Nueva solicitud de asiento</h2>
               <time datetime="2026-09-28">Septiembre 28, 2026</time>
             </div>
-            <a class="notification-trip-link" href="detalles_viaje.html">Ir al viaje</a>
+            <a class="notification-trip-link" href="../viajes/detalles_viaje.html">Ir al viaje</a>
           </li>
           <li class="notification-item">
             <div class="notification-copy">
               <h2>Nueva solicitud de asiento</h2>
               <time datetime="2026-09-27">Septiembre 27, 2026</time>
             </div>
-            <a class="notification-trip-link" href="detalles_viaje.html">Ir al viaje</a>
+            <a class="notification-trip-link" href="../viajes/detalles_viaje.html">Ir al viaje</a>
           </li>
           <li class="notification-item">
             <div class="notification-copy">
               <h2>Solicitud aprobada</h2>
               <time datetime="2026-09-25">Septiembre 25, 2026</time>
             </div>
-            <a class="notification-trip-link" href="detalles_viaje.html">Ir al viaje</a>
+            <a class="notification-trip-link" href="../viajes/detalles_viaje.html">Ir al viaje</a>
           </li>
           <li class="notification-item">
             <div class="notification-copy">
               <h2>Solicitud rechazada</h2>
               <time datetime="2026-09-24">Septiembre 24, 2026</time>
             </div>
-            <a class="notification-trip-link" href="detalles_viaje.html">Ir al viaje</a>
+            <a class="notification-trip-link" href="../viajes/detalles_viaje.html">Ir al viaje</a>
           </li>
           <li class="notification-item">
             <div class="notification-copy">
               <h2>Viaje cancelado por conductor</h2>
               <time datetime="2026-09-24">Septiembre 24, 2026</time>
             </div>
-            <a class="notification-trip-link" href="detalles_viaje.html">Ir al viaje</a>
+            <a class="notification-trip-link" href="../viajes/detalles_viaje.html">Ir al viaje</a>
           </li>
         </ul>
 
@@ -93,15 +93,5 @@
       </section>
     </main>
 
-    <script>
-      const moreNotificationsButton = document.getElementById('notifications-more');
-      const notificationsStatus = document.getElementById('notifications-status');
-
-      moreNotificationsButton.addEventListener('click', () => {
-        notificationsStatus.textContent = 'No hay más notificaciones por mostrar.';
-        notificationsStatus.hidden = false;
-        moreNotificationsButton.disabled = true;
-      });
-    </script>
   </body>
 </html>

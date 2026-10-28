@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ffffff">
     <title>RutaU | Detalles del viaje</title>
-    <link rel="stylesheet" href="../css/tokens.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/help.css">
-    <link rel="stylesheet" href="../css/trip-details.css">
+    <link rel="stylesheet" href="../../css/tokens.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/help.css">
+    <link rel="stylesheet" href="../../css/trip-details.css">
   </head>
   <body class="help-page details-page">
     <header class="site-header help-header">
-      <a class="brand-mark" href="../index.html" aria-label="RutaU, volver al inicio">
+      <a class="brand-mark" href="../../index.html" aria-label="RutaU, volver al inicio">
         <img src="../../img/ruta-u-mark.png" alt="">
       </a>
-      <a class="help-link" href="ayuda.html" aria-label="Centro de ayuda">
+      <a class="help-link" href="../help/ayuda.html" aria-label="Centro de ayuda">
         <img src="../../img/logo-icon.svg" alt="">
       </a>
       <nav class="help-nav" aria-label="Navegación principal">
@@ -24,11 +24,11 @@
         <a class="button button-primary" href="publicar_viaje.html">Publicar viaje</a>
       </nav>
       <div class="help-user-actions">
-        <a class="help-notifications" href="notificaciones.html" aria-label="Notificaciones">
+        <a class="help-notifications" href="../user/notificaciones.html" aria-label="Notificaciones">
           <img src="../../img/help-bell.svg" alt="">
         </a>
         <span class="help-greeting">¡Hola, Paula!</span>
-        <a class="help-avatar" href="perfil.html" aria-label="Ver perfil de Paula">
+        <a class="help-avatar" href="../user/perfil.html" aria-label="Ver perfil de Paula">
           <img src="../../img/help-user-avatar.png" alt="">
         </a>
       </div>
@@ -152,38 +152,5 @@
       </div>
     </div>
 
-    <script>
-      const reservationModal = document.getElementById('confirmar-reserva');
-      const reservationOpenButton = document.querySelector('[data-open-modal="confirmar-reserva"]');
-      const reservationCloseButton = document.querySelector('[data-close-modal="confirmar-reserva"]');
-
-      reservationOpenButton.addEventListener('click', () => {
-        reservationModal.classList.add('is-open');
-        reservationModal.setAttribute('aria-hidden', 'false');
-        reservationCloseButton.focus();
-      });
-
-      reservationCloseButton.addEventListener('click', () => {
-        reservationModal.classList.remove('is-open');
-        reservationModal.setAttribute('aria-hidden', 'true');
-        reservationOpenButton.focus();
-      });
-
-      reservationModal.addEventListener('click', (event) => {
-        if (event.target === reservationModal) {
-          reservationModal.classList.remove('is-open');
-          reservationModal.setAttribute('aria-hidden', 'true');
-          reservationOpenButton.focus();
-        }
-      });
-
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && reservationModal.classList.contains('is-open')) {
-          reservationModal.classList.remove('is-open');
-          reservationModal.setAttribute('aria-hidden', 'true');
-          reservationOpenButton.focus();
-        }
-      });
-    </script>
   </body>
 </html>
