@@ -3,96 +3,97 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
     <title>RutaU | Iniciar sesión</title>
     <link rel="stylesheet" href="../css/tokens.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/login.css">
   </head>
-  <body class="app-page">
-    <header class="app-header">
-      <div class="app-header__inner">
-        <a class="app-brand" href="../index.html" aria-label="RutaU inicio">
-          <img src="../assets/ruta-u-mark.png" alt="RutaU">
-          <span>RutaU</span>
-        </a>
-        <nav class="app-nav" aria-label="Navegación principal">
-          <a href="buscar_viaje.html">Buscar viajes</a>
-          <a href="publicar_viaje.html">Publicar viaje</a>
-          <a href="ayuda.html">Ayuda</a>
-        </nav>
-        <a class="button button-primary" href="registro.html">Registrarse</a>
-      </div>
-    </header>
+  <body class="login-page">
+    <main class="login-main">
+      <a class="login-logo" href="../index.html" aria-label="RutaU, volver al inicio">
+        <img src="../assets/login-rutau-logo.png" alt="RutaU">
+      </a>
 
-    <main class="auth-shell">
-      <section class="auth-card" aria-label="Iniciar sesión">
-        <div class="auth-visual">
-          <div class="auth-visual__content">
-            <h2>Tu comunidad universitaria, conectada.</h2>
-            <p>Encuentra viajes seguros, comparte costos y llega a tu universidad con total tranquilidad.</p>
-          </div>
+      <form class="login-form" data-validate="true" novalidate>
+        <div class="login-field">
+          <label for="login-email">Email</label>
+          <input
+            id="login-email"
+            name="email"
+            type="email"
+            required
+            aria-invalid="false"
+            placeholder="Ejm: u002002@upc.edu.pe"
+            autocomplete="username">
+          <span class="login-field-error" aria-live="polite"></span>
         </div>
-        <div class="auth-form-wrap">
-          <form class="auth-form" data-validate="true" novalidate>
-            <h1>Iniciar sesión</h1>
-            <div class="form-grid">
-              <div class="field">
-                <label for="login-email">Correo institucional</label>
-                <input id="login-email" name="email" type="email" required aria-invalid="false" placeholder="estudiante@upc.edu.pe">
-              </div>
-              <div class="field">
-                <label for="login-password">Contraseña</label>
-                <input id="login-password" name="password" type="password" required aria-invalid="false" placeholder="********">
-              </div>
-            </div>
-            <div class="inline-row">
-              <label><input type="checkbox" name="recordar"> Recordarme</label>
-              <a class="help-link" href="ayuda.html">¿Olvidaste tu contraseña?</a>
-            </div>
-            <button class="primary-btn" type="submit" style="width:100%;">Ingresar</button>
-            <div class="form-status" aria-live="polite"></div>
-            <p class="auth-meta">¿Aún no tienes cuenta? <a href="registro.html">Regístrate aquí</a></p>
-          </form>
+
+        <div class="login-field login-field--password">
+          <label for="login-password">Password</label>
+          <input
+            id="login-password"
+            name="password"
+            type="password"
+            required
+            aria-invalid="false"
+            placeholder="Ejm: Carlitos6714"
+            autocomplete="current-password">
+          <span class="login-field-error" aria-live="polite"></span>
         </div>
-      </section>
+
+        <label class="remember-option" for="login-remember">
+          <input id="login-remember" name="remember" type="checkbox" checked>
+          <span>Recuérdame</span>
+        </label>
+
+        <a class="forgot-password" href="ayuda.html">Olvidé mi contraseña</a>
+
+        <div class="login-actions">
+          <button class="login-submit" type="submit">Iniciar sesión</button>
+          <a class="login-home" href="../index.html">Volver al inicio</a>
+        </div>
+
+        <p class="login-status" aria-live="polite"></p>
+      </form>
+
+      <a class="create-account" href="registro.html">Crear cuenta</a>
     </main>
 
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('[data-validate]').forEach((form) => {
-          form.addEventListener('submit', (event) => {
-            event.preventDefault();
-            const status = form.querySelector('.form-status');
-            const fields = form.querySelectorAll('input[required], select[required], textarea[required]');
-            let valid = true;
+      const loginForm = document.querySelector('.login-form');
+      const loginStatus = document.querySelector('.login-status');
 
-            fields.forEach((field) => {
-              const value = field.value.trim();
-              const isEmail = field.type === 'email';
-              let message = '';
+      loginForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        let isValid = true;
 
-              if (!value) {
-                message = 'Este campo es obligatorio.';
-              } else if (isEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-                message = 'Ingresa un correo válido.';
-              }
+        loginForm.querySelectorAll('.login-field').forEach((field) => {
+          const input = field.querySelector('input');
+          const error = field.querySelector('.login-field-error');
+          const value = input.value.trim();
+          let message = '';
 
-              field.setAttribute('aria-invalid', String(Boolean(message)));
-              if (message) {
-                valid = false;
-              }
-            });
+          if (!value) {
+            message = 'Este campo es obligatorio.';
+          } else if (input.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+            message = 'Ingresa un correo válido.';
+          }
 
-            if (!valid) {
-              status.textContent = 'Revisa los datos antes de continuar.';
-              status.classList.remove('success');
-              return;
-            }
-
-            status.textContent = 'Inicio de sesión correcto.';
-            status.classList.add('success');
-            form.reset();
-          });
+          input.setAttribute('aria-invalid', String(Boolean(message)));
+          error.textContent = message;
+          isValid = isValid && !message;
         });
+
+        if (!isValid) {
+          loginStatus.textContent = 'Revisa los datos antes de continuar.';
+          loginStatus.classList.remove('success');
+          return;
+        }
+
+        loginStatus.textContent = 'Inicio de sesión correcto.';
+        loginStatus.classList.add('success');
+        loginForm.reset();
       });
     </script>
   </body>
