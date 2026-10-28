@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RutaU | Detalle del viaje</title>
+    <link rel="stylesheet" href="../css/tokens.css">
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body class="app-page">
+    <header class="app-header">
+      <div class="app-header__inner">
+        <a class="app-brand" href="../index.html" aria-label="RutaU inicio">
+          <img src="../assets/ruta-u-mark.png" alt="RutaU">
+          <span>RutaU</span>
+        </a>
+        <nav class="app-nav" aria-label="Navegación principal">
+          <a href="buscar_viaje.html">Buscar viajes</a>
+          <a href="publicar_viaje.html">Publicar viaje</a>
+          <a href="viajes_planeados.html">Viajes planeados</a>
+          <a href="notificaciones.html">Notificaciones</a>
+        </nav>
+        <a class="button button-primary" href="perfil.html">Mi perfil</a>
+      </div>
+    </header>
+
+    <main class="app-shell">
+      <h1 class="page-title">Detalle del viaje</h1>
+      <div class="detail-layout">
+        <section class="panel trip-summary" aria-label="Resumen del viaje">
+          <span class="kicker">Viaje disponible</span>
+          <h2>San Isidro → UPC San Isidro</h2>
+          <div class="trip-summary__meta">
+            <span>🗓 29 oct 2026</span>
+            <span>⏱ 08:15 AM</span>
+            <span>🪑 3 asientos disponibles</span>
+          </div>
+          <ul class="meta-list">
+            <li><strong>Salida:</strong> Av. Primavera 445, San Isidro</li>
+            <li><strong>Destino:</strong> Campus San Isidro – UPC</li>
+            <li><strong>Ruta recomendada:</strong> Av. Javier Prado, Puente de Piedra y Av. Salaverry</li>
+          </ul>
+          <div class="map-placeholder" aria-label="Mapa de la ruta"></div>
+        </section>
+
+        <aside class="panel cta-panel">
+          <div class="driver-profile">
+            <img src="../assets/review-avatar-maria.png" alt="Luis Diego Ramírez">
+            <div>
+              <h3>Luis Diego Ramírez</h3>
+              <p>Conductor verificado</p>
+            </div>
+          </div>
+          <ul class="info-list">
+            <li><strong>Calificación:</strong> 4.9 / 5</li>
+            <li><strong>Vehículo:</strong> Honda Civic 2022</li>
+            <li><strong>Costo estimado:</strong> S/ 18</li>
+            <li><strong>Tiempo estimado:</strong> 35 minutos</li>
+          </ul>
+          <button class="primary-btn trip-cta" type="button" data-open-modal="confirmar-reserva">Reservar asiento</button>
+          <button class="ghost-btn" type="button">Enviar mensaje</button>
+        </aside>
+      </div>
+    </main>
+
+    <div class="modal" id="confirmar-reserva" aria-hidden="true">
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <h3 id="modal-title">Confirmar reserva</h3>
+        <p>¿Deseas reservar un asiento para este viaje? La solicitud se enviará al conductor.</p>
+        <div class="modal-actions">
+          <button class="action-btn" type="button" data-close-modal="confirmar-reserva">Volver</button>
+          <button class="primary-btn" type="button">Sí, reservar</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('confirmar-reserva');
+        const openButtons = document.querySelectorAll('[data-open-modal]');
+        const closeButtons = document.querySelectorAll('[data-close-modal]');
+
+        openButtons.forEach((button) => {
+          button.addEventListener('click', () => {
+            modal.classList.add('is-open');
+            modal.setAttribute('aria-hidden', 'false');
+          });
+        });
+
+        closeButtons.forEach((button) => {
+          button.addEventListener('click', () => {
+            modal.classList.remove('is-open');
+            modal.setAttribute('aria-hidden', 'true');
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
