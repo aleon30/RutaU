@@ -1,11 +1,7 @@
 # 🚗 RutaU — Carpooling Universitario
 
-<p align="center">
-  <img src="assets/ruta-u-mark.png">
-  
-  <img src="https://img.shields.io/badge/Startup-RutaLabs-blue" alt="RutaLabs">
-  <img src="https://img.shields.io/badge/Status-Prototipo%20MVP-orange" alt="Status">
-  <img src="https://img.shields.io/badge/Plataforma-Web%20Application-green" alt="Platform">
+<p align="center" style="background-color: white">
+  <img src="img/ruta-u-logo.png">
 </p>
 
 Plataforma web de carpooling eficiente, accesible y segura diseñada para conectar a la comunidad universitaria de Lima Metropolitana mediante un modelo de economía colaborativa y conectividad inteligente.
@@ -31,7 +27,7 @@ Moverse por Lima Metropolitana representa un reto diario para la comunidad unive
 
 ## 🛠️ Stack Tecnológico y Diseño
 
-* **Frontend:** HTML5, CSS, JavaScript (siguiendo estrictamente el sistema de diseño y guías visuales del proyecto).
+* **Frontend:** HTML y CSS.
 * **Diseño UI/UX:** Mockframes y Mockups oficiales diseñados en [Figma de RutaU](https://www.figma.com/design/MSs2wWWnPmxHptLHo3lsGn/RutaU?node-id=41-500&m=dev&t=Ugnw5NFw4MgDYzqP-1).
 * **Control de Versiones:** Git y GitHub.
 
@@ -42,15 +38,26 @@ Moverse por Lima Metropolitana representa un reto diario para la comunidad unive
 La organización del proyecto sigue una estructura modular orientada a separar la interfaz estática, los estilos, los scripts y la documentación del MVP:
 
 ```text
-RutaU/
-├── agents.md             # Guía de instrucciones y restricciones para agentes de IA
-├── README.md             # Documentación principal del proyecto
-├── src/                  # Código fuente de la aplicación web
-│   ├── css/              # Hojas de estilo basadas en la guía de diseño (Montserrat, colores institucionales)
-│   ├── js/               # Scripts para interactividad, validaciones y flujos de usuario
-│   └── assets/           # Imágenes, íconos y recursos gráficos oficiales de Figma
-├── docs/                 # Documentación académica e informes del proyecto (TB1, TB2)
-└── └── mockups/          # Referencias y capturas de los flujos de usuario
+├── index.html                       # Landing, con su propia cabecera y pie
+├── css/
+│   ├── styles.css                   # Único CSS con los estilos de todas las pantallas
+│   └── tokens.css                   # Único CSS con variables para todas las pantallas
+├── js/                              # Vacía por ahora, sin archivos
+├── img/                             # Imágenes del sitio
+└── pages/
+    ├── auth/                        # Grupo de acceso (se nombra por su función)
+    │   ├── login.html
+    │   └── registro.html
+    ├── help/
+    │   └── ayuda.html
+    ├── user/
+    │   ├── notificaciones.html
+    │   └── perfil.html
+    └── viajes/
+        ├── buscar_viaje.html
+        ├── detalles_viaje.html
+        ├── publicar_viaje.html
+        └── viajes_planeados.html
 ```
 
 ## 📝 Informe del proyecto
