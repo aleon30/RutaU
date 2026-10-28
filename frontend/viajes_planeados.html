@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RutaU | Viajes planeados</title>
+    <link rel="stylesheet" href="../css/tokens.css">
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body class="app-page">
+    <header class="app-header">
+      <div class="app-header__inner">
+        <a class="app-brand" href="../index.html" aria-label="RutaU inicio">
+          <img src="../assets/ruta-u-mark.png" alt="RutaU">
+          <span>RutaU</span>
+        </a>
+        <nav class="app-nav" aria-label="Navegación principal">
+          <a href="buscar_viaje.html">Buscar viajes</a>
+          <a href="publicar_viaje.html">Publicar viaje</a>
+          <a href="viajes_planeados.html">Viajes planeados</a>
+          <a href="notificaciones.html">Notificaciones</a>
+        </nav>
+        <a class="button button-primary" href="perfil.html">Mi perfil</a>
+      </div>
+    </header>
+
+    <main class="app-shell">
+      <h1 class="page-title">Viajes planeados</h1>
+      <div class="search-results">
+        <article class="panel trip-card">
+          <img class="trip-card__avatar" src="../assets/review-avatar-maria.png" alt="Conductor">
+          <div class="trip-card__meta">
+            <h2 class="trip-card__route">San Isidro → UPC</h2>
+            <ul class="trip-card__details">
+              <li>🗓 29 oct 2026</li>
+              <li>⏱ 08:15 AM</li>
+              <li>👤 Asiento reservado</li>
+            </ul>
+          </div>
+          <div class="trip-card__summary">
+            <span class="status-chip confirmado">Confirmado</span>
+            <button class="action-btn" type="button" data-open-modal="cancelar-viaje">Cancelar</button>
+          </div>
+        </article>
+
+        <article class="panel trip-card">
+          <img class="trip-card__avatar" src="../assets/review-avatar-luis.png" alt="Conductor">
+          <div class="trip-card__meta">
+            <h2 class="trip-card__route">La Molina → ULima</h2>
+            <ul class="trip-card__details">
+              <li>🗓 31 oct 2026</li>
+              <li>⏱ 09:10 AM</li>
+              <li>📝 Solicitud pendiente</li>
+            </ul>
+          </div>
+          <div class="trip-card__summary">
+            <span class="status-chip pendiente">Pendiente</span>
+            <button class="action-btn" type="button">Ver detalle</button>
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <div class="modal" id="cancelar-viaje" aria-hidden="true">
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="cancel-title">
+        <h3 id="cancel-title">Cancelar viaje</h3>
+        <p>¿Seguro que deseas cancelar esta reserva? La acción puede afectar la disponibilidad del conductor.</p>
+        <div class="modal-actions">
+          <button class="action-btn" type="button" data-close-modal="cancelar-viaje">Volver</button>
+          <button class="primary-btn" type="button">Sí, cancelar</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('cancelar-viaje');
+        const openButtons = document.querySelectorAll('[data-open-modal]');
+        const closeButtons = document.querySelectorAll('[data-close-modal]');
+
+        openButtons.forEach((button) => {
+          button.addEventListener('click', () => {
+            modal.classList.add('is-open');
+            modal.setAttribute('aria-hidden', 'false');
+          });
+        });
+
+        closeButtons.forEach((button) => {
+          button.addEventListener('click', () => {
+            modal.classList.remove('is-open');
+            modal.setAttribute('aria-hidden', 'true');
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
