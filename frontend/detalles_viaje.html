@@ -3,69 +3,147 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>RutaU | Detalle del viaje</title>
+    <meta name="theme-color" content="#ffffff">
+    <title>RutaU | Detalles del viaje</title>
     <link rel="stylesheet" href="../css/tokens.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/help.css">
+    <link rel="stylesheet" href="../css/trip-details.css">
   </head>
-  <body class="app-page">
-    <header class="app-header">
-      <div class="app-header__inner">
-        <a class="app-brand" href="../index.html" aria-label="RutaU inicio">
-          <img src="../assets/ruta-u-mark.png" alt="RutaU">
-          <span>RutaU</span>
+  <body class="help-page details-page">
+    <header class="site-header help-header">
+      <a class="brand-mark" href="../index.html" aria-label="RutaU, volver al inicio">
+        <img src="../assets/ruta-u-mark.png" alt="">
+      </a>
+      <a class="help-link" href="ayuda.html" aria-label="Centro de ayuda">
+        <img src="../assets/logo-icon.svg" alt="">
+      </a>
+      <nav class="help-nav" aria-label="Navegación principal">
+        <a class="button button-primary" href="buscar_viaje.html">Buscar viaje</a>
+        <a class="button button-primary" href="viajes_planeados.html">Viajes planeados</a>
+        <a class="button button-primary" href="publicar_viaje.html">Publicar viaje</a>
+      </nav>
+      <div class="help-user-actions">
+        <a class="help-notifications" href="notificaciones.html" aria-label="Notificaciones">
+          <img src="../assets/help-bell.svg" alt="">
         </a>
-        <nav class="app-nav" aria-label="Navegación principal">
-          <a href="buscar_viaje.html">Buscar viajes</a>
-          <a href="publicar_viaje.html">Publicar viaje</a>
-          <a href="viajes_planeados.html">Viajes planeados</a>
-          <a href="notificaciones.html">Notificaciones</a>
-        </nav>
-        <a class="button button-primary" href="perfil.html">Mi perfil</a>
+        <span class="help-greeting">¡Hola, Paula!</span>
+        <a class="help-avatar" href="perfil.html" aria-label="Ver perfil de Paula">
+          <img src="../assets/help-user-avatar.png" alt="">
+        </a>
       </div>
     </header>
 
-    <main class="app-shell">
-      <h1 class="page-title">Detalle del viaje</h1>
-      <div class="detail-layout">
-        <section class="panel trip-summary" aria-label="Resumen del viaje">
-          <span class="kicker">Viaje disponible</span>
-          <h2>San Isidro → UPC San Isidro</h2>
-          <div class="trip-summary__meta">
-            <span>🗓 29 oct 2026</span>
-            <span>⏱ 08:15 AM</span>
-            <span>🪑 3 asientos disponibles</span>
+    <main class="details-layout">
+      <section class="driver-card" aria-labelledby="driver-title">
+        <h1 id="driver-title">Datos del conductor</h1>
+        <img class="driver-photo" src="../assets/trip-driver-avatar.png" alt="Luciana Vargas Paredes">
+
+        <dl class="driver-fields">
+          <div class="driver-field">
+            <dt>NOMBRES Y APELLIDOS</dt>
+            <dd>Luciana Vargas Paredes</dd>
           </div>
-          <ul class="meta-list">
-            <li><strong>Salida:</strong> Av. Primavera 445, San Isidro</li>
-            <li><strong>Destino:</strong> Campus San Isidro – UPC</li>
-            <li><strong>Ruta recomendada:</strong> Av. Javier Prado, Puente de Piedra y Av. Salaverry</li>
-          </ul>
-          <div class="map-placeholder" aria-label="Mapa de la ruta"></div>
+          <div class="driver-field">
+            <dt>UNIVERSIDAD</dt>
+            <dd>UPC</dd>
+          </div>
+          <div class="driver-field">
+            <dt>VIAJES REALIZADOS</dt>
+            <dd>27</dd>
+          </div>
+          <div class="driver-field">
+            <dt>RATING</dt>
+            <dd class="driver-rating">
+              <img src="../assets/review-star-1.svg" alt="">
+              <span>4.95</span>
+            </dd>
+          </div>
+        </dl>
+      </section>
+
+      <div class="trip-content">
+        <section class="journey-card" aria-labelledby="journey-title">
+          <h2 id="journey-title">Datos del viaje</h2>
+          <dl class="journey-fields">
+            <div>
+              <dt>RUTA</dt>
+              <dd>UPC Monterrico → UPC San Miguel</dd>
+            </div>
+            <div>
+              <dt>FECHA</dt>
+              <dd>Oct 17, 2026</dd>
+            </div>
+            <div>
+              <dt>HORA DE SALIDA</dt>
+              <dd>10:00 AM</dd>
+            </div>
+            <div>
+              <dt>TIEMPO DE LLEGADA ESTIMADO</dt>
+              <dd>11:10 AM</dd>
+            </div>
+            <div>
+              <dt>ASIENTOS DISPONIBLES</dt>
+              <dd>1 de 4 disponibles</dd>
+            </div>
+            <div>
+              <dt>PRECIO</dt>
+              <dd>13 PER</dd>
+            </div>
+          </dl>
         </section>
 
-        <aside class="panel cta-panel">
-          <div class="driver-profile">
-            <img src="../assets/review-avatar-maria.png" alt="Luis Diego Ramírez">
-            <div>
-              <h3>Luis Diego Ramírez</h3>
-              <p>Conductor verificado</p>
-            </div>
+        <div class="trip-extra">
+          <section class="vehicle-card" aria-labelledby="vehicle-title">
+            <h2 id="vehicle-title">Datos del carro</h2>
+            <dl class="vehicle-fields">
+              <div>
+                <dt>MODELO DEL CARRO:</dt>
+                <dd>Toyota Corolla</dd>
+              </div>
+              <div>
+                <dt>COLOR:</dt>
+                <dd>Blanco</dd>
+              </div>
+              <div>
+                <dt>PLACA:</dt>
+                <dd>ANX-766</dd>
+              </div>
+            </dl>
+          </section>
+
+          <div class="passenger-column">
+            <section class="passenger-card" aria-labelledby="passenger-title">
+              <h2 id="passenger-title">Pasajeros</h2>
+              <ul class="passenger-list">
+                <li>
+                  <span>Sofia Navarro Campos</span>
+                  <span class="passenger-rating">
+                    <img src="../assets/review-star-1.svg" alt="">
+                    <span>4.63 rating</span>
+                  </span>
+                </li>
+                <li>
+                  <span>Nicolas Flores Medina</span>
+                  <span class="passenger-rating">
+                    <img src="../assets/review-star-1.svg" alt="">
+                    <span>4.85 rating</span>
+                  </span>
+                </li>
+              </ul>
+            </section>
+
+            <button class="reserve-button" type="button" data-open-modal="confirmar-reserva">
+              Reservar viaje
+            </button>
           </div>
-          <ul class="info-list">
-            <li><strong>Calificación:</strong> 4.9 / 5</li>
-            <li><strong>Vehículo:</strong> Honda Civic 2022</li>
-            <li><strong>Costo estimado:</strong> S/ 18</li>
-            <li><strong>Tiempo estimado:</strong> 35 minutos</li>
-          </ul>
-          <button class="primary-btn trip-cta" type="button" data-open-modal="confirmar-reserva">Reservar asiento</button>
-          <button class="ghost-btn" type="button">Enviar mensaje</button>
-        </aside>
+        </div>
       </div>
     </main>
 
     <div class="modal" id="confirmar-reserva" aria-hidden="true">
       <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <h3 id="modal-title">Confirmar reserva</h3>
+        <h2 id="modal-title">Confirmar reserva</h2>
         <p>¿Deseas reservar un asiento para este viaje? La solicitud se enviará al conductor.</p>
         <div class="modal-actions">
           <button class="action-btn" type="button" data-close-modal="confirmar-reserva">Volver</button>
@@ -75,24 +153,36 @@
     </div>
 
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const modal = document.getElementById('confirmar-reserva');
-        const openButtons = document.querySelectorAll('[data-open-modal]');
-        const closeButtons = document.querySelectorAll('[data-close-modal]');
+      const reservationModal = document.getElementById('confirmar-reserva');
+      const reservationOpenButton = document.querySelector('[data-open-modal="confirmar-reserva"]');
+      const reservationCloseButton = document.querySelector('[data-close-modal="confirmar-reserva"]');
 
-        openButtons.forEach((button) => {
-          button.addEventListener('click', () => {
-            modal.classList.add('is-open');
-            modal.setAttribute('aria-hidden', 'false');
-          });
-        });
+      reservationOpenButton.addEventListener('click', () => {
+        reservationModal.classList.add('is-open');
+        reservationModal.setAttribute('aria-hidden', 'false');
+        reservationCloseButton.focus();
+      });
 
-        closeButtons.forEach((button) => {
-          button.addEventListener('click', () => {
-            modal.classList.remove('is-open');
-            modal.setAttribute('aria-hidden', 'true');
-          });
-        });
+      reservationCloseButton.addEventListener('click', () => {
+        reservationModal.classList.remove('is-open');
+        reservationModal.setAttribute('aria-hidden', 'true');
+        reservationOpenButton.focus();
+      });
+
+      reservationModal.addEventListener('click', (event) => {
+        if (event.target === reservationModal) {
+          reservationModal.classList.remove('is-open');
+          reservationModal.setAttribute('aria-hidden', 'true');
+          reservationOpenButton.focus();
+        }
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && reservationModal.classList.contains('is-open')) {
+          reservationModal.classList.remove('is-open');
+          reservationModal.setAttribute('aria-hidden', 'true');
+          reservationOpenButton.focus();
+        }
       });
     </script>
   </body>
