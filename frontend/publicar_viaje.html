@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RutaU | Publicar un viaje</title>
+    <link rel="stylesheet" href="../css/tokens.css">
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body class="app-page">
+    <header class="app-header">
+      <div class="app-header__inner">
+        <a class="app-brand" href="../index.html" aria-label="RutaU inicio">
+          <img src="../assets/ruta-u-mark.png" alt="RutaU">
+          <span>RutaU</span>
+        </a>
+        <nav class="app-nav" aria-label="Navegación principal">
+          <a href="buscar_viaje.html">Buscar viajes</a>
+          <a href="publicar_viaje.html">Publicar viaje</a>
+          <a href="viajes_planeados.html">Viajes planeados</a>
+          <a href="notificaciones.html">Notificaciones</a>
+        </nav>
+        <a class="button button-primary" href="perfil.html">Mi perfil</a>
+      </div>
+    </header>
+
+    <main class="app-shell">
+      <h1 class="page-title">Publica tu próximo viaje</h1>
+      <p class="page-subtitle">Comparte tu ruta y ayuda a otros estudiantes a llegar más fácil a la universidad.</p>
+
+      <section class="panel form-card" aria-label="Formulario de publicación">
+        <form data-validate="true" novalidate>
+          <div class="form-grid">
+            <div class="two-col">
+              <div class="field">
+                <label for="publicar-origen">Lugar de salida</label>
+                <input id="publicar-origen" type="text" required aria-invalid="false" placeholder="Ej. San Isidro">
+              </div>
+              <div class="field">
+                <label for="publicar-destino">Destino</label>
+                <input id="publicar-destino" type="text" required aria-invalid="false" placeholder="Ej. UPC San Isidro">
+              </div>
+            </div>
+
+            <div class="two-col">
+              <div class="field">
+                <label for="publicar-fecha">Fecha</label>
+                <input id="publicar-fecha" type="date" required aria-invalid="false">
+              </div>
+              <div class="field">
+                <label for="publicar-hora">Hora</label>
+                <input id="publicar-hora" type="time" required aria-invalid="false">
+              </div>
+            </div>
+
+            <div class="two-col">
+              <div class="field">
+                <label for="publicar-asientos">Asientos disponibles</label>
+                <select id="publicar-asientos" required aria-invalid="false">
+                  <option value="">Selecciona</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="publicar-costo">Precio por estudiante</label>
+                <input id="publicar-costo" type="text" required aria-invalid="false" placeholder="S/ 18">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="publicar-detalles">Detalles de la ruta</label>
+              <textarea id="publicar-detalles" required aria-invalid="false" placeholder="Indica puntos de encuentro, horarios, descripción del vehículo o recomendaciones de seguridad."></textarea>
+            </div>
+          </div>
+
+          <div class="inline-row" style="margin-top: 18px;">
+            <p class="small-note">Todas las publicaciones requieren una verificación previa con correo institucional.</p>
+          </div>
+          <button class="primary-btn" type="submit" style="margin-top: 16px;">Publicar viaje</button>
+          <div class="form-status" aria-live="polite"></div>
+        </form>
+      </section>
+    </main>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('[data-validate]').forEach((form) => {
+          form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const status = form.querySelector('.form-status');
+            const fields = form.querySelectorAll('input[required], select[required], textarea[required]');
+            let valid = true;
+
+            fields.forEach((field) => {
+              const value = field.value.trim();
+              if (!value) {
+                field.setAttribute('aria-invalid', 'true');
+                valid = false;
+              } else {
+                field.setAttribute('aria-invalid', 'false');
+              }
+            });
+
+            if (!valid) {
+              status.textContent = 'Completa todos los campos para publicar el viaje.';
+              status.classList.remove('success');
+              return;
+            }
+
+            status.textContent = 'Tu viaje fue publicado correctamente.';
+            status.classList.add('success');
+            form.reset();
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
