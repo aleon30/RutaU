@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RutaU | Mi perfil</title>
+    <link rel="stylesheet" href="../css/tokens.css">
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body class="app-page">
+    <header class="app-header">
+      <div class="app-header__inner">
+        <a class="app-brand" href="../index.html" aria-label="RutaU inicio">
+          <img src="../assets/ruta-u-mark.png" alt="RutaU">
+          <span>RutaU</span>
+        </a>
+        <nav class="app-nav" aria-label="Navegación principal">
+          <a href="buscar_viaje.html">Buscar viajes</a>
+          <a href="publicar_viaje.html">Publicar viaje</a>
+          <a href="viajes_planeados.html">Viajes planeados</a>
+          <a href="notificaciones.html">Notificaciones</a>
+        </nav>
+        <a class="button button-primary" href="login.html">Cerrar sesión</a>
+      </div>
+    </header>
+
+    <main class="app-shell">
+      <h1 class="page-title">Mi perfil</h1>
+      <div class="profile-layout">
+        <section class="panel profile-card" aria-label="Perfi del usuario">
+          <div class="profile-header">
+            <img src="../assets/review-avatar-camila.png" alt="Camila Torres">
+            <div>
+              <h2>Camila Torres</h2>
+              <p class="small-note">Estudiante de Ingeniería • UPC</p>
+              <span class="verification-badge">✅ Perfil verificado</span>
+            </div>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-box">
+              <strong>24</strong>
+              <span>Viajes compartidos</span>
+            </div>
+            <div class="stat-box">
+              <strong>4.9</strong>
+              <span>Calificación media</span>
+            </div>
+            <div class="stat-box">
+              <strong>12</strong>
+              <span>Reservas activas</span>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <form data-validate="true" novalidate>
+              <div class="form-grid">
+                <div class="two-col">
+                  <div class="field">
+                    <label for="perfil-nombre">Nombres</label>
+                    <input id="perfil-nombre" type="text" value="Camila" required aria-invalid="false">
+                  </div>
+                  <div class="field">
+                    <label for="perfil-apellido">Apellidos</label>
+                    <input id="perfil-apellido" type="text" value="Torres" required aria-invalid="false">
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="perfil-email">Correo institucional</label>
+                  <input id="perfil-email" type="email" value="camila.torres@upc.edu.pe" required aria-invalid="false">
+                </div>
+                <div class="field">
+                  <label for="perfil-telefono">Teléfono</label>
+                  <input id="perfil-telefono" type="text" value="987654321" required aria-invalid="false">
+                </div>
+              </div>
+              <button class="primary-btn" type="submit" style="margin-top:18px;">Guardar cambios</button>
+              <div class="form-status" aria-live="polite"></div>
+            </form>
+          </div>
+        </section>
+
+        <aside class="panel settings-card" aria-label="Configuración">
+          <h3>Preferencias</h3>
+          <ul class="info-list">
+            <li>✔️ Compartir viajes con estudiantes verificados</li>
+            <li>✔️ Recordatorios automáticos</li>
+            <li>✔️ Notificaciones de ruta</li>
+          </ul>
+          <div class="form-section">
+            <button class="secondary-btn" type="button" style="width:100%;">Actualizar preferencias</button>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('[data-validate]').forEach((form) => {
+          form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const status = form.querySelector('.form-status');
+            const fields = form.querySelectorAll('input[required], select[required], textarea[required]');
+            let valid = true;
+
+            fields.forEach((field) => {
+              const value = field.value.trim();
+              if (!value) {
+                field.setAttribute('aria-invalid', 'true');
+                valid = false;
+              } else {
+                field.setAttribute('aria-invalid', 'false');
+              }
+            });
+
+            if (!valid) {
+              status.textContent = 'Completa la información antes de guardar.';
+              status.classList.remove('success');
+              return;
+            }
+
+            status.textContent = 'Perfil actualizado correctamente.';
+            status.classList.add('success');
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
