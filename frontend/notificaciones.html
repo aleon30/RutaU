@@ -3,48 +3,105 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
     <title>RutaU | Notificaciones</title>
     <link rel="stylesheet" href="../css/tokens.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/help.css">
+    <link rel="stylesheet" href="../css/notifications.css">
   </head>
-  <body class="app-page">
-    <header class="app-header">
-      <div class="app-header__inner">
-        <a class="app-brand" href="../index.html" aria-label="RutaU inicio">
-          <img src="../assets/ruta-u-mark.png" alt="RutaU">
-          <span>RutaU</span>
+  <body class="help-page notifications-page">
+    <header class="site-header help-header">
+      <a class="brand-mark" href="../index.html" aria-label="RutaU, volver al inicio">
+        <img src="../assets/ruta-u-mark.png" alt="">
+      </a>
+      <a class="help-link" href="ayuda.html" aria-label="Centro de ayuda">
+        <img src="../assets/logo-icon.svg" alt="">
+      </a>
+      <nav class="help-nav" aria-label="Navegación principal">
+        <a class="button button-primary" href="buscar_viaje.html">
+          <img class="notification-search-icon" src="../assets/profile-search.svg" alt="">
+          <span>Buscar viaje</span>
         </a>
-        <nav class="app-nav" aria-label="Navegación principal">
-          <a href="buscar_viaje.html">Buscar viajes</a>
-          <a href="publicar_viaje.html">Publicar viaje</a>
-          <a href="viajes_planeados.html">Viajes planeados</a>
-          <a href="notificaciones.html">Notificaciones</a>
-        </nav>
-        <a class="button button-primary" href="perfil.html">Mi perfil</a>
+        <a class="button button-primary" href="viajes_planeados.html">Viajes planeados</a>
+        <a class="button button-primary" href="publicar_viaje.html">Publicar viaje</a>
+      </nav>
+      <div class="help-user-actions">
+        <a class="help-notifications" href="notificaciones.html" aria-label="Notificaciones" aria-current="page">
+          <img src="../assets/help-bell.svg" alt="">
+        </a>
+        <span class="help-greeting">¡Hola, Paula!</span>
+        <a class="help-avatar" href="perfil.html" aria-label="Ver perfil de Paula">
+          <img src="../assets/help-user-avatar.png" alt="">
+        </a>
       </div>
     </header>
 
-    <main class="app-shell">
-      <h1 class="page-title">Notificaciones</h1>
-      <section class="panel info-panel" aria-label="Lista de notificaciones">
-        <ul class="notification-list">
-          <li>
-            <span class="tag">Reserva</span>
-            <strong>Tu reserva para San Isidro → UPC fue confirmada.</strong>
-            <span>Hace 10 minutos</span>
+    <main class="notifications-main">
+      <section class="notifications-panel" aria-labelledby="notifications-title">
+        <h1 id="notifications-title">Notificaciones</h1>
+
+        <ul class="notifications-list" id="notifications-list">
+          <li class="notification-item">
+            <div class="notification-copy">
+              <h2>Nueva solicitud de asiento</h2>
+              <time datetime="2026-09-28">Septiembre 28, 2026</time>
+            </div>
+            <a class="notification-trip-link" href="detalles_viaje.html">Ir al viaje</a>
           </li>
-          <li>
-            <span class="tag">Mensaje</span>
-            <strong>Luis Diego respondió tu consulta sobre el punto de encuentro.</strong>
-            <span>Hace 1 hora</span>
+          <li class="notification-item">
+            <div class="notification-copy">
+              <h2>Nueva solicitud de asiento</h2>
+              <time datetime="2026-09-28">Septiembre 28, 2026</time>
+            </div>
+            <a class="notification-trip-link" href="detalles_viaje.html">Ir al viaje</a>
           </li>
-          <li>
-            <span class="tag">Verificación</span>
-            <strong>Tu correo institucional fue validado con éxito.</strong>
-            <span>Hace 2 días</span>
+          <li class="notification-item">
+            <div class="notification-copy">
+              <h2>Nueva solicitud de asiento</h2>
+              <time datetime="2026-09-27">Septiembre 27, 2026</time>
+            </div>
+            <a class="notification-trip-link" href="detalles_viaje.html">Ir al viaje</a>
+          </li>
+          <li class="notification-item">
+            <div class="notification-copy">
+              <h2>Solicitud aprobada</h2>
+              <time datetime="2026-09-25">Septiembre 25, 2026</time>
+            </div>
+            <a class="notification-trip-link" href="detalles_viaje.html">Ir al viaje</a>
+          </li>
+          <li class="notification-item">
+            <div class="notification-copy">
+              <h2>Solicitud rechazada</h2>
+              <time datetime="2026-09-24">Septiembre 24, 2026</time>
+            </div>
+            <a class="notification-trip-link" href="detalles_viaje.html">Ir al viaje</a>
+          </li>
+          <li class="notification-item">
+            <div class="notification-copy">
+              <h2>Viaje cancelado por conductor</h2>
+              <time datetime="2026-09-24">Septiembre 24, 2026</time>
+            </div>
+            <a class="notification-trip-link" href="detalles_viaje.html">Ir al viaje</a>
           </li>
         </ul>
+
+        <button class="notifications-more-button" id="notifications-more" type="button">
+          Ver mas notificaciones
+        </button>
+        <p class="notifications-status" id="notifications-status" role="status" hidden></p>
       </section>
     </main>
+
+    <script>
+      const moreNotificationsButton = document.getElementById('notifications-more');
+      const notificationsStatus = document.getElementById('notifications-status');
+
+      moreNotificationsButton.addEventListener('click', () => {
+        notificationsStatus.textContent = 'No hay más notificaciones por mostrar.';
+        notificationsStatus.hidden = false;
+        moreNotificationsButton.disabled = true;
+      });
+    </script>
   </body>
 </html>
