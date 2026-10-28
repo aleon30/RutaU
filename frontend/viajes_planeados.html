@@ -3,95 +3,297 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
     <title>RutaU | Viajes planeados</title>
     <link rel="stylesheet" href="../css/tokens.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/help.css">
+    <link rel="stylesheet" href="../css/planned-trips.css">
   </head>
-  <body class="app-page">
-    <header class="app-header">
-      <div class="app-header__inner">
-        <a class="app-brand" href="../index.html" aria-label="RutaU inicio">
-          <img src="../assets/ruta-u-mark.png" alt="RutaU">
-          <span>RutaU</span>
+  <body class="help-page planned-trips-page">
+    <header class="site-header help-header">
+      <a class="brand-mark" href="../index.html" aria-label="RutaU, volver al inicio">
+        <img src="../assets/ruta-u-mark.png" alt="">
+      </a>
+      <a class="help-link" href="ayuda.html" aria-label="Centro de ayuda">
+        <img src="../assets/logo-icon.svg" alt="">
+      </a>
+      <nav class="help-nav" aria-label="Navegación principal">
+        <a class="button button-primary" href="buscar_viaje.html">Buscar viaje</a>
+        <a class="button button-primary" href="viajes_planeados.html" aria-current="page">Viajes planeados</a>
+        <a class="button button-primary" href="publicar_viaje.html">Publicar viaje</a>
+      </nav>
+      <div class="help-user-actions">
+        <a class="help-notifications" href="notificaciones.html" aria-label="Notificaciones">
+          <img src="../assets/help-bell.svg" alt="">
         </a>
-        <nav class="app-nav" aria-label="Navegación principal">
-          <a href="buscar_viaje.html">Buscar viajes</a>
-          <a href="publicar_viaje.html">Publicar viaje</a>
-          <a href="viajes_planeados.html">Viajes planeados</a>
-          <a href="notificaciones.html">Notificaciones</a>
-        </nav>
-        <a class="button button-primary" href="perfil.html">Mi perfil</a>
+        <span class="help-greeting">¡Hola, Paula!</span>
+        <a class="help-avatar" href="perfil.html" aria-label="Ver perfil de Paula">
+          <img src="../assets/help-user-avatar.png" alt="">
+        </a>
       </div>
     </header>
 
-    <main class="app-shell">
-      <h1 class="page-title">Viajes planeados</h1>
-      <div class="search-results">
-        <article class="panel trip-card">
-          <img class="trip-card__avatar" src="../assets/review-avatar-maria.png" alt="Conductor">
-          <div class="trip-card__meta">
-            <h2 class="trip-card__route">San Isidro → UPC</h2>
-            <ul class="trip-card__details">
-              <li>🗓 29 oct 2026</li>
-              <li>⏱ 08:15 AM</li>
-              <li>👤 Asiento reservado</li>
-            </ul>
-          </div>
-          <div class="trip-card__summary">
-            <span class="status-chip confirmado">Confirmado</span>
-            <button class="action-btn" type="button" data-open-modal="cancelar-viaje">Cancelar</button>
-          </div>
-        </article>
+    <main class="planned-main">
+      <h1 class="planned-title">Mis viajes planeados</h1>
 
-        <article class="panel trip-card">
-          <img class="trip-card__avatar" src="../assets/review-avatar-luis.png" alt="Conductor">
-          <div class="trip-card__meta">
-            <h2 class="trip-card__route">La Molina → ULima</h2>
-            <ul class="trip-card__details">
-              <li>🗓 31 oct 2026</li>
-              <li>⏱ 09:10 AM</li>
-              <li>📝 Solicitud pendiente</li>
-            </ul>
+      <div class="planned-layout">
+        <section class="planned-results-column" aria-label="Mis viajes">
+          <div class="trip-tabs" role="tablist" aria-label="Filtrar viajes por estado">
+            <button
+              class="trip-tab is-active"
+              type="button"
+              role="tab"
+              id="tab-upcoming"
+              aria-selected="true"
+              aria-controls="trip-list"
+              data-trip-filter="upcoming"
+            >
+              Próximos
+            </button>
+            <button
+              class="trip-tab"
+              type="button"
+              role="tab"
+              id="tab-past"
+              aria-selected="false"
+              aria-controls="trip-list"
+              data-trip-filter="past"
+              tabindex="-1"
+            >
+              Pasados
+            </button>
+            <button
+              class="trip-tab"
+              type="button"
+              role="tab"
+              id="tab-canceled"
+              aria-selected="false"
+              aria-controls="trip-list"
+              data-trip-filter="canceled"
+              tabindex="-1"
+            >
+              Cancelados
+            </button>
           </div>
-          <div class="trip-card__summary">
-            <span class="status-chip pendiente">Pendiente</span>
-            <button class="action-btn" type="button">Ver detalle</button>
+
+          <div class="planned-results" id="trip-list" role="tabpanel" aria-labelledby="tab-upcoming">
+            <article class="planned-trip-card" data-trip-status="confirmed" data-trip-date="2026-02-08">
+              <div class="planned-trip-primary">
+                <h2>UPC Monterrico → UPC Villa</h2>
+                <div class="planned-trip-schedule">
+                  <time datetime="2026-02-08">Feb 08, 2026</time>
+                  <time datetime="2026-02-08T10:45">10:45 AM</time>
+                </div>
+              </div>
+              <a class="planned-details-button" href="detalles_viaje.html">Ver detalles del viaje</a>
+              <p class="planned-trip-vehicle">Toyota Corolla <span aria-hidden="true">|</span> Blanco <span aria-hidden="true">|</span> ABC-123</p>
+              <p class="planned-trip-driver">Conductor: Diego Martinez Vargas</p>
+              <span class="planned-trip-status is-confirmed">Confirmado</span>
+            </article>
+
+            <article class="planned-trip-card" data-trip-status="confirmed" data-trip-date="2026-02-10">
+              <div class="planned-trip-primary">
+                <h2>Miraflores → UPC Villa</h2>
+                <div class="planned-trip-schedule">
+                  <time datetime="2026-02-10">Feb 10, 2026</time>
+                  <time datetime="2026-02-10T09:15">09:15 AM</time>
+                </div>
+              </div>
+              <a class="planned-details-button" href="detalles_viaje.html">Ver detalles del viaje</a>
+              <p class="planned-trip-vehicle">Kia Sportage <span aria-hidden="true">|</span> Gris <span aria-hidden="true">|</span> XYZ-789</p>
+              <p class="planned-trip-driver">Conductor: Valeria Fernandez Salazar</p>
+              <span class="planned-trip-status is-confirmed">Confirmado</span>
+            </article>
+
+            <article class="planned-trip-card" data-trip-status="pending" data-trip-date="2026-02-14">
+              <div class="planned-trip-primary">
+                <h2>Miraflores → UPC Villa</h2>
+                <div class="planned-trip-schedule">
+                  <time datetime="2026-02-14">Feb 14, 2026</time>
+                  <time datetime="2026-02-14T15:00">15:00 PM</time>
+                </div>
+              </div>
+              <a class="planned-details-button" href="detalles_viaje.html">Ver detalles del viaje</a>
+              <p class="planned-trip-vehicle">Hyundai Elantra <span aria-hidden="true">|</span> Negro <span aria-hidden="true">|</span> DEF-456</p>
+              <p class="planned-trip-driver">Conductor: Nicolas Torres Rojas</p>
+              <span class="planned-trip-status is-pending">Pendiente</span>
+            </article>
+
+            <p class="planned-empty-state" id="trip-empty-state" hidden>No tienes viajes en esta categoría.</p>
           </div>
-        </article>
+        </section>
+
+        <aside class="planned-sidebar">
+          <a class="new-trip-button" href="buscar_viaje.html">Buscar un nuevo viaje</a>
+
+          <section class="trip-calendar" aria-label="Calendario de viajes">
+            <div class="calendar-header">
+              <button class="calendar-arrow" type="button" aria-label="Mes anterior" data-calendar-step="-1">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+              </button>
+              <label class="visually-hidden" for="calendar-month">Mes</label>
+              <select id="calendar-month" aria-label="Mes">
+                <option value="0">Jan</option>
+                <option value="1" selected>Feb</option>
+                <option value="2">Mar</option>
+                <option value="3">Apr</option>
+                <option value="4">May</option>
+                <option value="5">Jun</option>
+                <option value="6">Jul</option>
+                <option value="7">Aug</option>
+                <option value="8">Sep</option>
+                <option value="9">Oct</option>
+                <option value="10">Nov</option>
+                <option value="11">Dec</option>
+              </select>
+              <label class="visually-hidden" for="calendar-year">Año</label>
+              <select id="calendar-year" aria-label="Año">
+                <option>2024</option>
+                <option>2025</option>
+                <option selected>2026</option>
+                <option>2027</option>
+                <option>2028</option>
+              </select>
+              <button class="calendar-arrow" type="button" aria-label="Mes siguiente" data-calendar-step="1">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+              </button>
+            </div>
+            <div class="calendar-weekdays" aria-hidden="true">
+              <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+            </div>
+            <div class="calendar-days" id="calendar-days" role="grid" aria-label="Días del mes"></div>
+          </section>
+
+          <section class="trip-help-card" aria-labelledby="trip-help-title">
+            <h2 id="trip-help-title">¿Necesitas ayuda?</h2>
+            <p>Revisa nuestras preguntas frecuentes o contactanos.</p>
+            <a href="ayuda.html">Ir al Centro de Ayuda</a>
+          </section>
+        </aside>
       </div>
     </main>
 
-    <div class="modal" id="cancelar-viaje" aria-hidden="true">
-      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="cancel-title">
-        <h3 id="cancel-title">Cancelar viaje</h3>
-        <p>¿Seguro que deseas cancelar esta reserva? La acción puede afectar la disponibilidad del conductor.</p>
-        <div class="modal-actions">
-          <button class="action-btn" type="button" data-close-modal="cancelar-viaje">Volver</button>
-          <button class="primary-btn" type="button">Sí, cancelar</button>
-        </div>
-      </div>
-    </div>
-
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const modal = document.getElementById('cancelar-viaje');
-        const openButtons = document.querySelectorAll('[data-open-modal]');
-        const closeButtons = document.querySelectorAll('[data-close-modal]');
+      const tripTabs = [...document.querySelectorAll('[data-trip-filter]')];
+      const tripCards = [...document.querySelectorAll('.planned-trip-card')];
+      const tripList = document.getElementById('trip-list');
+      const emptyState = document.getElementById('trip-empty-state');
+      const monthSelect = document.getElementById('calendar-month');
+      const yearSelect = document.getElementById('calendar-year');
+      const calendarDays = document.getElementById('calendar-days');
+      const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      let selectedCalendarDate = '';
 
-        openButtons.forEach((button) => {
-          button.addEventListener('click', () => {
-            modal.classList.add('is-open');
-            modal.setAttribute('aria-hidden', 'false');
-          });
+      function selectTripTab(selectedTab) {
+        const statusByFilter = {
+          upcoming: ['confirmed', 'pending'],
+          past: ['past'],
+          canceled: ['canceled']
+        };
+        const allowedStatuses = statusByFilter[selectedTab.dataset.tripFilter];
+        let visibleTrips = 0;
+
+        tripTabs.forEach((tab) => {
+          const isSelected = tab === selectedTab;
+          tab.classList.toggle('is-active', isSelected);
+          tab.setAttribute('aria-selected', String(isSelected));
+          tab.tabIndex = isSelected ? 0 : -1;
         });
 
-        closeButtons.forEach((button) => {
-          button.addEventListener('click', () => {
-            modal.classList.remove('is-open');
-            modal.setAttribute('aria-hidden', 'true');
-          });
+        tripCards.forEach((card) => {
+          const isVisible = allowedStatuses.includes(card.dataset.tripStatus);
+          card.hidden = !isVisible;
+          if (isVisible) visibleTrips += 1;
+        });
+
+        const activeTab = selectedTab.id;
+        tripList.setAttribute('aria-labelledby', activeTab);
+        tripList.classList.toggle('is-empty', visibleTrips === 0);
+        emptyState.hidden = visibleTrips > 0;
+      }
+
+      tripTabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => selectTripTab(tab));
+        tab.addEventListener('keydown', (event) => {
+          if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+          event.preventDefault();
+          const nextIndex = event.key === 'Home'
+            ? 0
+            : event.key === 'End'
+              ? tripTabs.length - 1
+              : (index + (event.key === 'ArrowRight' ? 1 : -1) + tripTabs.length) % tripTabs.length;
+          tripTabs[nextIndex].focus();
+          selectTripTab(tripTabs[nextIndex]);
         });
       });
+
+      function renderCalendar() {
+        const year = Number(yearSelect.value);
+        const month = Number(monthSelect.value);
+        const firstWeekday = new Date(year, month, 1).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+        const daysInPreviousMonth = new Date(year, month, 0).getDate();
+        const totalCells = Math.max(35, Math.ceil((firstWeekday + daysInMonth) / 7) * 7);
+        const cells = [];
+
+        for (let index = 0; index < totalCells; index += 1) {
+          const dayOffset = index - firstWeekday + 1;
+          let day = dayOffset;
+          let date = new Date(year, month, dayOffset);
+          let isOutsideMonth = false;
+
+          if (dayOffset < 1) {
+            day = daysInPreviousMonth + dayOffset;
+            isOutsideMonth = true;
+          } else if (dayOffset > daysInMonth) {
+            day = dayOffset - daysInMonth;
+            isOutsideMonth = true;
+          }
+
+          const dateValue = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+          const isSelected = dateValue === selectedCalendarDate;
+          cells.push(
+            `<button class="calendar-day${isOutsideMonth ? ' is-outside' : ''}${isSelected ? ' is-selected' : ''}" type="button" role="gridcell" data-calendar-date="${dateValue}" aria-pressed="${isSelected}"${isOutsideMonth ? ' disabled' : ''}>${day}</button>`
+          );
+        }
+
+        calendarDays.innerHTML = cells.join('');
+      }
+
+      calendarDays.addEventListener('click', (event) => {
+        const dayButton = event.target.closest('[data-calendar-date]');
+        if (!dayButton || dayButton.classList.contains('is-outside')) return;
+        selectedCalendarDate = dayButton.dataset.calendarDate;
+        renderCalendar();
+        calendarDays.querySelector(`[data-calendar-date="${selectedCalendarDate}"]`).focus();
+      });
+
+      monthSelect.addEventListener('change', () => {
+        selectedCalendarDate = '';
+        renderCalendar();
+      });
+
+      yearSelect.addEventListener('change', () => {
+        selectedCalendarDate = '';
+        renderCalendar();
+      });
+
+      document.querySelectorAll('[data-calendar-step]').forEach((button) => {
+        button.addEventListener('click', () => {
+          const nextDate = new Date(
+            Number(yearSelect.value),
+            Number(monthSelect.value) + Number(button.dataset.calendarStep),
+            1
+          );
+          monthSelect.value = String(nextDate.getMonth());
+          yearSelect.value = String(nextDate.getFullYear());
+          selectedCalendarDate = '';
+          renderCalendar();
+        });
+      });
+
+      renderCalendar();
     </script>
   </body>
 </html>
