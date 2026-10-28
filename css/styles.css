@@ -891,7 +891,7 @@ grid-template-columns: 1fr;
   position: relative;
   min-height: 650px;
   background: linear-gradient(135deg, rgba(46, 148, 241, 0.2), rgba(250, 169, 39, 0.2)),
-    url('../assets/hero-street.png') center/cover no-repeat;
+    url('../img/hero-street.png') center/cover no-repeat;
 }
 
 .auth-visual::before {
