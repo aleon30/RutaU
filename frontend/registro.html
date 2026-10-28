@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RutaU | Registro</title>
+    <link rel="stylesheet" href="../css/tokens.css">
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body class="app-page">
+    <header class="app-header">
+      <div class="app-header__inner">
+        <a class="app-brand" href="../index.html" aria-label="RutaU inicio">
+          <img src="../assets/ruta-u-mark.png" alt="RutaU">
+          <span>RutaU</span>
+        </a>
+        <nav class="app-nav" aria-label="Navegación principal">
+          <a href="buscar_viaje.html">Buscar viajes</a>
+          <a href="publicar_viaje.html">Publicar viaje</a>
+          <a href="ayuda.html">Ayuda</a>
+        </nav>
+        <a class="button button-primary" href="login.html">Iniciar sesión</a>
+      </div>
+    </header>
+
+    <main class="auth-shell">
+      <section class="auth-card" aria-label="Registrarse">
+        <div class="auth-visual">
+          <div class="auth-visual__content">
+            <h2>Crea tu perfil universitario.</h2>
+            <p>Únete a una comunidad verificada por correo institucional y comparte viajes con estudiantes de confianza.</p>
+          </div>
+        </div>
+        <div class="auth-form-wrap">
+          <form class="auth-form" data-validate="true" novalidate>
+            <h1>Registrarse</h1>
+            <div class="form-grid">
+              <div class="two-col">
+                <div class="field">
+                  <label for="registro-nombre">Nombres</label>
+                  <input id="registro-nombre" name="nombre" type="text" required aria-invalid="false">
+                </div>
+                <div class="field">
+                  <label for="registro-apellido">Apellidos</label>
+                  <input id="registro-apellido" name="apellido" type="text" required aria-invalid="false">
+                </div>
+              </div>
+              <div class="field">
+                <label for="registro-universidad">Universidad</label>
+                <select id="registro-universidad" name="universidad" required aria-invalid="false">
+                  <option value="">Selecciona</option>
+                  <option>UPC</option>
+                  <option>ULima</option>
+                  <option>PUCP</option>
+                  <option>Otra</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="registro-email">Correo institucional</label>
+                <input id="registro-email" name="email" type="email" required aria-invalid="false" placeholder="nombre@upc.edu.pe">
+              </div>
+              <div class="two-col">
+                <div class="field">
+                  <label for="registro-password">Contraseña</label>
+                  <input id="registro-password" name="password" type="password" required aria-invalid="false" placeholder="Mínimo 8 caracteres">
+                </div>
+                <div class="field">
+                  <label for="registro-confirm">Confirmar</label>
+                  <input id="registro-confirm" name="confirm" type="password" required aria-invalid="false" placeholder="Repite la contraseña">
+                </div>
+              </div>
+            </div>
+            <div class="inline-row" style="margin-top: 14px;">
+              <label><input type="checkbox" required> Acepto los términos</label>
+            </div>
+            <button class="primary-btn" type="submit" style="width:100%; margin-top:8px;">Crear cuenta</button>
+            <div class="form-status" aria-live="polite"></div>
+            <p class="auth-meta">¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('[data-validate]').forEach((form) => {
+          form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const status = form.querySelector('.form-status');
+            const fields = form.querySelectorAll('input[required], select[required], textarea[required]');
+            let valid = true;
+
+            const password = form.querySelector('#registro-password');
+            const confirm = form.querySelector('#registro-confirm');
+
+            fields.forEach((field) => {
+              const value = field.value.trim();
+              if (!value) {
+                field.setAttribute('aria-invalid', 'true');
+                valid = false;
+                return;
+              }
+              field.setAttribute('aria-invalid', 'false');
+            });
+
+            if (password && confirm && password.value && confirm.value && password.value !== confirm.value) {
+              password.setAttribute('aria-invalid', 'true');
+              confirm.setAttribute('aria-invalid', 'true');
+              valid = false;
+            }
+
+            if (!valid) {
+              status.textContent = 'Completa correctamente todos los datos.';
+              status.classList.remove('success');
+              return;
+            }
+
+            status.textContent = 'Cuenta creada con éxito.';
+            status.classList.add('success');
+            form.reset();
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
