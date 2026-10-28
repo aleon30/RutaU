@@ -5,26 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ffffff">
     <title>RutaU | Mi perfil</title>
-    <link rel="stylesheet" href="../css/tokens.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/help.css">
-    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="../../css/tokens.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/help.css">
+    <link rel="stylesheet" href="../../css/profile.css">
   </head>
   <body class="help-page profile-page">
     <header class="site-header help-header">
-      <a class="brand-mark" href="../index.html" aria-label="RutaU, volver al inicio">
+      <a class="brand-mark" href="../../index.html" aria-label="RutaU, volver al inicio">
         <img src="../../img/ruta-u-mark.png" alt="">
       </a>
-      <a class="help-link" href="ayuda.html" aria-label="Centro de ayuda">
+      <a class="help-link" href="../help/ayuda.html" aria-label="Centro de ayuda">
         <img src="../../img/logo-icon.svg" alt="">
       </a>
       <nav class="help-nav" aria-label="Navegación principal">
-        <a class="button button-primary profile-search-button" href="buscar_viaje.html">
+        <a class="button button-primary profile-search-button" href="../viajes/buscar_viaje.html">
           <img src="../../img/profile-search.svg" alt="">
           <span>Buscar viaje</span>
         </a>
-        <a class="button button-primary" href="viajes_planeados.html">Viajes planeados</a>
-        <a class="button button-primary" href="publicar_viaje.html">Publicar viaje</a>
+        <a class="button button-primary" href="../viajes/viajes_planeados.html">Viajes planeados</a>
+        <a class="button button-primary" href="../viajes/publicar_viaje.html">Publicar viaje</a>
       </nav>
       <div class="help-user-actions">
         <a class="help-notifications" href="notificaciones.html" aria-label="Notificaciones">
@@ -102,7 +102,7 @@
               <span class="profile-trip-status">Completado</span>
             </li>
           </ol>
-          <a class="profile-history-button" href="viajes_planeados.html">Historial completo</a>
+          <a class="profile-history-button" href="../viajes/viajes_planeados.html">Historial completo</a>
         </section>
 
         <div class="profile-statistics">
@@ -128,49 +128,5 @@
       </div>
     </main>
 
-    <script>
-      const profileForm = document.getElementById('profile-form');
-      const editProfileButton = document.getElementById('edit-profile');
-      const editActions = document.getElementById('profile-edit-actions');
-      const cancelProfileButton = document.getElementById('cancel-profile');
-      const profileStatus = document.getElementById('profile-status');
-      const profileInputs = [...profileForm.querySelectorAll('input')];
-      let originalProfile = [];
-
-      editProfileButton.addEventListener('click', () => {
-        originalProfile = profileInputs.map((input) => input.value);
-        profileInputs.forEach((input) => {
-          input.readOnly = false;
-        });
-        editProfileButton.hidden = true;
-        editActions.hidden = false;
-        profileStatus.hidden = true;
-        profileInputs[0].focus();
-      });
-
-      cancelProfileButton.addEventListener('click', () => {
-        profileInputs.forEach((input, index) => {
-          input.value = originalProfile[index];
-          input.readOnly = true;
-        });
-        editActions.hidden = true;
-        editProfileButton.hidden = false;
-        profileStatus.hidden = true;
-        editProfileButton.focus();
-      });
-
-      profileForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        if (!profileForm.reportValidity()) return;
-
-        profileInputs.forEach((input) => {
-          input.readOnly = true;
-        });
-        editActions.hidden = true;
-        editProfileButton.hidden = false;
-        profileStatus.hidden = false;
-        editProfileButton.focus();
-      });
-    </script>
   </body>
 </html>

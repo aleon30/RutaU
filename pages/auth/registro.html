@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ffffff">
     <title>RutaU | Registro</title>
-    <link rel="stylesheet" href="../css/tokens.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="../../css/tokens.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/register.css">
   </head>
   <body class="register-page">
     <main class="register-main">
-      <a class="register-logo" href="../index.html" aria-label="RutaU, volver al inicio">
+      <a class="register-logo" href="../../index.html" aria-label="RutaU, volver al inicio">
         <img src="../../img/register-rutau-logo.png" alt="RutaU">
       </a>
 
@@ -124,68 +124,5 @@
       </form>
     </main>
 
-    <script>
-      const registerForm = document.getElementById('register-form');
-      const registerStatus = document.getElementById('register-status');
-      const registerFields = [...registerForm.querySelectorAll('input[required]')];
-      const universityEmail = registerForm.querySelector('#register-email');
-      const institutionalDomains = new Set(['upc.edu.pe', 'ulima.edu.pe', 'pucp.edu.pe']);
-
-      function validateEmailDomain() {
-        const domain = universityEmail.value.trim().toLowerCase().split('@').pop();
-        const hasInstitutionalDomain = institutionalDomains.has(domain);
-        universityEmail.setCustomValidity(
-          universityEmail.value && !hasInstitutionalDomain
-            ? 'Usa tu correo institucional de UPC, ULima o PUCP.'
-            : ''
-        );
-      }
-
-      registerFields.forEach((field) => {
-        field.addEventListener('input', () => {
-          if (field === universityEmail) validateEmailDomain();
-          field.setAttribute('aria-invalid', String(!field.checkValidity()));
-          registerStatus.hidden = true;
-        });
-
-        field.addEventListener('change', () => {
-          if (field === universityEmail) validateEmailDomain();
-        });
-      });
-
-      registerForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        validateEmailDomain();
-
-        const valid = registerForm.checkValidity();
-        registerFields.forEach((field) => {
-          field.setAttribute('aria-invalid', String(!field.checkValidity()));
-        });
-
-        if (!valid) {
-          registerStatus.textContent = 'Completa correctamente todos los datos.';
-          registerStatus.classList.remove('success');
-          registerStatus.hidden = false;
-          registerForm.reportValidity();
-          return;
-        }
-
-        registerForm.reset();
-        registerFields.forEach((field) => {
-          field.setAttribute('aria-invalid', 'false');
-        });
-        registerStatus.textContent = 'Cuenta creada con éxito.';
-        registerStatus.classList.add('success');
-        registerStatus.hidden = false;
-      });
-
-      registerForm.addEventListener('reset', () => {
-        universityEmail.setCustomValidity('');
-        registerStatus.hidden = true;
-        registerFields.forEach((field) => {
-          field.setAttribute('aria-invalid', 'false');
-        });
-      });
-    </script>
   </body>
 </html>

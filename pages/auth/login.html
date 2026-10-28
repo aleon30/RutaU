@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ffffff">
     <title>RutaU | Iniciar sesión</title>
-    <link rel="stylesheet" href="../css/tokens.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../../css/tokens.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/login.css">
   </head>
   <body class="login-page">
     <main class="login-main">
-      <a class="login-logo" href="../index.html" aria-label="RutaU, volver al inicio">
+      <a class="login-logo" href="../../index.html" aria-label="RutaU, volver al inicio">
         <img src="../../img/login-rutau-logo.png" alt="RutaU">
       </a>
 
@@ -47,11 +47,11 @@
           <span>Recuérdame</span>
         </label>
 
-        <a class="forgot-password" href="ayuda.html">Olvidé mi contraseña</a>
+        <a class="forgot-password" href="../help/ayuda.html">Olvidé mi contraseña</a>
 
         <div class="login-actions">
           <button class="login-submit" type="submit">Iniciar sesión</button>
-          <a class="login-home" href="../index.html">Volver al inicio</a>
+          <a class="login-home" href="../../index.html">Volver al inicio</a>
         </div>
 
         <p class="login-status" aria-live="polite"></p>
@@ -60,41 +60,5 @@
       <a class="create-account" href="registro.html">Crear cuenta</a>
     </main>
 
-    <script>
-      const loginForm = document.querySelector('.login-form');
-      const loginStatus = document.querySelector('.login-status');
-
-      loginForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        let isValid = true;
-
-        loginForm.querySelectorAll('.login-field').forEach((field) => {
-          const input = field.querySelector('input');
-          const error = field.querySelector('.login-field-error');
-          const value = input.value.trim();
-          let message = '';
-
-          if (!value) {
-            message = 'Este campo es obligatorio.';
-          } else if (input.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-            message = 'Ingresa un correo válido.';
-          }
-
-          input.setAttribute('aria-invalid', String(Boolean(message)));
-          error.textContent = message;
-          isValid = isValid && !message;
-        });
-
-        if (!isValid) {
-          loginStatus.textContent = 'Revisa los datos antes de continuar.';
-          loginStatus.classList.remove('success');
-          return;
-        }
-
-        loginStatus.textContent = 'Inicio de sesión correcto.';
-        loginStatus.classList.add('success');
-        loginForm.reset();
-      });
-    </script>
   </body>
 </html>
