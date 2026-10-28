@@ -3,120 +3,171 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>RutaU | Buscar viajes</title>
+    <meta name="theme-color" content="#ffffff">
+    <title>RutaU | Buscar viaje</title>
     <link rel="stylesheet" href="../css/tokens.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/help.css">
+    <link rel="stylesheet" href="../css/search-trips.css">
   </head>
-  <body class="app-page">
-    <header class="app-header">
-      <div class="app-header__inner">
-        <a class="app-brand" href="../index.html" aria-label="RutaU inicio">
-          <img src="../assets/ruta-u-mark.png" alt="RutaU">
-          <span>RutaU</span>
+  <body class="help-page search-page">
+    <header class="site-header help-header">
+      <a class="brand-mark" href="../index.html" aria-label="RutaU, volver al inicio">
+        <img src="../assets/ruta-u-mark.png" alt="">
+      </a>
+      <a class="help-link" href="ayuda.html" aria-label="Centro de ayuda">
+        <img src="../assets/logo-icon.svg" alt="">
+      </a>
+      <nav class="help-nav" aria-label="Navegación principal">
+        <a class="button button-primary" href="buscar_viaje.html" aria-current="page">Buscar viaje</a>
+        <a class="button button-primary" href="viajes_planeados.html">Viajes planeados</a>
+        <a class="button button-primary" href="publicar_viaje.html">Publicar viaje</a>
+      </nav>
+      <div class="help-user-actions">
+        <a class="help-notifications" href="notificaciones.html" aria-label="Notificaciones">
+          <img src="../assets/help-bell.svg" alt="">
         </a>
-        <nav class="app-nav" aria-label="Navegación principal">
-          <a href="buscar_viaje.html">Buscar viajes</a>
-          <a href="publicar_viaje.html">Publicar viaje</a>
-          <a href="viajes_planeados.html">Viajes planeados</a>
-          <a href="notificaciones.html">Notificaciones</a>
-        </nav>
-        <a class="button button-primary" href="perfil.html">Mi perfil</a>
+        <span class="help-greeting">¡Hola, Paula!</span>
+        <a class="help-avatar" href="perfil.html" aria-label="Ver perfil de Paula">
+          <img src="../assets/help-user-avatar.png" alt="">
+        </a>
       </div>
     </header>
 
-    <main class="app-shell">
-      <h1 class="page-title">Busca tu próximo viaje</h1>
-      <p class="page-subtitle">Encuentra rutas compatibles con tu universidad, horario y presupuesto.</p>
+    <main class="search-main">
+      <h1 class="search-title">Buscar viaje</h1>
 
-      <div class="app-grid">
-        <aside class="panel sidebar-panel">
-          <form class="filter-form" data-validate="true" novalidate>
-            <div class="field">
-              <label for="filtro-origen">Desde</label>
-              <input id="filtro-origen" type="text" value="San Isidro" aria-invalid="false">
+      <div class="search-layout">
+        <aside class="search-filter" aria-label="Filtros de viaje">
+          <button class="filter-toggle" type="button" aria-expanded="false" aria-controls="trip-filters">
+            <span>Filtrar viaje</span>
+            <span class="filter-chevron" aria-hidden="true"></span>
+          </button>
+          <form class="filter-form" id="trip-filters" hidden>
+            <div class="filter-field">
+              <label for="filter-origin">Desde</label>
+              <input id="filter-origin" name="origin" type="text" placeholder="Lugar de salida">
             </div>
-            <div class="field">
-              <label for="filtro-destino">Hacia</label>
-              <input id="filtro-destino" type="text" value="UPC San Isidro" aria-invalid="false">
+            <div class="filter-field">
+              <label for="filter-destination">Hacia</label>
+              <input id="filter-destination" name="destination" type="text" placeholder="Destino">
             </div>
-            <div class="field">
-              <label for="filtro-fecha">Fecha</label>
-              <input id="filtro-fecha" type="date" value="2026-10-29" aria-invalid="false">
+            <div class="filter-field">
+              <label for="filter-date">Fecha</label>
+              <input id="filter-date" name="date" type="text" placeholder="dd/mm/yyyy">
             </div>
-            <div class="field">
-              <label for="filtro-horario">Horario</label>
-              <select id="filtro-horario" aria-invalid="false">
-                <option>7:00 - 8:00</option>
-                <option selected>8:00 - 9:00</option>
-                <option>9:00 - 10:00</option>
-              </select>
+            <div class="filter-field">
+              <label for="filter-time">Hora</label>
+              <input id="filter-time" name="time" type="text" placeholder="--:--">
             </div>
-            <button class="primary-btn" type="submit" style="width:100%;">Aplicar filtros</button>
-            <div class="form-status" aria-live="polite"></div>
+            <div class="filter-field">
+              <label for="filter-seats">Asientos</label>
+              <input id="filter-seats" name="seats" type="number" min="1" placeholder="1">
+            </div>
+            <div class="filter-field">
+              <label for="filter-price">Precio</label>
+              <input id="filter-price" name="price" type="text" placeholder="1 - 10 S/">
+            </div>
+            <button class="filter-submit" type="submit">
+              <img src="../assets/trip-search.svg" alt="">
+              <span>Buscar</span>
+            </button>
+            <p class="filter-status" aria-live="polite" hidden></p>
           </form>
         </aside>
 
         <section class="search-results" aria-label="Resultados de búsqueda">
-          <article class="panel trip-card">
-            <img class="trip-card__avatar" src="../assets/review-avatar-maria.png" alt="Conductor 1">
-            <div class="trip-card__meta">
-              <h2 class="trip-card__route">San Isidro → UPC</h2>
-              <ul class="trip-card__details">
-                <li>🚗 Luis D.</li>
-                <li>⏱ 08:15 AM</li>
-                <li>📍 3 asientos libres</li>
-              </ul>
-              <ul class="trip-card__stats">
-                <li>⭐ 4.9</li>
-                <li>✅ Perfil verificado</li>
-                <li>💬 2 mensajes recientes</li>
-              </ul>
-            </div>
-            <div class="trip-card__summary">
-              <span class="price-pill">S/ 18</span>
-              <a class="button button-primary" href="detalles_viaje.html">Ver detalle</a>
+          <article class="trip-card">
+            <h2>UPC Monterrico → UPC Villa</h2>
+            <div class="trip-details">
+              <span class="trip-date">
+                <span>Feb 08, 2026</span>
+                <img src="../assets/trip-calendar.svg" alt="">
+              </span>
+              <span class="trip-time">
+                <span>10:45 AM</span>
+                <img src="../assets/trip-clock-a.svg" alt="">
+              </span>
+              <span>2 de 5 disponibles</span>
+              <span>Precio: S/ 34</span>
+              <a class="trip-link" href="detalles_viaje.html">Ver detalles del viaje</a>
             </div>
           </article>
-
-          <article class="panel trip-card">
-            <img class="trip-card__avatar" src="../assets/review-avatar-camila.png" alt="Conductor 2">
-            <div class="trip-card__meta">
-              <h2 class="trip-card__route">Miraflores → PUCP</h2>
-              <ul class="trip-card__details">
-                <li>🚗 Valeria C.</li>
-                <li>⏱ 08:30 AM</li>
-                <li>📍 2 asientos libres</li>
-              </ul>
-              <ul class="trip-card__stats">
-                <li>⭐ 4.8</li>
-                <li>✅ Perfil verificado</li>
-                <li>💡 Rutas seguras</li>
-              </ul>
-            </div>
-            <div class="trip-card__summary">
-              <span class="price-pill">S/ 20</span>
-              <a class="button button-primary" href="detalles_viaje.html">Ver detalle</a>
+          <article class="trip-card">
+            <h2>UNMSM → UNI</h2>
+            <div class="trip-details">
+              <span class="trip-date">
+                <span>Jan 09, 2026</span>
+                <img src="../assets/trip-calendar.svg" alt="">
+              </span>
+              <span class="trip-time"><span>16:00 PM</span></span>
+              <span>4 de 5 disponibles</span>
+              <span>Precio: S/ 67</span>
+              <a class="trip-link" href="detalles_viaje.html">Ver detalles del viaje</a>
             </div>
           </article>
-
-          <article class="panel trip-card">
-            <img class="trip-card__avatar" src="../assets/review-avatar-luis.png" alt="Conductor 3">
-            <div class="trip-card__meta">
-              <h2 class="trip-card__route">La Molina → ULima</h2>
-              <ul class="trip-card__details">
-                <li>🚗 Mateo P.</li>
-                <li>⏱ 09:10 AM</li>
-                <li>📍 1 asiento libre</li>
-              </ul>
-              <ul class="trip-card__stats">
-                <li>⭐ 5.0</li>
-                <li>✅ Perfil verificado</li>
-                <li>🧭 Ruta directa</li>
-              </ul>
+          <article class="trip-card">
+            <h2>PUCH → UNMSM</h2>
+            <div class="trip-details">
+              <span class="trip-date">
+                <span>Dec 17, 2025</span>
+                <img src="../assets/trip-calendar.svg" alt="">
+              </span>
+              <span class="trip-time">
+                <span>12:10 AM</span>
+                <img src="../assets/trip-clock-a.svg" alt="">
+              </span>
+              <span>3 de 5 disponibles</span>
+              <span>Precio: S/ 14</span>
+              <a class="trip-link" href="detalles_viaje.html">Ver detalles del viaje</a>
             </div>
-            <div class="trip-card__summary">
-              <span class="price-pill">S/ 16</span>
-              <a class="button button-primary" href="detalles_viaje.html">Ver detalle</a>
+          </article>
+          <article class="trip-card">
+            <h2>UNMSM → ULIMA</h2>
+            <div class="trip-details">
+              <span class="trip-date">
+                <span>Sep 08, 2026</span>
+                <img src="../assets/trip-calendar.svg" alt="">
+              </span>
+              <span class="trip-time">
+                <span>11:30 AM</span>
+                <img src="../assets/trip-clock-a.svg" alt="">
+              </span>
+              <span>1 de 5 disponibles</span>
+              <span>Precio: S/ 39</span>
+              <a class="trip-link" href="detalles_viaje.html">Ver detalles del viaje</a>
+            </div>
+          </article>
+          <article class="trip-card">
+            <h2>UTP → UCV</h2>
+            <div class="trip-details">
+              <span class="trip-date">
+                <span>Sep 20, 2026</span>
+                <img src="../assets/trip-calendar.svg" alt="">
+              </span>
+              <span class="trip-time">
+                <span>09:00 AM</span>
+                <img src="../assets/trip-clock-a.svg" alt="">
+              </span>
+              <span>4 de 8 disponibles</span>
+              <span>Precio: S/ 24</span>
+              <a class="trip-link" href="detalles_viaje.html">Ver detalles del viaje</a>
+            </div>
+          </article>
+          <article class="trip-card">
+            <h2>UPC San Isidro → UPC San Miguel</h2>
+            <div class="trip-details">
+              <span class="trip-date">
+                <span>Feb 17, 2026</span>
+                <img src="../assets/trip-calendar.svg" alt="">
+              </span>
+              <span class="trip-time">
+                <span>15:30 PM</span>
+                <img src="../assets/trip-clock-a.svg" alt="">
+              </span>
+              <span>3 de 8 disponibles</span>
+              <span>Precio: S/ 26</span>
+              <a class="trip-link" href="detalles_viaje.html">Ver detalles del viaje</a>
             </div>
           </article>
         </section>
@@ -124,15 +175,22 @@
     </main>
 
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('[data-validate]').forEach((form) => {
-          form.addEventListener('submit', (event) => {
-            event.preventDefault();
-            const status = form.querySelector('.form-status');
-            status.textContent = 'Filtros aplicados correctamente.';
-            status.classList.add('success');
-          });
-        });
+      const filterToggle = document.querySelector('.filter-toggle');
+      const filterForm = document.querySelector('.filter-form');
+      const searchFilter = document.querySelector('.search-filter');
+      const filterStatus = document.querySelector('.filter-status');
+
+      filterToggle.addEventListener('click', () => {
+        const isExpanded = filterToggle.getAttribute('aria-expanded') === 'true';
+        filterToggle.setAttribute('aria-expanded', String(!isExpanded));
+        filterForm.hidden = isExpanded;
+        searchFilter.classList.toggle('search-filter--open', !isExpanded);
+      });
+
+      filterForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        filterStatus.textContent = 'Filtros aplicados correctamente.';
+        filterStatus.hidden = false;
       });
     </script>
   </body>
