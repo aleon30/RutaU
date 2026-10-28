@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RutaU | Buscar viajes</title>
+    <link rel="stylesheet" href="../css/tokens.css">
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body class="app-page">
+    <header class="app-header">
+      <div class="app-header__inner">
+        <a class="app-brand" href="../index.html" aria-label="RutaU inicio">
+          <img src="../assets/ruta-u-mark.png" alt="RutaU">
+          <span>RutaU</span>
+        </a>
+        <nav class="app-nav" aria-label="Navegación principal">
+          <a href="buscar_viaje.html">Buscar viajes</a>
+          <a href="publicar_viaje.html">Publicar viaje</a>
+          <a href="viajes_planeados.html">Viajes planeados</a>
+          <a href="notificaciones.html">Notificaciones</a>
+        </nav>
+        <a class="button button-primary" href="perfil.html">Mi perfil</a>
+      </div>
+    </header>
+
+    <main class="app-shell">
+      <h1 class="page-title">Busca tu próximo viaje</h1>
+      <p class="page-subtitle">Encuentra rutas compatibles con tu universidad, horario y presupuesto.</p>
+
+      <div class="app-grid">
+        <aside class="panel sidebar-panel">
+          <form class="filter-form" data-validate="true" novalidate>
+            <div class="field">
+              <label for="filtro-origen">Desde</label>
+              <input id="filtro-origen" type="text" value="San Isidro" aria-invalid="false">
+            </div>
+            <div class="field">
+              <label for="filtro-destino">Hacia</label>
+              <input id="filtro-destino" type="text" value="UPC San Isidro" aria-invalid="false">
+            </div>
+            <div class="field">
+              <label for="filtro-fecha">Fecha</label>
+              <input id="filtro-fecha" type="date" value="2026-10-29" aria-invalid="false">
+            </div>
+            <div class="field">
+              <label for="filtro-horario">Horario</label>
+              <select id="filtro-horario" aria-invalid="false">
+                <option>7:00 - 8:00</option>
+                <option selected>8:00 - 9:00</option>
+                <option>9:00 - 10:00</option>
+              </select>
+            </div>
+            <button class="primary-btn" type="submit" style="width:100%;">Aplicar filtros</button>
+            <div class="form-status" aria-live="polite"></div>
+          </form>
+        </aside>
+
+        <section class="search-results" aria-label="Resultados de búsqueda">
+          <article class="panel trip-card">
+            <img class="trip-card__avatar" src="../assets/review-avatar-maria.png" alt="Conductor 1">
+            <div class="trip-card__meta">
+              <h2 class="trip-card__route">San Isidro → UPC</h2>
+              <ul class="trip-card__details">
+                <li>🚗 Luis D.</li>
+                <li>⏱ 08:15 AM</li>
+                <li>📍 3 asientos libres</li>
+              </ul>
+              <ul class="trip-card__stats">
+                <li>⭐ 4.9</li>
+                <li>✅ Perfil verificado</li>
+                <li>💬 2 mensajes recientes</li>
+              </ul>
+            </div>
+            <div class="trip-card__summary">
+              <span class="price-pill">S/ 18</span>
+              <a class="button button-primary" href="detalles_viaje.html">Ver detalle</a>
+            </div>
+          </article>
+
+          <article class="panel trip-card">
+            <img class="trip-card__avatar" src="../assets/review-avatar-camila.png" alt="Conductor 2">
+            <div class="trip-card__meta">
+              <h2 class="trip-card__route">Miraflores → PUCP</h2>
+              <ul class="trip-card__details">
+                <li>🚗 Valeria C.</li>
+                <li>⏱ 08:30 AM</li>
+                <li>📍 2 asientos libres</li>
+              </ul>
+              <ul class="trip-card__stats">
+                <li>⭐ 4.8</li>
+                <li>✅ Perfil verificado</li>
+                <li>💡 Rutas seguras</li>
+              </ul>
+            </div>
+            <div class="trip-card__summary">
+              <span class="price-pill">S/ 20</span>
+              <a class="button button-primary" href="detalles_viaje.html">Ver detalle</a>
+            </div>
+          </article>
+
+          <article class="panel trip-card">
+            <img class="trip-card__avatar" src="../assets/review-avatar-luis.png" alt="Conductor 3">
+            <div class="trip-card__meta">
+              <h2 class="trip-card__route">La Molina → ULima</h2>
+              <ul class="trip-card__details">
+                <li>🚗 Mateo P.</li>
+                <li>⏱ 09:10 AM</li>
+                <li>📍 1 asiento libre</li>
+              </ul>
+              <ul class="trip-card__stats">
+                <li>⭐ 5.0</li>
+                <li>✅ Perfil verificado</li>
+                <li>🧭 Ruta directa</li>
+              </ul>
+            </div>
+            <div class="trip-card__summary">
+              <span class="price-pill">S/ 16</span>
+              <a class="button button-primary" href="detalles_viaje.html">Ver detalle</a>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('[data-validate]').forEach((form) => {
+          form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const status = form.querySelector('.form-status');
+            status.textContent = 'Filtros aplicados correctamente.';
+            status.classList.add('success');
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
