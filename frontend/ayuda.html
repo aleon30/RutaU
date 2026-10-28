@@ -3,48 +3,154 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>RutaU | Ayuda</title>
+    <meta name="theme-color" content="#ffffff">
+    <title>RutaU | Centro de Ayuda</title>
     <link rel="stylesheet" href="../css/tokens.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/help.css">
   </head>
-  <body class="app-page">
-    <header class="app-header">
-      <div class="app-header__inner">
-        <a class="app-brand" href="../index.html" aria-label="RutaU inicio">
-          <img src="../assets/ruta-u-mark.png" alt="RutaU">
-          <span>RutaU</span>
+  <body class="help-page">
+    <header class="site-header help-header">
+      <a class="brand-mark" href="../index.html" aria-label="RutaU, volver al inicio">
+        <img src="../assets/ruta-u-mark.png" alt="">
+      </a>
+      <a class="help-link" href="ayuda.html" aria-label="Centro de ayuda">
+        <img src="../assets/logo-icon.svg" alt="">
+      </a>
+      <nav class="help-nav" aria-label="Navegación principal">
+        <a class="button button-primary" href="buscar_viaje.html">Buscar viaje</a>
+        <a class="button button-primary" href="viajes_planeados.html">Viajes planeados</a>
+        <a class="button button-primary" href="publicar_viaje.html">Publicar viaje</a>
+      </nav>
+      <div class="help-user-actions">
+        <a class="help-notifications" href="notificaciones.html" aria-label="Notificaciones">
+          <img src="../assets/help-bell.svg" alt="">
         </a>
-        <nav class="app-nav" aria-label="Navegación principal">
-          <a href="buscar_viaje.html">Buscar viajes</a>
-          <a href="publicar_viaje.html">Publicar viaje</a>
-          <a href="viajes_planeados.html">Viajes planeados</a>
-          <a href="ayuda.html">Ayuda</a>
-        </nav>
-        <a class="button button-primary" href="login.html">Iniciar sesión</a>
+        <span class="help-greeting">¡Hola, Paula!</span>
+        <a class="help-avatar" href="perfil.html" aria-label="Ver perfil de Paula">
+          <img src="../assets/help-user-avatar.png" alt="">
+        </a>
       </div>
     </header>
 
-    <main class="app-shell">
-      <h1 class="page-title">Centro de ayuda</h1>
-      <section class="panel info-panel" aria-label="Preguntas frecuentes">
-        <ul class="help-list">
-          <li>
-            <span class="tag">Seguridad</span>
-            <strong>¿Cómo valida RutaU a los estudiantes?</strong>
-            <span>Se requiere un correo institucional activo y verificación de perfil antes de concretar viajes.</span>
-          </li>
-          <li>
-            <span class="tag">Pago</span>
-            <strong>¿Cómo se gestionan los costos del viaje?</strong>
-            <span>El conductor publica el precio sugerido y el pasajero confirma la reserva directamente desde la plataforma.</span>
-          </li>
-          <li>
-            <span class="tag">Soporte</span>
-            <strong>¿Qué hacer si necesito cancelar un viaje?</strong>
-            <span>Puedes cancelar desde la sección de viajes planeados y confirmar la acción con el modal de seguridad.</span>
-          </li>
-        </ul>
+    <main class="help-main">
+      <h1 class="help-title">Centro de Ayuda</h1>
+
+      <section class="help-panel" aria-label="Preguntas frecuentes">
+        <details class="faq-item faq-registration" open>
+          <summary>
+            <span>¿Cómo me registro en RutaU?</span>
+            <img class="faq-chevron" src="../assets/help-chevron.svg" alt="">
+          </summary>
+          <div class="faq-answer faq-registration-answer">
+            <ol class="registration-steps">
+              <li class="registration-step registration-step--first">
+                <span class="step-icon"><img src="../assets/help-step-user.svg" alt=""></span>
+                <div>
+                  <h2>1. Haz clic en “Crear cuenta”</h2>
+                  <p>En la página de inicio</p>
+                </div>
+              </li>
+              <li class="registration-step registration-step--second">
+                <span class="step-icon"><img src="../assets/help-step-edit.svg" alt=""></span>
+                <div>
+                  <h2>2. Completa tus datos</h2>
+                  <p>Ingresa tu nombre, correo institucional y contraseña</p>
+                </div>
+              </li>
+              <li class="registration-step registration-step--third">
+                <span class="step-icon"><img src="../assets/help-step-inbox.svg" alt=""></span>
+                <div>
+                  <h2>3. Verifica tu correo</h2>
+                  <p>Revisa tu bandeja de entrada y haz clic en el enlace de confirmación</p>
+                </div>
+              </li>
+              <li class="registration-step registration-step--fourth">
+                <span class="step-icon"><img src="../assets/help-step-check.svg" alt=""></span>
+                <div>
+                  <h2>4. ¡Listo!</h2>
+                  <p>Tu cuenta estará activa y podrás empezar a usar RutaU</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </details>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>
+              <span>¿Cómo busco un viaje?</span>
+              <img class="faq-chevron" src="../assets/help-chevron.svg" alt="">
+            </summary>
+            <div class="faq-answer">
+              <p>Ingresa tu punto de salida, destino y fecha en “Buscar viaje”. Revisa las opciones disponibles y abre el detalle para consultar la ruta y al conductor.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span>¿Cómo publico un viaje?</span>
+              <img class="faq-chevron" src="../assets/help-chevron.svg" alt="">
+            </summary>
+            <div class="faq-answer">
+              <p>En “Publicar viaje”, completa la ruta, fecha, hora, asientos y costo. Verifica los datos antes de publicar para que otros estudiantes puedan encontrar tu viaje.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span>¿Cómo sé si aceptaron mi solicitud?</span>
+              <img class="faq-chevron" src="../assets/help-chevron.svg" alt="">
+            </summary>
+            <div class="faq-answer">
+              <p>Recibirás una notificación cuando el conductor responda a tu solicitud. También puedes revisar el estado desde “Viajes planeados”.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span>¿Puedo cancelar un viaje o una solicitud?</span>
+              <img class="faq-chevron" src="../assets/help-chevron.svg" alt="">
+            </summary>
+            <div class="faq-answer">
+              <p>Sí. Abre “Viajes planeados”, selecciona la reserva o solicitud y elige cancelar. La plataforma te pedirá confirmar antes de completar la acción.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span>¿Es seguro viajar con RutaU?</span>
+              <img class="faq-chevron" src="../assets/help-chevron.svg" alt="">
+            </summary>
+            <div class="faq-answer">
+              <p>RutaU está orientado a la comunidad universitaria. Revisa los perfiles verificados y las calificaciones antes de confirmar un viaje.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span>¿Cómo edito mi perfil?</span>
+              <img class="faq-chevron" src="../assets/help-chevron.svg" alt="">
+            </summary>
+            <div class="faq-answer">
+              <p>Entra a tu perfil desde el menú superior, actualiza tus datos y guarda los cambios.</p>
+            </div>
+          </details>
+        </div>
+
+        <a class="help-home-button" href="../index.html">Volver al inicio</a>
       </section>
     </main>
+
+    <script>
+      document.querySelectorAll('.faq-item').forEach((item) => {
+        item.addEventListener('toggle', () => {
+          if (!item.open) {
+            return;
+          }
+
+          document.querySelectorAll('.faq-item[open]').forEach((openItem) => {
+            if (openItem !== item) {
+              openItem.open = false;
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>

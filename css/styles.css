@@ -411,6 +411,7 @@ margin: 0;
 color: var(--secundario);
 font-size: 20px;
 line-height: 1.4;
+width: 200px
 }
 
 .university-card .arrow-link {
@@ -528,8 +529,8 @@ align-items: flex-start;
 
 .footer-brand > img {
 display: block;
-width: 26.8333px;
-height: 38.5px;
+width: 50px;
+height: 50px;
 }
 
 .social-links {
