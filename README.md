@@ -2,6 +2,7 @@
 
 <p align="center">
   <img src="assets/ruta-u-mark.png">
+  
   <img src="https://img.shields.io/badge/Startup-RutaLabs-blue" alt="RutaLabs">
   <img src="https://img.shields.io/badge/Status-Prototipo%20MVP-orange" alt="Status">
   <img src="https://img.shields.io/badge/Plataforma-Web%20Application-green" alt="Platform">
