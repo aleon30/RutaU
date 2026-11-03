@@ -4,6 +4,7 @@
 
 .search-main {
   width: 100%;
+  min-width: 0;
 }
 
 .search-title {
@@ -23,6 +24,7 @@
   grid-template-columns: 299px minmax(0, 1fr);
   gap: 60px;
   margin: 0 auto;
+  min-width: 0;
 }
 
 .search-filter {
@@ -143,6 +145,7 @@
 
 .search-results {
   display: grid;
+  min-width: 0;
   height: 672px;
   grid-template-rows: repeat(6, 90px);
   gap: 14px;
@@ -178,7 +181,7 @@
 .trip-details {
   display: grid;
   min-width: 0;
-  grid-template-columns: 208px 128px 208px 144px 180px;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, .8fr) minmax(0, 1.25fr) minmax(0, .9fr) minmax(150px, 1.1fr);
   align-items: center;
   color: #757575;
   font-size: 16px;
@@ -217,7 +220,8 @@
 
 .trip-link {
   display: flex;
-  width: 180px;
+  width: 100%;
+  min-width: 0;
   height: 40px;
   align-items: center;
   justify-content: center;
@@ -247,8 +251,10 @@
   }
 
   .trip-details {
-    grid-template-columns: minmax(145px, 1.3fr) minmax(112px, 0.8fr) minmax(145px, 1.3fr) minmax(120px, 1fr) 180px;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(145px, 1.2fr);
     font-size: 14px;
+    gap: 8px;
+    white-space: normal;
   }
 }
 
@@ -273,6 +279,16 @@
 
   .trip-card {
     min-height: 90px;
+  }
+
+  .trip-details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    white-space: normal;
+  }
+
+  .trip-link {
+    grid-column: 1 / -1;
   }
 }
 
@@ -301,10 +317,7 @@
   }
 
   .trip-details {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
     font-size: 13px;
-    white-space: normal;
   }
 
   .trip-date,
@@ -312,8 +325,4 @@
     gap: 5px;
   }
 
-  .trip-link {
-    width: 100%;
-    grid-column: 1 / -1;
-  }
 }

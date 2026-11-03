@@ -279,17 +279,50 @@
   line-height: 1;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
+  .help-header {
+    display: flex;
+    height: auto;
+    min-height: 109px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 20px;
+    padding: 18px 32px;
+  }
+
+  .help-header .brand-mark,
+  .help-header .help-link,
+  .help-nav,
+  .help-user-actions {
+    position: static;
+  }
+
+  .help-header .brand-mark {
+    position: relative;
+    top: auto;
+    left: auto;
+  }
+
+  .help-header .help-link {
+    flex: 0 0 auto;
+  }
+
   .help-nav {
-    right: 260px;
-    left: 197px;
+    order: 2;
+    flex: 1 1 100%;
     gap: 12px;
+    justify-content: center;
   }
 
   .help-nav .button {
     width: auto;
-    min-width: 145px;
+    min-width: 0;
     flex: 1 1 0;
+  }
+
+  .help-user-actions {
+    height: 50px;
   }
 }
 
