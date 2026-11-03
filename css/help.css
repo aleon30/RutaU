@@ -390,8 +390,20 @@
   }
 
   .help-nav {
+    /*
     flex-direction: column;
     gap: 8px;
+    */
+    display: none;
+  }
+
+  .help-notifications{
+    display: none;
+  }
+
+  .help-avatar,
+  .help-avatar img {
+    display:none;
   }
 
   .help-nav .button {
@@ -400,8 +412,11 @@
   }
 
   .help-greeting {
+    /*
     width: auto;
     font-size: 14px;
+    */
+    display: none;
   }
 
   .help-title {
