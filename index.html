@@ -10,24 +10,29 @@
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand-mark" href="#inicio" aria-label="RutaU, inicio">
+    <header class="site-header" id="site-header">
+      <a class="brand-mark" id="brand-mark" href="#inicio" aria-label="RutaU, inicio">
         <img src="img/ruta-u-mark.png" alt="">
       </a>
-      <a class="help-link" href="pages/help/ayuda.html" aria-label="Más información">
+      <a class="help-link" id="help-link" href="pages/help/ayuda.html" aria-label="Más información">
         <img src="img/logo-icon.svg" alt="">
       </a>
-      <nav class="header-actions" aria-label="Acceso a la cuenta">
+      <a class="mobile-menu-toggle" id="mobile-menu-toggle" href="pages/menu.html" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+      <nav class="header-actions" id="header-actions" aria-label="Acceso a la cuenta">
         <a class="button button-primary" href="pages/auth/login.html">Iniciar sesión</a>
-        <a class="button button-dark" href="pages/auth/registro.html">Registrarse</a>
+        <a class="button button-dark" id="button-dark" href="pages/auth/registro.html">Registrarse</a>
       </nav>
     </header>
 
     <main id="inicio">
-      <section class="hero" aria-labelledby="hero-title">
+      <section class="hero" id="hero" aria-labelledby="hero-title">
         <img class="hero-photo" src="img/hero-street.png" alt="">
-        <div class="hero-intro">
-          <div class="hero-logo-frame">
+        <div class="hero-intro" id="hero-intro">
+          <div class="hero-logo-frame" id="hero-logo-frame">
             <img src="img/ruta-u-logo.png" alt="RutaU">
           </div>
           <h1 id="hero-title">Comparte tu próximo viaje</h1>
@@ -45,15 +50,15 @@
             <label class="form-label" for="fecha">Fecha</label>
             <input class="form-control" id="fecha" name="fecha" type="text" placeholder="dd/mm/yyyy" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'">
           </div>
-          <button class="search-submit" type="submit">
+          <button class="search-submit" id="search-submit" type="submit">
             <img src="img/search.svg" alt="">
             <span>Buscar</span>
           </button>
         </form>
       </section>
 
-      <section class="benefits" aria-label="Beneficios de viajar con RutaU">
-        <div class="benefit-grid">
+      <section class="benefits" id="benefits" aria-label="Beneficios de viajar con RutaU">
+        <div class="benefit-grid" id="benefit-grid">
           <article class="benefit-card">
             <div class="benefit-icon benefit-icon--shield">
               <img src="img/benefit-shield.svg" alt="">
@@ -77,7 +82,7 @@
 
       <section class="universities" id="universidades" aria-labelledby="universities-title">
         <h2 class="section-title" id="universities-title">Planea tu viaje a cualquier universidad en Lima</h2>
-        <div class="university-grid">
+        <div class="university-grid" id="university-grid">
           <article class="university-card card">
             <div class="university-photo university-photo--upc">
               <img src="img/university-upc.png" alt="Campus de la Universidad Peruana de Ciencias Aplicadas">
@@ -111,9 +116,9 @@
         </div>
       </section>
 
-      <section class="reviews" aria-labelledby="reviews-title">
+      <section class="reviews" id="reviews" aria-labelledby="reviews-title">
         <h2 class="section-title" id="reviews-title">Lo que dicen otros estudiantes</h2>
-        <div class="review-grid">
+        <div class="review-grid" id="review-grid">
           <article class="review-card">
             <div class="stars" aria-label="5 de 5 estrellas">
               <img src="img/review-star-1.svg" alt="">
@@ -173,9 +178,9 @@
     </main>
 
     <footer class="site-footer" id="mas-informacion">
-      <div class="footer-brand">
+      <div class="footer-brand" id="footer-brand">
         <img src="img/ruta-u-mark.png" alt="RutaU">
-        <nav class="social-links" aria-label="Redes sociales">
+        <nav class="social-links" id="social-links" aria-label="Redes sociales">
           <a href="#mas-informacion" aria-label="X">
             <img src="img/footer-icon-2.svg" alt="">
           </a>
@@ -190,7 +195,7 @@
           </a>
         </nav>
       </div>
-      <div class="footer-columns">
+      <div class="footer-columns" id="footer-columns">
         <nav class="footer-column" aria-label="Enlaces de ayuda">
           <h2>Enlaces de ayuda</h2>
           <ul>

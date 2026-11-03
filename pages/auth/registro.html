@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="../../css/tokens.css">
     <link rel="stylesheet" href="../../css/styles.css">
   </head>
-  <body class="site-page">
-    <main class="register-main">
-      <a class="register-logo" href="../../index.html" aria-label="RutaU, volver al inicio">
+  <body class="site-page" id="site-page">
+    <main class="register-main" id="register-main">
+      <a class="register-logo" id="register-logo" href="../../index.html" aria-label="RutaU, volver al inicio">
         <img src="../../img/register-rutau-logo.png" alt="RutaU">
       </a>
 
       <form class="register-form" id="register-form" novalidate>
-        <div class="register-card card">
+        <div class="register-card card" id="register-card">
           <div class="register-fields">
             <div class="register-field">
               <label class="form-label" for="register-first-name">Nombres</label>
@@ -124,7 +124,7 @@
           </label>
         </div>
 
-        <button class="register-submit" type="submit">Registrarse</button>
+        <button class="register-submit" id="register-submit" type="submit">Registrarse</button>
         <p class="register-status" id="register-status" role="status" hidden></p>
       </form>
     </main>

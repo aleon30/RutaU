@@ -8,25 +8,30 @@
     <link rel="stylesheet" href="../../css/tokens.css">
     <link rel="stylesheet" href="../../css/styles.css">
   </head>
-  <body class="site-page">
-    <header class="site-header help-header">
-      <a class="brand-mark" href="../../index.html" aria-label="RutaU, volver al inicio">
+  <body class="site-page" id="site-page">
+    <header class="site-header help-header" id="site-header">
+      <a class="brand-mark" id="brand-mark" href="../../index.html" aria-label="RutaU, volver al inicio">
         <img src="../../img/ruta-u-mark.png" alt="">
       </a>
-      <a class="help-link" href="../help/ayuda.html" aria-label="Centro de ayuda">
+      <a class="help-link" id="help-link" href="../help/ayuda.html" aria-label="Centro de ayuda">
         <img src="../../img/logo-icon.svg" alt="">
       </a>
-      <nav class="help-nav" aria-label="Navegación principal">
+      <a class="mobile-menu-toggle" id="mobile-menu-toggle" href="../menu.html" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+      <nav class="help-nav" id="help-nav" aria-label="Navegación principal">
         <a class="button button-primary" href="../viajes/buscar_viaje.html">Buscar viaje</a>
         <a class="button button-primary" href="../viajes/viajes_planeados.html">Viajes planeados</a>
         <a class="button button-primary" href="publicar_viaje.html" aria-current="page">Publicar viaje</a>
       </nav>
-      <div class="help-user-actions">
-        <a class="help-notifications" href="../user/notificaciones.html" aria-label="Notificaciones">
+      <div class="help-user-actions" id="help-user-actions">
+        <a class="help-notifications" id="help-notifications" href="../user/notificaciones.html" aria-label="Notificaciones">
           <img src="../../img/help-bell.svg" alt="">
         </a>
         <span class="help-greeting">¡Hola, Paula!</span>
-        <a class="help-avatar" href="../user/perfil.html" aria-label="Ver perfil de Paula">
+        <a class="help-avatar" id="help-avatar" href="../user/perfil.html" aria-label="Ver perfil de Paula">
           <img src="../../img/help-user-avatar.png" alt="">
         </a>
       </div>
@@ -36,8 +41,8 @@
       <h1 class="page-title publish-title">Publica tu viaje</h1>
 
       <form class="publish-form" id="publish-form" novalidate>
-        <div class="publish-form-card card">
-          <div class="publish-fields">
+        <div class="publish-form-card card" id="publish-form-card">
+          <div class="publish-fields" id="publish-fields">
             <div class="publish-field">
               <label class="form-label" for="vehicle-model">Modelo del vehículo</label>
               <input
@@ -105,7 +110,7 @@
               >
             </div>
 
-            <div class="publish-field-row">
+            <div class="publish-field-row" id="publish-field-row">
               <div class="publish-field">
                 <label class="form-label" for="available-seats">Asientos</label>
                 <input
@@ -137,15 +142,15 @@
             </div>
           </div>
 
-          <label class="publish-terms" for="accept-terms">
+          <label class="publish-terms" id="publish-terms" for="accept-terms">
             <input id="accept-terms" name="acceptTerms" type="checkbox" required>
             <span>Acepto los Terminos y condiciones</span>
           </label>
         </div>
 
-        <div class="publish-actions">
-          <button class="publish-cancel-button" type="reset">Cancelar</button>
-          <button class="publish-submit-button" type="submit">Publicar</button>
+        <div class="publish-actions" id="publish-actions">
+          <button class="publish-cancel-button" id="publish-cancel-button" type="reset">Cancelar</button>
+          <button class="publish-submit-button" id="publish-submit-button" type="submit">Publicar</button>
         </div>
         <p class="publish-status" id="publish-status" role="status" hidden>
           Tu viaje fue publicado correctamente.

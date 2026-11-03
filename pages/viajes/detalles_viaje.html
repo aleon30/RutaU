@@ -8,36 +8,41 @@
     <link rel="stylesheet" href="../../css/tokens.css">
     <link rel="stylesheet" href="../../css/styles.css">
   </head>
-  <body class="site-page">
-    <header class="site-header help-header">
-      <a class="brand-mark" href="../../index.html" aria-label="RutaU, volver al inicio">
+  <body class="site-page" id="site-page">
+    <header class="site-header help-header" id="site-header">
+      <a class="brand-mark" id="brand-mark" href="../../index.html" aria-label="RutaU, volver al inicio">
         <img src="../../img/ruta-u-mark.png" alt="">
       </a>
-      <a class="help-link" href="../help/ayuda.html" aria-label="Centro de ayuda">
+      <a class="help-link" id="help-link" href="../help/ayuda.html" aria-label="Centro de ayuda">
         <img src="../../img/logo-icon.svg" alt="">
       </a>
-      <nav class="help-nav" aria-label="Navegación principal">
+      <a class="mobile-menu-toggle" id="mobile-menu-toggle" href="../menu.html" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+      <nav class="help-nav" id="help-nav" aria-label="Navegación principal">
         <a class="button button-primary" href="buscar_viaje.html">Buscar viaje</a>
         <a class="button button-primary" href="viajes_planeados.html">Viajes planeados</a>
         <a class="button button-primary" href="publicar_viaje.html">Publicar viaje</a>
       </nav>
-      <div class="help-user-actions">
-        <a class="help-notifications" href="../user/notificaciones.html" aria-label="Notificaciones">
+      <div class="help-user-actions" id="help-user-actions">
+        <a class="help-notifications" id="help-notifications" href="../user/notificaciones.html" aria-label="Notificaciones">
           <img src="../../img/help-bell.svg" alt="">
         </a>
         <span class="help-greeting">¡Hola, Paula!</span>
-        <a class="help-avatar" href="../user/perfil.html" aria-label="Ver perfil de Paula">
+        <a class="help-avatar" id="help-avatar" href="../user/perfil.html" aria-label="Ver perfil de Paula">
           <img src="../../img/help-user-avatar.png" alt="">
         </a>
       </div>
     </header>
 
-    <main class="details-layout">
-      <section class="driver-card card" aria-labelledby="driver-title">
+    <main class="details-layout" id="details-layout">
+      <section class="driver-card card" id="driver-card" aria-labelledby="driver-title">
         <h1 class="card-title" id="driver-title">Datos del conductor</h1>
-        <img class="driver-photo" src="../../img/trip-driver-avatar.png" alt="Luciana Vargas Paredes">
+        <img class="driver-photo" id="driver-photo" src="../../img/trip-driver-avatar.png" alt="Luciana Vargas Paredes">
 
-        <dl class="driver-fields">
+        <dl class="driver-fields" id="driver-fields">
           <div class="driver-field">
             <dt>NOMBRES Y APELLIDOS</dt>
             <dd>Luciana Vargas Paredes</dd>
@@ -52,7 +57,7 @@
           </div>
           <div class="driver-field">
             <dt>RATING</dt>
-            <dd class="driver-rating">
+            <dd class="driver-rating" id="driver-rating">
               <img src="../../img/review-star-1.svg" alt="">
               <span>4.95</span>
             </dd>
@@ -61,9 +66,9 @@
       </section>
 
       <div class="trip-content">
-        <section class="journey-card" aria-labelledby="journey-title">
+        <section class="journey-card" id="journey-card" aria-labelledby="journey-title">
           <h2 class="card-title" id="journey-title">Datos del viaje</h2>
-          <dl class="journey-fields">
+          <dl class="journey-fields" id="journey-fields">
             <div>
               <dt>RUTA</dt>
               <dd>UPC Monterrico → UPC San Miguel</dd>
@@ -91,10 +96,10 @@
           </dl>
         </section>
 
-        <div class="trip-extra">
-          <section class="vehicle-card card" aria-labelledby="vehicle-title">
+        <div class="trip-extra" id="trip-extra">
+          <section class="vehicle-card card" id="vehicle-card" aria-labelledby="vehicle-title">
             <h2 class="card-title" id="vehicle-title">Datos del carro</h2>
-            <dl class="vehicle-fields">
+            <dl class="vehicle-fields" id="vehicle-fields">
               <div>
                 <dt>MODELO DEL CARRO:</dt>
                 <dd>Toyota Corolla</dd>
@@ -111,9 +116,9 @@
           </section>
 
           <div class="passenger-column">
-            <section class="passenger-card card" aria-labelledby="passenger-title">
+            <section class="passenger-card card" id="passenger-card" aria-labelledby="passenger-title">
               <h2 class="card-title" id="passenger-title">Pasajeros</h2>
-              <ul class="passenger-list">
+              <ul class="passenger-list" id="passenger-list">
                 <li>
                   <span>Sofia Navarro Campos</span>
                   <span class="passenger-rating">
@@ -131,24 +136,11 @@
               </ul>
             </section>
 
-            <button class="reserve-button" type="button" data-open-modal="confirmar-reserva">
-              Reservar viaje
-            </button>
+            <button class="reserve-button" id="reserve-button" type="button">Reservar viaje</button>
           </div>
         </div>
       </div>
     </main>
-
-    <div class="modal" id="confirmar-reserva" aria-hidden="true">
-      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <h2 class="card-title" id="modal-title">Confirmar reserva</h2>
-        <p>¿Deseas reservar un asiento para este viaje? La solicitud se enviará al conductor.</p>
-        <div class="modal-actions">
-          <button class="action-btn" type="button" data-close-modal="confirmar-reserva">Volver</button>
-          <button class="primary-btn" type="button">Sí, reservar</button>
-        </div>
-      </div>
-    </div>
 
   </body>
 </html>
