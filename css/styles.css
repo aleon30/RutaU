@@ -81,6 +81,30 @@ gap: 34px;
 transform: translateY(-50%);
 }
 
+/* Header: botón hamburguesa (solo se muestra en móvil) */
+.header-menu {
+display: none;
+width: 47px;
+height: 44px;
+flex: 0 0 auto;
+flex-direction: column;
+justify-content: space-between;
+margin-right: -10px;
+padding: 10px;
+}
+
+.header-menu__bar {
+display: block;
+height: 3px;
+border-radius: 2px;
+background: var(--primario);
+}
+
+.header-menu:focus-visible {
+outline: 3px solid var(--primario);
+outline-offset: 3px;
+}
+
 .button {
 display: inline-flex;
 min-height: 40px;
@@ -408,7 +432,7 @@ letter-spacing: -0.48px;
 
 .university-copy p {
 margin: 0;
-color: var(--secundario);
+color: var(--terciario);
 font-size: 20px;
 line-height: 1.4;
 width: 200px
@@ -628,8 +652,11 @@ height: 52px;
 
 .help-link,
 .help-link img {
+/*
 width: 32px;
 height: 32px;
+*/
+display: none;
 }
 
 .header-actions {
@@ -790,6 +817,27 @@ padding-left: 16px;
 
 .footer-columns {
 grid-template-columns: 1fr;
+}
+}
+
+@media (max-width: 560px) {
+.site-header {
+height: 93px;
+justify-content: space-between;
+padding: 0 22px 0 24px;
+}
+
+.brand-mark {
+width: 52px;
+height: 60px;
+}
+
+.header-actions {
+display: none;
+}
+
+.header-menu {
+display: flex;
 }
 }
 
