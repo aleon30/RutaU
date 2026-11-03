@@ -1,0 +1,430 @@
+.help-page {
+  min-width: 320px;
+  background: #fff;
+  color: #1e1e1e;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.help-header {
+  display: block;
+}
+
+.help-header .brand-mark {
+  position: absolute;
+  top: 24px;
+  left: 32px;
+}
+
+.help-header .help-link {
+  position: absolute;
+  top: 35px;
+  left: 108px;
+}
+
+.help-nav {
+  position: absolute;
+  top: 35px;
+  left: 197px;
+  display: flex;
+  gap: 19px;
+}
+
+.help-nav .button {
+  width: 301px;
+  height: 40px;
+  min-height: 40px;
+  padding: 0 12px;
+  border-radius: 8px;
+  background: var(--primario);
+  color: #f5f5f5;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.help-user-actions {
+  position: absolute;
+  top: 30px;
+  right: 33px;
+  display: flex;
+  height: 50px;
+  align-items: center;
+  gap: 10px;
+}
+
+.help-notifications {
+  display: grid;
+  width: 33px;
+  height: 34px;
+  flex: 0 0 33px;
+  place-items: center;
+}
+
+.help-notifications img {
+  display: block;
+}
+
+.help-greeting {
+  width: 96px;
+  color: #000;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.help-avatar,
+.help-avatar img {
+  display: block;
+  width: 50px;
+  height: 50px;
+  flex: 0 0 50px;
+  border-radius: 50%;
+}
+
+.help-avatar img {
+  object-fit: cover;
+}
+
+.help-header a:focus-visible,
+.help-home-button:focus-visible,
+.faq-item summary:focus-visible {
+  outline: 3px solid var(--primario);
+  outline-offset: 3px;
+}
+
+.help-main {
+  width: 100%;
+}
+
+.help-title {
+  height: 58px;
+  margin: 45px 0;
+  color: #1e1e1e;
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: -0.96px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.help-panel {
+  position: relative;
+  width: calc(100% - 65px);
+  height: 676px;
+  margin-left: 32px;
+  padding: 23px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.faq-item {
+  margin: 0;
+}
+
+.faq-item summary {
+  display: flex;
+  height: 53px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  background: #f5f5f5;
+  color: #1e1e1e;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::marker {
+  content: "";
+}
+
+.faq-item[open] summary {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.faq-chevron {
+  display: block;
+  flex: 0 0 auto;
+  transform: rotate(180deg);
+  transition: transform 120ms ease;
+}
+
+.faq-item[open] .faq-chevron {
+  transform: rotate(0);
+}
+
+.faq-answer {
+  min-height: 149px;
+  padding: 18px 24px;
+  border: 1px solid #d9d9d9;
+  border-top: 0;
+  background: #fff;
+  color: #1e1e1e;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.faq-answer p {
+  max-width: 1000px;
+  margin: 0;
+}
+
+.faq-registration-answer {
+  display: flow-root;
+  height: 149px;
+  min-height: 0;
+  padding: 0;
+}
+
+.registration-steps {
+  display: grid;
+  width: 1177px;
+  height: 99px;
+  grid-template-columns: 229px 201px 201px 201px;
+  column-gap: 115px;
+  margin: 32px 0 0 70px;
+  padding: 0;
+  list-style: none;
+}
+
+.registration-step {
+  position: relative;
+  margin: 0;
+  color: #000;
+  text-align: center;
+}
+
+.registration-step h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.registration-step p {
+  margin: 16px 0 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.step-icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-icon img {
+  display: block;
+}
+
+.registration-step--first .step-icon {
+  top: 23px;
+  left: -47px;
+  width: 40px;
+  height: 40px;
+}
+
+.registration-step--second .step-icon {
+  top: 29px;
+  left: -55px;
+  width: 34px;
+  height: 34px;
+}
+
+.registration-step--third .step-icon {
+  top: 28px;
+  left: -43px;
+  width: 34px;
+  height: 34px;
+}
+
+.registration-step--fourth .step-icon {
+  top: 29px;
+  left: -48px;
+  width: 34px;
+  height: 34px;
+}
+
+.faq-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.help-home-button {
+  position: absolute;
+  right: 23px;
+  bottom: 23px;
+  left: 23px;
+  display: flex;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--primario);
+  color: #f5f5f5;
+  font-size: 16px;
+  line-height: 1;
+}
+
+@media (max-width: 1200px) {
+  .help-nav {
+    right: 260px;
+    left: 197px;
+    gap: 12px;
+  }
+
+  .help-nav .button {
+    width: auto;
+    min-width: 145px;
+    flex: 1 1 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .help-header {
+    display: flex;
+    height: auto;
+    min-height: 109px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    padding: 18px 20px;
+  }
+
+  .help-header .brand-mark,
+  .help-header .help-link,
+  .help-nav,
+  .help-user-actions {
+    position: static;
+  }
+
+  .help-header .brand-mark {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 52px;
+    height: 60px;
+    flex: 0 0 52px;
+  }
+
+  .help-nav {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+
+  .help-user-actions {
+    height: 40px;
+  }
+
+  .help-avatar,
+  .help-avatar img {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+  }
+
+  .help-title {
+    height: auto;
+    margin: 36px 0;
+    font-size: clamp(32px, 7vw, 48px);
+  }
+
+  .help-panel {
+    width: calc(100% - 32px);
+    height: auto;
+    min-height: 676px;
+    margin: 0 16px 32px;
+    padding: 16px;
+  }
+
+  .registration-steps {
+    width: auto;
+    height: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 20px;
+    margin: 24px;
+  }
+
+  .faq-registration-answer {
+    height: auto;
+    min-height: 149px;
+  }
+
+  .registration-step {
+    min-height: 100px;
+  }
+
+  .registration-step .step-icon {
+    position: static;
+    width: 34px;
+    height: 34px;
+    margin: 0 auto 8px;
+  }
+
+  .faq-list {
+    margin-top: 8px;
+  }
+
+  .help-home-button {
+    position: static;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .help-header {
+    gap: 14px;
+  }
+
+  .help-nav {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .help-nav .button {
+    width: min(100%, 320px);
+    min-height: 40px;
+  }
+
+  .help-greeting {
+    width: auto;
+    font-size: 14px;
+  }
+
+  .help-title {
+    margin: 28px 16px;
+  }
+
+  .help-panel {
+    padding: 12px;
+  }
+
+  .faq-item summary {
+    height: auto;
+    min-height: 53px;
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .registration-steps {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .registration-step {
+    min-height: 0;
+  }
+}

@@ -1,125 +1,16 @@
 :root {
-  color-scheme: light;
-  font-family: var(--font-family-base);
-  color: var(--texto);
-  background: var(--fondo);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-
-  /* Colores de marca y estados */
-  --primario: #2e94f1;
-  --secundario: #faa927;
-  --terciario: #13263e;
-  --fondo: #ffffff;
-  --fondo2: #d9d9d9;
-  --texto: #000000;
-  --fracaso: #eb0000;
-  --exito: #17c800;
-  --color-primary: var(--primario);
-  --color-secondary: var(--secundario);
-  --color-tertiary: var(--terciario);
-  --color-background: var(--fondo);
-  --color-background-muted: var(--fondo2);
-  --color-text: var(--texto);
-  --color-error: var(--fracaso);
-  --color-success: var(--exito);
-  --color-warning-background: #fffdb4;
-  --color-success-background: #cbffbd;
-  --color-error-background: #ffb4b5;
-  --color-border: #d9d9d9;
-  --color-border-muted: #a8a8a8;
-  --color-focus: #0065d8;
-  --color-disabled: #cccccc;
-  --color-card-background: #f4f4f4;
-  --color-card-hover: #ededed;
-  --color-card-pressed: #c6c6c6;
-  --color-button-primary-hover: #0f7cde;
-  --color-button-primary-pressed: #0c5292;
-  --color-button-secondary-hover: #0c5292;
-  --color-button-secondary-pressed: #000000;
-  --color-button-label: #ffffff;
-  --color-button-label-hover: rgb(255 255 255 / 70%);
-  --color-caption: #777777;
-  --color-supporting-text: #828282;
-  --muted: var(--color-supporting-text);
-
-  /* Tipogrfía y tamaños */
-  --font-family-base: "Montserrat", Inter, Arial, sans-serif;
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-  --font-size-h1: 40px;
-  --font-size-h2: 32px;
-  --font-size-page-title: 48px;
-  --font-size-body: 24px;
-  --font-size-caption: 16px;
-  --font-size-button: 30px;
-  --font-size-card-title: 24px;
-  --font-size-card-description: 16px;
-  --line-height-heading: 1.2;
-  --line-height-body: 1.4;
-  --line-height-compact: 1;
-
-  /* Escala de espaciado: combina los valores de guía para móvil y escritorio */
-  --space-1: 4px;
-  --space-2: 6px;
-  --space-3: 8px;
-  --space-4: 12px;
-  --space-5: 14px;
-  --space-6: 16px;
-  --space-7: 24px;
-  --space-8: 32px;
-  --space-9: 48px;
-
-  /* Diseño responsivo: Grilla para móvil y escritorio */
-  --grid-columns: 4;
-  --grid-gutter: 16px;
-  --grid-margin: 16px;
-  --grid-frame-width: 390px;
-  --grid-frame-height: 844px;
-  --grid-desktop-columns: 12;
-  --grid-desktop-gutter: 24px;
-  --grid-desktop-margin: 80px;
-  --grid-desktop-frame-width: 1440px;
-  --grid-desktop-frame-height: 1024px;
-  --content-max-width: 1280px;
-  --breakpoint-desktop: 768px;
-
-  /* Dimensiones y estados para tarjetas */
-  --card-background: var(--color-card-background);
-  --card-background-hover: var(--color-card-hover);
-  --card-background-pressed: var(--color-card-pressed);
-  --card-border-width: 1px;
-  --card-border-color: var(--color-border);
-  --card-border-radius: 8px;
-  --card-padding: 24px;
-  --card-gap: 24px;
-  --card-image-size: 160px;
-  --card-vertical-width: 333px;
-  --card-vertical-height: 313px;
-  --card-horizontal-width: 519px;
-  --card-horizontal-height: 208px;
-
-  /* Tamaño de formularios y botones */
-  --field-height: 59px;
-  --field-border-width: 2px;
-  --field-border-radius: 15px;
-  --button-reference-width: 306px;
-  --button-reference-height: 79px;
-  --button-border-radius: 8px;
-  --button-horizontal-padding: 25px;
-  --button-vertical-padding: 12px;
-  --icon-button-size: 68px;
-  --icon-button-border-radius: 50%;
-}
-
-@media (min-width: 768px) {
-  :root {
-    --grid-columns: var(--grid-desktop-columns);
-    --grid-gutter: var(--grid-desktop-gutter);
-    --grid-margin: var(--grid-desktop-margin);
-    --grid-frame-width: var(--grid-desktop-frame-width);
-    --grid-frame-height: var(--grid-desktop-frame-height);
-  }
+    color-scheme: light;
+    font-family: Inter, Arial, sans-serif;
+    color: #1e1e1e;
+    background: #fff;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    --primario: #2e94f1;
+    --secundario: #faa927;
+    --terciario: #13263e;
+    --fondo: #FFFFFF;
+    --fondo2: #D9D9D9;
+    --texto: #000000;
+    --fracaso: #EB0000;
+    --exito: #17C800;
 }

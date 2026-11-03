@@ -7,71 +7,68 @@
     <title>RutaU | Buscar viaje</title>
     <link rel="stylesheet" href="../../css/tokens.css">
     <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/help.css">
+    <link rel="stylesheet" href="../../css/search-trips.css">
   </head>
-  <body class="site-page" id="site-page">
-    <header class="site-header help-header" id="site-header">
-      <a class="brand-mark" id="brand-mark" href="../../index.html" aria-label="RutaU, volver al inicio">
+  <body class="help-page search-page">
+    <header class="site-header help-header">
+      <a class="brand-mark" href="../../index.html" aria-label="RutaU, volver al inicio">
         <img src="../../img/ruta-u-mark.png" alt="">
       </a>
-      <a class="help-link" id="help-link" href="../help/ayuda.html" aria-label="Centro de ayuda">
+      <a class="help-link" href="../help/ayuda.html" aria-label="Centro de ayuda">
         <img src="../../img/logo-icon.svg" alt="">
       </a>
-      <a class="mobile-menu-toggle" id="mobile-menu-toggle" href="../menu.html" aria-label="Abrir menú">
-        <span></span>
-        <span></span>
-        <span></span>
-      </a>
-      <nav class="help-nav" id="help-nav" aria-label="Navegación principal">
+      <nav class="help-nav" aria-label="Navegación principal">
         <a class="button button-primary" href="buscar_viaje.html" aria-current="page">Buscar viaje</a>
         <a class="button button-primary" href="viajes_planeados.html">Viajes planeados</a>
         <a class="button button-primary" href="publicar_viaje.html">Publicar viaje</a>
       </nav>
-      <div class="help-user-actions" id="help-user-actions">
-        <a class="help-notifications" id="help-notifications" href="../user/notificaciones.html" aria-label="Notificaciones">
+      <div class="help-user-actions">
+        <a class="help-notifications" href="../user/notificaciones.html" aria-label="Notificaciones">
           <img src="../../img/help-bell.svg" alt="">
         </a>
         <span class="help-greeting">¡Hola, Paula!</span>
-        <a class="help-avatar" id="help-avatar" href="../user/perfil.html" aria-label="Ver perfil de Paula">
+        <a class="help-avatar" href="../user/perfil.html" aria-label="Ver perfil de Paula">
           <img src="../../img/help-user-avatar.png" alt="">
         </a>
       </div>
     </header>
 
     <main class="search-main">
-      <h1 class="page-title search-title" id="search-title">Buscar viaje</h1>
+      <h1 class="search-title">Buscar viaje</h1>
 
-      <div class="search-layout" id="search-layout">
+      <div class="search-layout">
         <aside class="search-filter" aria-label="Filtros de viaje">
-          <button class="filter-toggle" id="filter-toggle" type="button" aria-expanded="false" aria-controls="trip-filters">
+          <button class="filter-toggle" type="button" aria-expanded="false" aria-controls="trip-filters">
             <span>Filtrar viaje</span>
-            <span class="filter-chevron" id="filter-chevron" aria-hidden="true"></span>
+            <span class="filter-chevron" aria-hidden="true"></span>
           </button>
           <form class="filter-form" id="trip-filters" hidden>
             <div class="filter-field">
-              <label class="form-label" for="filter-origin">Desde</label>
+              <label for="filter-origin">Desde</label>
               <input id="filter-origin" name="origin" type="text" placeholder="Lugar de salida">
             </div>
             <div class="filter-field">
-              <label class="form-label" for="filter-destination">Hacia</label>
+              <label for="filter-destination">Hacia</label>
               <input id="filter-destination" name="destination" type="text" placeholder="Destino">
             </div>
             <div class="filter-field">
-              <label class="form-label" for="filter-date">Fecha</label>
+              <label for="filter-date">Fecha</label>
               <input id="filter-date" name="date" type="text" placeholder="dd/mm/yyyy">
             </div>
             <div class="filter-field">
-              <label class="form-label" for="filter-time">Hora</label>
+              <label for="filter-time">Hora</label>
               <input id="filter-time" name="time" type="text" placeholder="--:--">
             </div>
             <div class="filter-field">
-              <label class="form-label" for="filter-seats">Asientos</label>
+              <label for="filter-seats">Asientos</label>
               <input id="filter-seats" name="seats" type="number" min="1" placeholder="1">
             </div>
             <div class="filter-field">
-              <label class="form-label" for="filter-price">Precio</label>
+              <label for="filter-price">Precio</label>
               <input id="filter-price" name="price" type="text" placeholder="1 - 10 S/">
             </div>
-            <button class="filter-submit" id="filter-submit" type="submit">
+            <button class="filter-submit" type="submit">
               <img src="../../img/trip-search.svg" alt="">
               <span>Buscar</span>
             </button>
@@ -79,9 +76,9 @@
           </form>
         </aside>
 
-        <section class="search-results" id="search-results" aria-label="Resultados de búsqueda">
-          <article class="trip-card card">
-            <h2 class="card-title">UPC Monterrico → UPC Villa</h2>
+        <section class="search-results" aria-label="Resultados de búsqueda">
+          <article class="trip-card">
+            <h2>UPC Monterrico → UPC Villa</h2>
             <div class="trip-details">
               <span class="trip-date">
                 <span>Feb 08, 2026</span>
@@ -96,24 +93,21 @@
               <a class="trip-link" href="detalles_viaje.html">Ver detalles del viaje</a>
             </div>
           </article>
-          <article class="trip-card card">
-            <h2 class="card-title">UNMSM → UNI</h2>
+          <article class="trip-card">
+            <h2>UNMSM → UNI</h2>
             <div class="trip-details">
               <span class="trip-date">
                 <span>Jan 09, 2026</span>
                 <img src="../../img/trip-calendar.svg" alt="">
               </span>
-              <span class="trip-time">
-                <span>16:00 PM</span>
-                <img src="../../img/trip-clock-a.svg" alt="">
-              </span>
+              <span class="trip-time"><span>16:00 PM</span></span>
               <span>4 de 5 disponibles</span>
               <span>Precio: S/ 67</span>
               <a class="trip-link" href="detalles_viaje.html">Ver detalles del viaje</a>
             </div>
           </article>
-          <article class="trip-card card">
-            <h2 class="card-title">PUCH → UNMSM</h2>
+          <article class="trip-card">
+            <h2>PUCH → UNMSM</h2>
             <div class="trip-details">
               <span class="trip-date">
                 <span>Dec 17, 2025</span>
@@ -128,8 +122,8 @@
               <a class="trip-link" href="detalles_viaje.html">Ver detalles del viaje</a>
             </div>
           </article>
-          <article class="trip-card card">
-            <h2 class="card-title">UNMSM → ULIMA</h2>
+          <article class="trip-card">
+            <h2>UNMSM → ULIMA</h2>
             <div class="trip-details">
               <span class="trip-date">
                 <span>Sep 08, 2026</span>
@@ -144,8 +138,8 @@
               <a class="trip-link" href="detalles_viaje.html">Ver detalles del viaje</a>
             </div>
           </article>
-          <article class="trip-card card">
-            <h2 class="card-title">UTP → UCV</h2>
+          <article class="trip-card">
+            <h2>UTP → UCV</h2>
             <div class="trip-details">
               <span class="trip-date">
                 <span>Sep 20, 2026</span>
@@ -160,8 +154,8 @@
               <a class="trip-link" href="detalles_viaje.html">Ver detalles del viaje</a>
             </div>
           </article>
-          <article class="trip-card card">
-            <h2 class="card-title">UPC San Isidro → UPC San Miguel</h2>
+          <article class="trip-card">
+            <h2>UPC San Isidro → UPC San Miguel</h2>
             <div class="trip-details">
               <span class="trip-date">
                 <span>Feb 17, 2026</span>
