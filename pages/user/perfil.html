@@ -7,10 +7,8 @@
     <title>RutaU | Mi perfil</title>
     <link rel="stylesheet" href="../../css/tokens.css">
     <link rel="stylesheet" href="../../css/styles.css">
-    <link rel="stylesheet" href="../../css/help.css">
-    <link rel="stylesheet" href="../../css/profile.css">
   </head>
-  <body class="help-page profile-page">
+  <body class="site-page">
     <header class="site-header help-header">
       <a class="brand-mark" href="../../index.html" aria-label="RutaU, volver al inicio">
         <img src="../../img/ruta-u-mark.png" alt="">
@@ -19,8 +17,8 @@
         <img src="../../img/logo-icon.svg" alt="">
       </a>
       <nav class="help-nav" aria-label="Navegación principal">
-        <a class="button button-primary profile-search-button" href="../viajes/buscar_viaje.html">
-          <img src="../../img/profile-search.svg" alt="">
+        <a class="button button-primary search-nav-button" href="../viajes/buscar_viaje.html">
+          <img class="search-nav-icon" src="../../img/profile-search.svg" alt="">
           <span>Buscar viaje</span>
         </a>
         <a class="button button-primary" href="../viajes/viajes_planeados.html">Viajes planeados</a>
@@ -38,7 +36,7 @@
     </header>
 
     <main class="profile-layout">
-      <section class="profile-card" aria-label="Datos del perfil">
+      <section class="profile-card card" aria-label="Datos del perfil">
         <img
           class="profile-photo"
           src="../../img/profile-paula.jpeg"
@@ -47,16 +45,17 @@
         <form class="profile-form" id="profile-form">
           <div class="profile-fields">
             <label class="profile-field">
-              <span>Nombres</span>
-              <input name="givenName" type="text" value="Paula Angela" readonly required>
+              <span class="form-label">Nombres</span>
+              <input class="form-control" name="givenName" type="text" value="Paula Angela" readonly required>
             </label>
             <label class="profile-field">
-              <span>Apellidos</span>
-              <input name="familyName" type="text" value="Gonzales Garcia" readonly required>
+              <span class="form-label">Apellidos</span>
+              <input class="form-control" name="familyName" type="text" value="Gonzales Garcia" readonly required>
             </label>
             <label class="profile-field">
-              <span>Correo universitario</span>
+              <span class="form-label">Correo universitario</span>
               <input
+                class="form-control"
                 name="email"
                 type="email"
                 value="u202310423@upc.edu.pe"
@@ -77,26 +76,26 @@
       </section>
 
       <div class="profile-overview">
-        <section class="profile-history" aria-labelledby="history-title">
-          <h1 id="history-title">Viajes recientes</h1>
+        <section class="profile-history card" aria-labelledby="history-title">
+          <h1 class="card-title" id="history-title">Viajes recientes</h1>
           <ol class="profile-trip-list">
-            <li class="profile-trip">
+            <li class="profile-trip card">
               <div class="profile-trip-details">
-                <h2>UPC Monterrico → Miraflores</h2>
+                <h2 class="card-title">UPC Monterrico → Miraflores</h2>
                 <p>Septiembre 29, 2026 - Conductor</p>
               </div>
               <span class="profile-trip-status">Completado</span>
             </li>
-            <li class="profile-trip">
+            <li class="profile-trip card">
               <div class="profile-trip-details">
-                <h2>Miraflores → UPC Monterrico</h2>
+                <h2 class="card-title">Miraflores → UPC Monterrico</h2>
                 <p>Septiembre 29, 2026 - Conductor</p>
               </div>
               <span class="profile-trip-status">Completado</span>
             </li>
-            <li class="profile-trip">
+            <li class="profile-trip card">
               <div class="profile-trip-details">
-                <h2>UPC Monterrico → UPC San Isidro</h2>
+                <h2 class="card-title">UPC Monterrico → UPC San Isidro</h2>
                 <p>Septiembre 27, 2026 - Pasajero</p>
               </div>
               <span class="profile-trip-status">Completado</span>
@@ -106,8 +105,8 @@
         </section>
 
         <div class="profile-statistics">
-          <section class="profile-activity" aria-labelledby="activity-title">
-            <h2 id="activity-title">Tu actividad</h2>
+          <section class="profile-activity card" aria-labelledby="activity-title">
+            <h2 class="card-title" id="activity-title">Tu actividad</h2>
             <dl class="profile-activity-list">
               <div><dt>Miembro desde</dt><dd>2026</dd></div>
               <div><dt>Viajes realizados:</dt><dd>18</dd></div>

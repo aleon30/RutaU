@@ -7,10 +7,8 @@
     <title>RutaU | Detalles del viaje</title>
     <link rel="stylesheet" href="../../css/tokens.css">
     <link rel="stylesheet" href="../../css/styles.css">
-    <link rel="stylesheet" href="../../css/help.css">
-    <link rel="stylesheet" href="../../css/trip-details.css">
   </head>
-  <body class="help-page details-page">
+  <body class="site-page">
     <header class="site-header help-header">
       <a class="brand-mark" href="../../index.html" aria-label="RutaU, volver al inicio">
         <img src="../../img/ruta-u-mark.png" alt="">
@@ -35,8 +33,8 @@
     </header>
 
     <main class="details-layout">
-      <section class="driver-card" aria-labelledby="driver-title">
-        <h1 id="driver-title">Datos del conductor</h1>
+      <section class="driver-card card" aria-labelledby="driver-title">
+        <h1 class="card-title" id="driver-title">Datos del conductor</h1>
         <img class="driver-photo" src="../../img/trip-driver-avatar.png" alt="Luciana Vargas Paredes">
 
         <dl class="driver-fields">
@@ -64,7 +62,7 @@
 
       <div class="trip-content">
         <section class="journey-card" aria-labelledby="journey-title">
-          <h2 id="journey-title">Datos del viaje</h2>
+          <h2 class="card-title" id="journey-title">Datos del viaje</h2>
           <dl class="journey-fields">
             <div>
               <dt>RUTA</dt>
@@ -94,8 +92,8 @@
         </section>
 
         <div class="trip-extra">
-          <section class="vehicle-card" aria-labelledby="vehicle-title">
-            <h2 id="vehicle-title">Datos del carro</h2>
+          <section class="vehicle-card card" aria-labelledby="vehicle-title">
+            <h2 class="card-title" id="vehicle-title">Datos del carro</h2>
             <dl class="vehicle-fields">
               <div>
                 <dt>MODELO DEL CARRO:</dt>
@@ -113,8 +111,8 @@
           </section>
 
           <div class="passenger-column">
-            <section class="passenger-card" aria-labelledby="passenger-title">
-              <h2 id="passenger-title">Pasajeros</h2>
+            <section class="passenger-card card" aria-labelledby="passenger-title">
+              <h2 class="card-title" id="passenger-title">Pasajeros</h2>
               <ul class="passenger-list">
                 <li>
                   <span>Sofia Navarro Campos</span>
@@ -143,7 +141,7 @@
 
     <div class="modal" id="confirmar-reserva" aria-hidden="true">
       <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <h2 id="modal-title">Confirmar reserva</h2>
+        <h2 class="card-title" id="modal-title">Confirmar reserva</h2>
         <p>¿Deseas reservar un asiento para este viaje? La solicitud se enviará al conductor.</p>
         <div class="modal-actions">
           <button class="action-btn" type="button" data-close-modal="confirmar-reserva">Volver</button>

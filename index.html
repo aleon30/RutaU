@@ -34,16 +34,16 @@
         </div>
         <form class="search-panel" id="buscar-viaje" action="pages/viajes/buscar_viaje.html" method="get">
           <div class="search-field">
-            <label for="origen">Desde</label>
-            <input id="origen" name="desde" type="text" placeholder="Lugar de salida">
+            <label class="form-label" for="origen">Desde</label>
+            <input class="form-control" id="origen" name="desde" type="text" placeholder="Lugar de salida">
           </div>
           <div class="search-field">
-            <label for="destino">Hacia</label>
-            <input id="destino" name="hacia" type="text" placeholder="Destino">
+            <label class="form-label" for="destino">Hacia</label>
+            <input class="form-control" id="destino" name="hacia" type="text" placeholder="Destino">
           </div>
           <div class="search-field">
-            <label for="fecha">Fecha</label>
-            <input id="fecha" name="fecha" type="text" placeholder="dd/mm/yyyy" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'">
+            <label class="form-label" for="fecha">Fecha</label>
+            <input class="form-control" id="fecha" name="fecha" type="text" placeholder="dd/mm/yyyy" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'">
           </div>
           <button class="search-submit" type="submit">
             <img src="img/search.svg" alt="">
@@ -78,32 +78,32 @@
       <section class="universities" id="universidades" aria-labelledby="universities-title">
         <h2 class="section-title" id="universities-title">Planea tu viaje a cualquier universidad en Lima</h2>
         <div class="university-grid">
-          <article class="university-card">
+          <article class="university-card card">
             <div class="university-photo university-photo--upc">
               <img src="img/university-upc.png" alt="Campus de la Universidad Peruana de Ciencias Aplicadas">
             </div>
             <div class="university-copy">
-              <h3>UPC</h3>
+              <h3 class="card-title">UPC</h3>
               <p>Universidad Peruana Ciencias Aplicadas</p>
             </div>
             <a class="arrow-link" href="pages/viajes/buscar_viaje.html" aria-label="Buscar viajes a la UPC">&rarr;</a>
           </article>
-          <article class="university-card">
+          <article class="university-card card">
             <div class="university-photo university-photo--ulima">
               <img src="img/university-ulima.png" alt="Campus de la Universidad de Lima">
             </div>
             <div class="university-copy">
-              <h3>ULima</h3>
+              <h3 class="card-title">ULima</h3>
               <p>Universidad de Lima</p>
             </div>
             <a class="arrow-link" href="pages/viajes/buscar_viaje.html" aria-label="Buscar viajes a la Universidad de Lima">&rarr;</a>
           </article>
-          <article class="university-card">
+          <article class="university-card card">
             <div class="university-photo university-photo--pucp">
               <img src="img/university-pucp.png" alt="Campus de la Pontificia Universidad Católica del Perú">
             </div>
             <div class="university-copy">
-              <h3>PUCP</h3>
+              <h3 class="card-title">PUCP</h3>
               <p>Pontificia Universidad Católica del Perú</p>
             </div>
             <a class="arrow-link" href="pages/viajes/buscar_viaje.html" aria-label="Buscar viajes a la PUCP">&rarr;</a>

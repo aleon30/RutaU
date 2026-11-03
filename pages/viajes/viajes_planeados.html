@@ -7,10 +7,8 @@
     <title>RutaU | Viajes planeados</title>
     <link rel="stylesheet" href="../../css/tokens.css">
     <link rel="stylesheet" href="../../css/styles.css">
-    <link rel="stylesheet" href="../../css/help.css">
-    <link rel="stylesheet" href="../../css/planned-trips.css">
   </head>
-  <body class="help-page planned-trips-page">
+  <body class="site-page">
     <header class="site-header help-header">
       <a class="brand-mark" href="../../index.html" aria-label="RutaU, volver al inicio">
         <img src="../../img/ruta-u-mark.png" alt="">
@@ -35,7 +33,7 @@
     </header>
 
     <main class="planned-main">
-      <h1 class="planned-title">Mis viajes planeados</h1>
+      <h1 class="page-title planned-title">Mis viajes planeados</h1>
 
       <div class="planned-layout">
         <section class="planned-results-column" aria-label="Mis viajes">
@@ -78,9 +76,9 @@
           </div>
 
           <div class="planned-results" id="trip-list" role="tabpanel" aria-labelledby="tab-upcoming">
-            <article class="planned-trip-card" data-trip-status="confirmed" data-trip-date="2026-02-08">
+            <article class="planned-trip-card card" data-trip-status="confirmed" data-trip-date="2026-02-08">
               <div class="planned-trip-primary">
-                <h2>UPC Monterrico → UPC Villa</h2>
+                <h2 class="card-title">UPC Monterrico → UPC Villa</h2>
                 <div class="planned-trip-schedule">
                   <time datetime="2026-02-08">Feb 08, 2026</time>
                   <time datetime="2026-02-08T10:45">10:45 AM</time>
@@ -92,9 +90,9 @@
               <span class="planned-trip-status is-confirmed">Confirmado</span>
             </article>
 
-            <article class="planned-trip-card" data-trip-status="confirmed" data-trip-date="2026-02-10">
+            <article class="planned-trip-card card" data-trip-status="confirmed" data-trip-date="2026-02-10">
               <div class="planned-trip-primary">
-                <h2>Miraflores → UPC Villa</h2>
+                <h2 class="card-title">Miraflores → UPC Villa</h2>
                 <div class="planned-trip-schedule">
                   <time datetime="2026-02-10">Feb 10, 2026</time>
                   <time datetime="2026-02-10T09:15">09:15 AM</time>
@@ -106,9 +104,9 @@
               <span class="planned-trip-status is-confirmed">Confirmado</span>
             </article>
 
-            <article class="planned-trip-card" data-trip-status="pending" data-trip-date="2026-02-14">
+            <article class="planned-trip-card card" data-trip-status="pending" data-trip-date="2026-02-14">
               <div class="planned-trip-primary">
-                <h2>Miraflores → UPC Villa</h2>
+                <h2 class="card-title">Miraflores → UPC Villa</h2>
                 <div class="planned-trip-schedule">
                   <time datetime="2026-02-14">Feb 14, 2026</time>
                   <time datetime="2026-02-14T15:00">15:00 PM</time>
@@ -165,8 +163,8 @@
             <div class="calendar-days" id="calendar-days" role="grid" aria-label="Días del mes"></div>
           </section>
 
-          <section class="trip-help-card" aria-labelledby="trip-help-title">
-            <h2 id="trip-help-title">¿Necesitas ayuda?</h2>
+          <section class="trip-help-card card" aria-labelledby="trip-help-title">
+            <h2 class="card-title" id="trip-help-title">¿Necesitas ayuda?</h2>
             <p>Revisa nuestras preguntas frecuentes o contactanos.</p>
             <a href="../help/ayuda.html">Ir al Centro de Ayuda</a>
           </section>

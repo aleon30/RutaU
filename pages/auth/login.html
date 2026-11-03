@@ -7,18 +7,18 @@
     <title>RutaU | Iniciar sesión</title>
     <link rel="stylesheet" href="../../css/tokens.css">
     <link rel="stylesheet" href="../../css/styles.css">
-    <link rel="stylesheet" href="../../css/login.css">
   </head>
-  <body class="login-page">
+  <body class="site-page">
     <main class="login-main">
       <a class="login-logo" href="../../index.html" aria-label="RutaU, volver al inicio">
         <img src="../../img/login-rutau-logo.png" alt="RutaU">
       </a>
 
-      <form class="login-form" data-validate="true" novalidate>
+      <form class="login-form card" data-validate="true" novalidate>
         <div class="login-field">
-          <label for="login-email">Email</label>
+          <label class="form-label" for="login-email">Email</label>
           <input
+            class="form-control"
             id="login-email"
             name="email"
             type="email"
@@ -30,8 +30,9 @@
         </div>
 
         <div class="login-field login-field--password">
-          <label for="login-password">Password</label>
+          <label class="form-label" for="login-password">Password</label>
           <input
+            class="form-control"
             id="login-password"
             name="password"
             type="password"
