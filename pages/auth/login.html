@@ -7,18 +7,18 @@
     <title>RutaU | Iniciar sesión</title>
     <link rel="stylesheet" href="../../css/tokens.css">
     <link rel="stylesheet" href="../../css/styles.css">
-    <link rel="stylesheet" href="../../css/login.css">
   </head>
-  <body class="login-page">
+  <body class="site-page" id="site-page">
     <main class="login-main">
-      <a class="login-logo" href="../../index.html" aria-label="RutaU, volver al inicio">
+      <a class="login-logo" id="login-logo" href="../../index.html" aria-label="RutaU, volver al inicio">
         <img src="../../img/login-rutau-logo.png" alt="RutaU">
       </a>
 
-      <form class="login-form" data-validate="true" novalidate>
+      <form class="login-form card" id="login-form" data-validate="true" novalidate>
         <div class="login-field">
-          <label for="login-email">Email</label>
+          <label class="form-label" for="login-email">Email</label>
           <input
+            class="form-control"
             id="login-email"
             name="email"
             type="email"
@@ -30,8 +30,9 @@
         </div>
 
         <div class="login-field login-field--password">
-          <label for="login-password">Password</label>
+          <label class="form-label" for="login-password">Password</label>
           <input
+            class="form-control"
             id="login-password"
             name="password"
             type="password"
@@ -42,22 +43,22 @@
           <span class="login-field-error" aria-live="polite"></span>
         </div>
 
-        <label class="remember-option" for="login-remember">
+        <label class="remember-option" id="remember-option" for="login-remember">
           <input id="login-remember" name="remember" type="checkbox" checked>
           <span>Recuérdame</span>
         </label>
 
-        <a class="forgot-password" href="../help/ayuda.html">Olvidé mi contraseña</a>
+        <a class="forgot-password" id="forgot-password" href="../help/ayuda.html">Olvidé mi contraseña</a>
 
-        <div class="login-actions">
-          <button class="login-submit" type="submit">Iniciar sesión</button>
-          <a class="login-home" href="../../index.html">Volver al inicio</a>
+        <div class="login-actions" id="login-actions">
+          <button class="login-submit" id="login-submit" type="submit">Iniciar sesión</button>
+          <a class="login-home" id="login-home" href="../../index.html">Volver al inicio</a>
         </div>
 
-        <p class="login-status" aria-live="polite"></p>
+        <p class="login-status" id="login-status" aria-live="polite"></p>
       </form>
 
-      <a class="create-account" href="registro.html">Crear cuenta</a>
+      <a class="create-account" id="create-account" href="registro.html">Crear cuenta</a>
     </main>
 
   </body>

@@ -7,39 +7,42 @@
     <title>RutaU | Viajes planeados</title>
     <link rel="stylesheet" href="../../css/tokens.css">
     <link rel="stylesheet" href="../../css/styles.css">
-    <link rel="stylesheet" href="../../css/help.css">
-    <link rel="stylesheet" href="../../css/planned-trips.css">
   </head>
-  <body class="help-page planned-trips-page">
-    <header class="site-header help-header">
-      <a class="brand-mark" href="../../index.html" aria-label="RutaU, volver al inicio">
+  <body class="site-page" id="site-page">
+    <header class="site-header help-header" id="site-header">
+      <a class="brand-mark" id="brand-mark" href="../../index.html" aria-label="RutaU, volver al inicio">
         <img src="../../img/ruta-u-mark.png" alt="">
       </a>
-      <a class="help-link" href="../help/ayuda.html" aria-label="Centro de ayuda">
+      <a class="help-link" id="help-link" href="../help/ayuda.html" aria-label="Centro de ayuda">
         <img src="../../img/logo-icon.svg" alt="">
       </a>
-      <nav class="help-nav" aria-label="Navegación principal">
+      <a class="mobile-menu-toggle" id="mobile-menu-toggle" href="../menu.html" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+      <nav class="help-nav" id="help-nav" aria-label="Navegación principal">
         <a class="button button-primary" href="buscar_viaje.html">Buscar viaje</a>
         <a class="button button-primary" href="viajes_planeados.html" aria-current="page">Viajes planeados</a>
         <a class="button button-primary" href="publicar_viaje.html">Publicar viaje</a>
       </nav>
-      <div class="help-user-actions">
-        <a class="help-notifications" href="../user/notificaciones.html" aria-label="Notificaciones">
+      <div class="help-user-actions" id="help-user-actions">
+        <a class="help-notifications" id="help-notifications" href="../user/notificaciones.html" aria-label="Notificaciones">
           <img src="../../img/help-bell.svg" alt="">
         </a>
         <span class="help-greeting">¡Hola, Paula!</span>
-        <a class="help-avatar" href="../user/perfil.html" aria-label="Ver perfil de Paula">
+        <a class="help-avatar" id="help-avatar" href="../user/perfil.html" aria-label="Ver perfil de Paula">
           <img src="../../img/help-user-avatar.png" alt="">
         </a>
       </div>
     </header>
 
-    <main class="planned-main">
-      <h1 class="planned-title">Mis viajes planeados</h1>
+    <main class="planned-main" id="planned-main">
+      <h1 class="page-title planned-title" id="planned-title">Mis viajes planeados</h1>
 
-      <div class="planned-layout">
-        <section class="planned-results-column" aria-label="Mis viajes">
-          <div class="trip-tabs" role="tablist" aria-label="Filtrar viajes por estado">
+      <div class="planned-layout" id="planned-layout">
+        <section class="planned-results-column" id="planned-results-column" aria-label="Mis viajes">
+          <div class="trip-tabs" id="trip-tabs" role="tablist" aria-label="Filtrar viajes por estado">
             <button
               class="trip-tab is-active"
               type="button"
@@ -78,9 +81,9 @@
           </div>
 
           <div class="planned-results" id="trip-list" role="tabpanel" aria-labelledby="tab-upcoming">
-            <article class="planned-trip-card" data-trip-status="confirmed" data-trip-date="2026-02-08">
+            <article class="planned-trip-card card" data-trip-status="confirmed" data-trip-date="2026-02-08">
               <div class="planned-trip-primary">
-                <h2>UPC Monterrico → UPC Villa</h2>
+                <h2 class="card-title">UPC Monterrico → UPC Villa</h2>
                 <div class="planned-trip-schedule">
                   <time datetime="2026-02-08">Feb 08, 2026</time>
                   <time datetime="2026-02-08T10:45">10:45 AM</time>
@@ -92,9 +95,9 @@
               <span class="planned-trip-status is-confirmed">Confirmado</span>
             </article>
 
-            <article class="planned-trip-card" data-trip-status="confirmed" data-trip-date="2026-02-10">
+            <article class="planned-trip-card card" data-trip-status="confirmed" data-trip-date="2026-02-10">
               <div class="planned-trip-primary">
-                <h2>Miraflores → UPC Villa</h2>
+                <h2 class="card-title">Miraflores → UPC Villa</h2>
                 <div class="planned-trip-schedule">
                   <time datetime="2026-02-10">Feb 10, 2026</time>
                   <time datetime="2026-02-10T09:15">09:15 AM</time>
@@ -106,9 +109,9 @@
               <span class="planned-trip-status is-confirmed">Confirmado</span>
             </article>
 
-            <article class="planned-trip-card" data-trip-status="pending" data-trip-date="2026-02-14">
+            <article class="planned-trip-card card" data-trip-status="pending" data-trip-date="2026-02-14">
               <div class="planned-trip-primary">
-                <h2>Miraflores → UPC Villa</h2>
+                <h2 class="card-title">Miraflores → UPC Villa</h2>
                 <div class="planned-trip-schedule">
                   <time datetime="2026-02-14">Feb 14, 2026</time>
                   <time datetime="2026-02-14T15:00">15:00 PM</time>
@@ -124,11 +127,11 @@
           </div>
         </section>
 
-        <aside class="planned-sidebar">
-          <a class="new-trip-button" href="buscar_viaje.html">Buscar un nuevo viaje</a>
+        <aside class="planned-sidebar" id="planned-sidebar">
+          <a class="new-trip-button" id="new-trip-button" href="buscar_viaje.html">Buscar un nuevo viaje</a>
 
-          <section class="trip-calendar" aria-label="Calendario de viajes">
-            <div class="calendar-header">
+          <section class="trip-calendar" id="trip-calendar" aria-label="Calendario de viajes">
+            <div class="calendar-header" id="calendar-header">
               <button class="calendar-arrow" type="button" aria-label="Mes anterior" data-calendar-step="-1">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
               </button>
@@ -159,14 +162,14 @@
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
               </button>
             </div>
-            <div class="calendar-weekdays" aria-hidden="true">
+            <div class="calendar-weekdays" id="calendar-weekdays" aria-hidden="true">
               <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
             </div>
             <div class="calendar-days" id="calendar-days" role="grid" aria-label="Días del mes"></div>
           </section>
 
-          <section class="trip-help-card" aria-labelledby="trip-help-title">
-            <h2 id="trip-help-title">¿Necesitas ayuda?</h2>
+          <section class="trip-help-card card" id="trip-help-card" aria-labelledby="trip-help-title">
+            <h2 class="card-title" id="trip-help-title">¿Necesitas ayuda?</h2>
             <p>Revisa nuestras preguntas frecuentes o contactanos.</p>
             <a href="../help/ayuda.html">Ir al Centro de Ayuda</a>
           </section>

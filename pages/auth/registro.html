@@ -7,20 +7,20 @@
     <title>RutaU | Registro</title>
     <link rel="stylesheet" href="../../css/tokens.css">
     <link rel="stylesheet" href="../../css/styles.css">
-    <link rel="stylesheet" href="../../css/register.css">
   </head>
-  <body class="register-page">
-    <main class="register-main">
-      <a class="register-logo" href="../../index.html" aria-label="RutaU, volver al inicio">
+  <body class="site-page" id="site-page">
+    <main class="register-main" id="register-main">
+      <a class="register-logo" id="register-logo" href="../../index.html" aria-label="RutaU, volver al inicio">
         <img src="../../img/register-rutau-logo.png" alt="RutaU">
       </a>
 
       <form class="register-form" id="register-form" novalidate>
-        <div class="register-card">
+        <div class="register-card card" id="register-card">
           <div class="register-fields">
             <div class="register-field">
-              <label for="register-first-name">Nombres</label>
+              <label class="form-label" for="register-first-name">Nombres</label>
               <input
+                class="form-control"
                 id="register-first-name"
                 name="firstName"
                 type="text"
@@ -32,8 +32,9 @@
             </div>
 
             <div class="register-field">
-              <label for="register-last-name">Apellidos</label>
+              <label class="form-label" for="register-last-name">Apellidos</label>
               <input
+                class="form-control"
                 id="register-last-name"
                 name="lastName"
                 type="text"
@@ -45,8 +46,9 @@
             </div>
 
             <div class="register-field">
-              <label for="register-dni">DNI</label>
+              <label class="form-label" for="register-dni">DNI</label>
               <input
+                class="form-control"
                 id="register-dni"
                 name="dni"
                 type="text"
@@ -61,8 +63,9 @@
             </div>
 
             <div class="register-field">
-              <label for="register-phone">Teléfono</label>
+              <label class="form-label" for="register-phone">Teléfono</label>
               <input
+                class="form-control"
                 id="register-phone"
                 name="phone"
                 type="tel"
@@ -76,8 +79,9 @@
             </div>
 
             <div class="register-field">
-              <label for="register-email">Correo universitario</label>
+              <label class="form-label" for="register-email">Correo universitario</label>
               <input
+                class="form-control"
                 id="register-email"
                 name="email"
                 type="email"
@@ -93,8 +97,9 @@
             </div>
 
             <div class="register-field">
-              <label for="register-password">Contraseña</label>
+              <label class="form-label" for="register-password">Contraseña</label>
               <input
+                class="form-control"
                 id="register-password"
                 name="password"
                 type="password"
@@ -119,7 +124,7 @@
           </label>
         </div>
 
-        <button class="register-submit" type="submit">Registrarse</button>
+        <button class="register-submit" id="register-submit" type="submit">Registrarse</button>
         <p class="register-status" id="register-status" role="status" hidden></p>
       </form>
     </main>
