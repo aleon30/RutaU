@@ -7,57 +7,56 @@
     <title>RutaU | Mi perfil</title>
     <link rel="stylesheet" href="../../css/tokens.css">
     <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/help.css">
+    <link rel="stylesheet" href="../../css/profile.css">
   </head>
-  <body class="site-page" id="site-page">
-    <header class="site-header help-header" id="site-header">
-      <a class="brand-mark" id="brand-mark" href="../../index.html" aria-label="RutaU, volver al inicio">
+  <body class="help-page profile-page">
+    <header class="site-header help-header">
+      <a class="brand-mark" href="../../index.html" aria-label="RutaU, volver al inicio">
         <img src="../../img/ruta-u-mark.png" alt="">
       </a>
-      <a class="help-link" id="help-link" href="../help/ayuda.html" aria-label="Centro de ayuda">
+      <a class="help-link" href="../help/ayuda.html" aria-label="Centro de ayuda">
         <img src="../../img/logo-icon.svg" alt="">
       </a>
-      <a class="mobile-menu-toggle" id="mobile-menu-toggle" href="../menu.html" aria-label="Abrir menú">
-        <span></span>
-        <span></span>
-        <span></span>
-      </a>
-      <nav class="help-nav" id="help-nav" aria-label="Navegación principal">
-        <a class="button button-primary" href="../viajes/buscar_viaje.html">Buscar viaje</a>
+      <nav class="help-nav" aria-label="Navegación principal">
+        <a class="button button-primary profile-search-button" href="../viajes/buscar_viaje.html">
+          <img src="../../img/profile-search.svg" alt="">
+          <span>Buscar viaje</span>
+        </a>
         <a class="button button-primary" href="../viajes/viajes_planeados.html">Viajes planeados</a>
         <a class="button button-primary" href="../viajes/publicar_viaje.html">Publicar viaje</a>
       </nav>
-      <div class="help-user-actions" id="help-user-actions">
-        <a class="help-notifications" id="help-notifications" href="notificaciones.html" aria-label="Notificaciones">
+      <div class="help-user-actions">
+        <a class="help-notifications" href="notificaciones.html" aria-label="Notificaciones">
           <img src="../../img/help-bell.svg" alt="">
         </a>
         <span class="help-greeting">¡Hola, Paula!</span>
-        <a class="help-avatar" id="help-avatar" href="perfil.html" aria-label="Ver perfil de Paula">
+        <a class="help-avatar" href="perfil.html" aria-label="Ver perfil de Paula">
           <img src="../../img/help-user-avatar.png" alt="">
         </a>
       </div>
     </header>
 
-    <main class="profile-layout" id="profile-layout">
-      <section class="profile-card card" id="profile-card" aria-label="Datos del perfil">
+    <main class="profile-layout">
+      <section class="profile-card" aria-label="Datos del perfil">
         <img
-          class="profile-photo" id="profile-photo"
+          class="profile-photo"
           src="../../img/profile-paula.jpeg"
           alt="Paula Angela Gonzales Garcia"
         >
         <form class="profile-form" id="profile-form">
           <div class="profile-fields">
             <label class="profile-field">
-              <span class="form-label">Nombres</span>
-              <input class="form-control" name="givenName" type="text" value="Paula Angela" readonly required>
+              <span>Nombres</span>
+              <input name="givenName" type="text" value="Paula Angela" readonly required>
             </label>
             <label class="profile-field">
-              <span class="form-label">Apellidos</span>
-              <input class="form-control" name="familyName" type="text" value="Gonzales Garcia" readonly required>
+              <span>Apellidos</span>
+              <input name="familyName" type="text" value="Gonzales Garcia" readonly required>
             </label>
             <label class="profile-field">
-              <span class="form-label">Correo universitario</span>
+              <span>Correo universitario</span>
               <input
-                class="form-control"
                 name="email"
                 type="email"
                 value="u202310423@upc.edu.pe"
@@ -69,7 +68,7 @@
           <button class="profile-edit-button" type="button" id="edit-profile">Editar perfil</button>
           <div class="profile-edit-actions" id="profile-edit-actions" hidden>
             <button class="profile-cancel-button" type="button" id="cancel-profile">Cancelar</button>
-            <button class="profile-save-button" id="profile-save-button" type="submit">Guardar cambios</button>
+            <button class="profile-save-button" type="submit">Guardar cambios</button>
           </div>
           <p class="profile-status" id="profile-status" role="status" hidden>
             Perfil actualizado correctamente.
@@ -77,51 +76,51 @@
         </form>
       </section>
 
-      <div class="profile-overview" id="profile-overview">
-        <section class="profile-history card" id="profile-history" aria-labelledby="history-title">
-          <h1 class="card-title" id="history-title">Viajes recientes</h1>
+      <div class="profile-overview">
+        <section class="profile-history" aria-labelledby="history-title">
+          <h1 id="history-title">Viajes recientes</h1>
           <ol class="profile-trip-list">
-            <li class="profile-trip card">
+            <li class="profile-trip">
               <div class="profile-trip-details">
-                <h2 class="card-title">UPC Monterrico → Miraflores</h2>
+                <h2>UPC Monterrico → Miraflores</h2>
                 <p>Septiembre 29, 2026 - Conductor</p>
               </div>
               <span class="profile-trip-status">Completado</span>
             </li>
-            <li class="profile-trip card">
+            <li class="profile-trip">
               <div class="profile-trip-details">
-                <h2 class="card-title">Miraflores → UPC Monterrico</h2>
+                <h2>Miraflores → UPC Monterrico</h2>
                 <p>Septiembre 29, 2026 - Conductor</p>
               </div>
               <span class="profile-trip-status">Completado</span>
             </li>
-            <li class="profile-trip card">
+            <li class="profile-trip">
               <div class="profile-trip-details">
-                <h2 class="card-title">UPC Monterrico → UPC San Isidro</h2>
+                <h2>UPC Monterrico → UPC San Isidro</h2>
                 <p>Septiembre 27, 2026 - Pasajero</p>
               </div>
               <span class="profile-trip-status">Completado</span>
             </li>
           </ol>
-          <a class="profile-history-button" id="profile-history-button" href="../viajes/viajes_planeados.html">Historial completo</a>
+          <a class="profile-history-button" href="../viajes/viajes_planeados.html">Historial completo</a>
         </section>
 
-        <div class="profile-statistics" id="profile-statistics">
-          <section class="profile-activity card" id="profile-activity" aria-labelledby="activity-title">
-            <h2 class="card-title" id="activity-title">Tu actividad</h2>
-            <dl class="profile-activity-list" id="profile-activity-list">
+        <div class="profile-statistics">
+          <section class="profile-activity" aria-labelledby="activity-title">
+            <h2 id="activity-title">Tu actividad</h2>
+            <dl class="profile-activity-list">
               <div><dt>Miembro desde</dt><dd>2026</dd></div>
               <div><dt>Viajes realizados:</dt><dd>18</dd></div>
               <div><dt>Pasajeros transportados:</dt><dd>15</dd></div>
               <div><dt>Reseñas:</dt><dd>12</dd></div>
-              <div class="profile-rating" id="profile-rating">
+              <div class="profile-rating">
                 <dt>Rating</dt>
                 <dd><img src="../../img/review-star-1.svg" alt="">4.93 rating</dd>
               </div>
             </dl>
           </section>
 
-          <section class="profile-savings" id="profile-savings" aria-labelledby="savings-title">
+          <section class="profile-savings" aria-labelledby="savings-title">
             <h2 id="savings-title">Soles ahorrados:</h2>
             <p><span>S/.</span> <strong>79.00</strong></p>
           </section>
