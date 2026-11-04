@@ -35,14 +35,24 @@ Moverse por Lima Metropolitana representa un reto diario para la comunidad unive
 
 ## 📂 Estructura del Repositorio
 
-La organización del proyecto sigue una estructura modular orientada a separar la interfaz estática, los estilos, los scripts y la documentación del MVP:
+La organización del proyecto separa la interfaz estática, las hojas de estilo, los scripts y la documentación del MVP. Los estilos están repartidos entre una hoja base, una hoja de variables y hojas específicas por pantalla o grupo; todavía no están unificados en un único archivo:
 
 ```text
 ├── index.html                       # Landing, con su propia cabecera y pie
 ├── css/
-│   ├── styles.css                   # Único CSS con los estilos de todas las pantallas
-│   └── tokens.css                   # Único CSS con variables para todas las pantallas
-├── js/                              # Vacía por ahora, sin archivos
+│   ├── styles.css                   # Estilos base, cabecera global y estilos de la portada y otros componentes
+│   ├── tokens.css                   # Variables compartidas y algunos valores base del documento
+│   ├── help.css                     # Centro de ayuda y reglas de cabecera usadas por varias páginas
+│   ├── login.css                    # Estilos específicos de acceso
+│   ├── register.css                 # Estilos específicos de registro
+│   ├── menu.css                     # Estilos del menú desplegable
+│   ├── search-trips.css             # Búsqueda de viajes
+│   ├── trip-details.css             # Detalle de viaje
+│   ├── publish-trip.css             # Publicación de viaje
+│   ├── planned-trips.css            # Viajes planeados
+│   ├── profile.css                  # Perfil
+│   └── notifications.css            # Notificaciones
+├── js/                              # Scripts del proyecto
 ├── img/                             # Imágenes del sitio
 └── pages/
     ├── auth/                        # Grupo de acceso (se nombra por su función)
@@ -51,6 +61,7 @@ La organización del proyecto sigue una estructura modular orientada a separar l
     ├── help/
     │   └── ayuda.html
     ├── user/
+    │   ├── menu_desplegable.html
     │   ├── notificaciones.html
     │   └── perfil.html
     └── viajes/
