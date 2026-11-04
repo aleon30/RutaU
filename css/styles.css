@@ -587,6 +587,24 @@ text-decoration: underline;
 text-underline-offset: 3px;
 }
 
+@media (min-width: 1400px) {
+  .benefit-grid {
+    gap: 64px;
+  }
+
+  .university-grid {
+    gap: 52px;
+  }
+
+  .review-grid {
+    gap: 36px;
+  }
+
+  .site-footer {
+    padding: 40px 52px;
+  }
+}
+
 @media (max-width: 1200px) {
   .benefit-grid {
     gap: 32px;
@@ -765,7 +783,6 @@ text-underline-offset: 3px;
     margin-bottom: 14px;
   }
 }
-
 @media (max-width: 560px) {
   .site-header {
     padding: 0 12px;
@@ -792,6 +809,7 @@ text-underline-offset: 3px;
     grid-template-columns: 1fr;
   }
 }
+
 .app-page {
   background: linear-gradient(180deg, #f8fbff 0%, #edf4fb 100%);
   color: var(--terciario);
