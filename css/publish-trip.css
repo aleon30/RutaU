@@ -1,0 +1,242 @@
+.publish-trip-page {
+  min-width: 320px;
+  background: #fff;
+  color: #1e1e1e;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.publish-main {
+  display: flow-root;
+}
+
+.publish-title {
+  height: 58px;
+  margin: 45px 0;
+  color: #1e1e1e;
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: -0.96px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.publish-form {
+  width: 641px;
+  max-width: calc(100% - 32px);
+  margin: 0 auto 76px;
+}
+
+.publish-form-card {
+  width: 100%;
+  height: 637px;
+  padding: 23px 23px 10px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.publish-fields {
+  display: grid;
+  gap: 24px;
+}
+
+.publish-field {
+  display: grid;
+  min-width: 0;
+  height: 70px;
+  grid-template-rows: 22px 40px;
+  gap: 8px;
+}
+
+.publish-field label {
+  color: #1e1e1e;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.publish-field input {
+  width: 100%;
+  min-width: 0;
+  height: 40px;
+  padding: 0 15px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  background: #fff;
+  color: #1e1e1e;
+  font: inherit;
+  font-size: 16px;
+}
+
+.publish-field input::placeholder {
+  color: #b0b0b0;
+  opacity: 1;
+}
+
+.publish-field input:focus-visible {
+  border-color: var(--primario);
+  outline: 2px solid rgba(46, 148, 241, 0.25);
+  outline-offset: 1px;
+}
+
+.publish-field input[aria-invalid='true'] {
+  border-color: var(--fracaso);
+  background: rgba(235, 0, 0, 0.02);
+}
+
+.publish-field-row {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: minmax(0, 267fr) minmax(0, 302fr);
+  gap: 24px;
+}
+
+.publish-terms {
+  display: flex;
+  height: 38px;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+  color: #1e1e1e;
+  font-size: 16px;
+  line-height: 22px;
+  cursor: pointer;
+}
+
+.publish-terms input {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  margin: 0;
+  accent-color: var(--primario);
+}
+
+.publish-terms input:focus-visible {
+  outline: 2px solid var(--primario);
+  outline-offset: 2px;
+}
+
+.publish-actions {
+  display: grid;
+  width: 604px;
+  grid-template-columns: repeat(2, 290px);
+  gap: 24px;
+  margin: 13px 0 0 24px;
+}
+
+.publish-cancel-button,
+.publish-submit-button {
+  display: inline-flex;
+  width: 290px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 8px;
+  color: #f5f5f5;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.publish-cancel-button {
+  background: var(--terciario);
+}
+
+.publish-submit-button {
+  background: var(--primario);
+}
+
+.publish-trip-page :is(a, button):focus-visible {
+  outline: 3px solid var(--terciario);
+  outline-offset: 3px;
+}
+
+.publish-status {
+  margin: 12px 24px 0;
+  color: #118b00;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.publish-status[hidden] {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .publish-title {
+    margin-top: 36px;
+    margin-bottom: 32px;
+    font-size: clamp(32px, 7vw, 48px);
+  }
+
+  .publish-form-card {
+    height: auto;
+    padding: 20px;
+  }
+
+  .publish-actions {
+    width: calc(100% - 40px);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin: 16px 20px 0;
+  }
+
+  .publish-cancel-button,
+  .publish-submit-button {
+    width: 100%;
+  }
+
+  .publish-status {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .publish-title {
+    height: auto;
+    margin: 28px 16px 24px;
+  }
+
+  .publish-form {
+    max-width: calc(100% - 32px);
+  }
+
+  .publish-form-card {
+    padding: 16px;
+  }
+
+  .publish-fields {
+    gap: 18px;
+  }
+
+  .publish-field-row {
+    gap: 12px;
+  }
+
+  .publish-field label,
+  .publish-field input,
+  .publish-terms {
+    font-size: 14px;
+  }
+
+  .publish-field input {
+    padding: 0 10px;
+  }
+
+  .publish-actions {
+    width: 100%;
+    gap: 12px;
+    margin: 12px 0 0;
+  }
+
+  .publish-cancel-button,
+  .publish-submit-button {
+    padding: 0 8px;
+    font-size: 14px;
+  }
+}

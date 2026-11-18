@@ -1,0 +1,256 @@
+.login-page {
+  min-width: 320px;
+  min-height: 100vh;
+  background: #fff;
+  color: #1e1e1e;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.login-main {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-logo {
+  position: relative;
+  display: block;
+  width: 399px;
+  height: 150px;
+  flex: 0 0 150px;
+  overflow: hidden;
+  margin-top: 188px;
+}
+
+.login-logo img {
+  position: absolute;
+  top: -108%;
+  left: -12.91%;
+  width: 125.31%;
+  height: 333.33%;
+  max-width: none;
+}
+
+.login-form {
+  position: relative;
+  width: min(641px, calc(100% - 32px));
+  height: 358px;
+  flex: 0 0 358px;
+  margin: 32px 0 0;
+  padding: 0;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.login-field {
+  position: absolute;
+  left: 23px;
+  display: grid;
+  width: min(593px, calc(100% - 46px));
+  height: 70px;
+  grid-template-rows: 22px 42px;
+  gap: 6px;
+}
+
+.login-field:first-child {
+  top: 23px;
+}
+
+.login-field--password {
+  top: 117px;
+}
+
+.login-field label {
+  color: #1e1e1e;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.login-field input {
+  width: 100%;
+  min-width: 0;
+  height: 42px;
+  padding: 0 16px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  background: #fff;
+  color: #1e1e1e;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.login-field input::placeholder {
+  color: #b6b6b6;
+  opacity: 1;
+}
+
+.login-field input:focus-visible {
+  border-color: var(--primario);
+  outline: 2px solid rgba(46, 148, 241, 0.3);
+}
+
+.login-field input[aria-invalid="true"] {
+  border-color: var(--fracaso);
+}
+
+.login-field-error {
+  display: none;
+  color: var(--fracaso);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.login-field input[aria-invalid="true"] + .login-field-error {
+  display: block;
+}
+
+.remember-option {
+  position: absolute;
+  top: 211px;
+  left: 23px;
+  display: flex;
+  width: 270px;
+  height: 38px;
+  align-items: center;
+  gap: 12px;
+  color: #1e1e1e;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.remember-option input {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  margin: 0;
+  accent-color: #333;
+}
+
+.forgot-password {
+  position: absolute;
+  top: 211px;
+  left: 475px;
+  color: #000;
+  font-size: 14px;
+  line-height: 20px;
+  text-decoration: none;
+}
+
+.login-actions {
+  position: absolute;
+  top: 273px;
+  right: 23px;
+  left: 23px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 31px;
+}
+
+.login-submit,
+.login-home {
+  display: flex;
+  width: 100%;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 8px;
+  color: #f5f5f5;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.login-submit {
+  background: var(--primario);
+}
+
+.login-home {
+  background: var(--terciario);
+}
+
+.login-submit:hover,
+.login-home:hover {
+  filter: brightness(0.95);
+}
+
+.login-submit:focus-visible,
+.login-home:focus-visible,
+.forgot-password:focus-visible,
+.create-account:focus-visible {
+  outline: 3px solid var(--primario);
+  outline-offset: 3px;
+}
+
+.login-status {
+  position: absolute;
+  top: 316px;
+  left: 23px;
+  margin: 0;
+  color: var(--fracaso);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.login-status.success {
+  color: var(--exito);
+}
+
+.create-account {
+  align-self: flex-start;
+  margin: 11px 0 32px max(calc((100% - 641px) / 2), 16px);
+  color: #000;
+  font-size: 14px;
+  line-height: 20px;
+  text-decoration: none;
+}
+
+@media (max-width: 700px) {
+  .login-logo {
+    width: min(399px, calc(100vw - 48px));
+    margin-top: clamp(48px, 18vh, 188px);
+  }
+
+  .login-form {
+    height: 358px;
+    flex-basis: 358px;
+  }
+
+  .login-field {
+    grid-template-rows: 22px 42px;
+    gap: 6px;
+  }
+
+  .login-actions {
+    gap: 12px;
+  }
+
+  .login-submit,
+  .login-home {
+    padding: 0 6px;
+    font-size: 14px;
+  }
+
+  .remember-option {
+    gap: 8px;
+    font-size: 14px;
+  }
+
+  .forgot-password {
+    right: 23px;
+    left: auto;
+    font-size: 12px;
+  }
+
+  .create-account {
+    margin-left: max(calc((100% - 641px) / 2), 16px);
+  }
+}

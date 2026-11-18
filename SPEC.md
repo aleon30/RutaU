@@ -25,9 +25,20 @@ Sigue la siguiente estructura:
 ```
 ├── index.html                       # Landing, con su propia cabecera y pie
 ├── css/
-│   ├── styles.css                   # Único CSS con los estilos de todas las pantallas
-│   └── tokens.css                   # Único CSS con variables para todas las pantallas
-├── js/                              # Vacía por ahora, sin archivos
+│   ├── styles.css                   # Estilos base, cabecera global y estilos de portada/componentes
+│   ├── tokens.css                   # Variables compartidas y algunos valores base del documento
+│   ├── help.css                     # Centro de ayuda y reglas de cabecera usadas por varias páginas
+│   ├── login.css                    # Estilos específicos de acceso
+│   ├── register.css                 # Estilos específicos de registro
+│   ├── menu.css                     # Estilos del menú desplegable
+│   ├── search-trips.css             # Búsqueda de viajes
+│   ├── trip-details.css             # Detalle de viaje
+│   ├── publish-trip.css             # Publicación de viaje
+│   ├── planned-trips.css            # Viajes planeados
+│   ├── profile.css                  # Perfil
+│   └── notifications.css            # Notificaciones
+├── js/
+│   └── login.js                     # Archivo placeholder; no implementa lógica de la pantalla
 ├── img/                             # Imágenes del sitio
 └── pages/
     ├── auth/                        # Grupo de acceso (se nombra por su función)
@@ -36,6 +47,7 @@ Sigue la siguiente estructura:
     ├── help/
     │   └── ayuda.html
     ├── user/
+    │   ├── menu_desplegable.html
     │   ├── notificaciones.html
     │   └── perfil.html
     └── viajes/
@@ -54,14 +66,14 @@ Solo dibuja cada pantalla y conéctala: formularios con sus campos, listas con d
 - Si dudas, déjalo fijo.
 
 ## 5. Reglas
-- **Archivos:** un `.html` por pantalla dentro de la carpeta de su grupo en `pages/`, y un solo `css/styles.css` para todo el sitio. Nombres en minúsculas y guiones.
+- **Archivos (estado actual):** las páginas están en `pages/` por grupo. El CSS está distribuido entre `styles.css`, `tokens.css` y hojas específicas por pantalla. No asumir que todos los estilos están unificados en `styles.css`; al editar una página, revisar qué hojas carga su HTML y respetar su alcance. Nombres en minúsculas y guiones.
 - **HTML:** semántico (`<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`), un solo `<h1>` por página, `alt` en todas las imágenes y `<label>` en cada campo.
-- **CSS:** clases con nombres claros (estilo BEM), sin estilos inline ni `!important`. Colores, fuentes y espacios van como variables al inicio de `css/styles.css`, y los estilos de cada pantalla van en su propia sección con un comentario.
+- **CSS:** clases con nombres claros (estilo BEM), sin estilos inline ni `!important`. Las variables compartidas se declaran en `css/tokens.css`. `css/styles.css` contiene estilos base, la cabecera global y también reglas de la portada y componentes. Las hojas específicas actuales son `help.css`, `login.css`, `register.css`, `menu.css`, `search-trips.css`, `trip-details.css`, `publish-trip.css`, `planned-trips.css`, `profile.css` y `notifications.css`. Antes de mover o generalizar una regla, comprobar sus usos y el orden de carga de las hojas en los HTML.
 - **Formularios:** cada campo con su `<label>`, `name` y validación HTML. El mensaje de error va debajo del campo, en el idioma del Figma.
 - **Navegación:** todos los botones y enlaces usan `<a href>`, también el que envía un formulario.
-- **Rutas:** son relativas. `index.html` usa `css/styles.css` e `img/...`. Las páginas de `pages/<grupo>/` usan `../../css/styles.css` e `../../img/...`. Para ir a otra página de otro grupo: `../participante/events.html`; para volver al inicio: `../../index.html`.
+- **Rutas:** son relativas. `index.html` carga `css/tokens.css` y `css/styles.css`. Las páginas de `pages/<grupo>/` cargan `../../css/tokens.css`, `../../css/styles.css` y, según la página, una o más hojas específicas; revisar las etiquetas `<link>` existentes para conocer la lista real. Las imágenes usan rutas relativas. Para volver al inicio: `../../index.html`.
 - **Landing (index.html):** es una sola página en la raíz, fuera de `pages/`. Lleva su propia cabecera y pie, y sus botones salen hacia los demás grupos.
-- **Responsive:** el Figma trae dos diseños por pantalla, escritorio y móvil. Impleméntalos en el mismo `.html` con `@media` en `css/styles.css`: empieza por el móvil y usa `@media (min-width: 768px)` para el escritorio. Usa Flexbox o Grid, sin archivos ni páginas aparte para móvil.
-- **Diseño:** respeta el Figma en ambos tamaños y usa las variables de `css/styles.css`.
+- **Responsive:** las adaptaciones actuales están repartidas entre `styles.css` y las hojas específicas. Los `max-width` existentes incluyen 1400, 1200, 1100, 960, 900, 760, 700, 640, 560 y 420 px; los puntos varían por hoja. No asumir un breakpoint único ni mover reglas a `styles.css` sin revisar la página y sus dependencias. Usa Flexbox o Grid, sin archivos ni páginas aparte para móvil.
+- **Diseño:** respeta el Figma en los tamaños implementados y usa las variables compartidas de `css/tokens.css`.
 - **Pantallas alternativas (error, vacío, rechazo):** son estados de la misma pantalla, no páginas nuevas. Por ahora solo los errores de formulario.
 - Si dudas, pregunta. No inventes pantallas.
