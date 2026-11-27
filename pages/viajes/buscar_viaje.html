@@ -57,7 +57,7 @@
             </div>
             <div class="filter-field">
               <label class="form-label" for="filter-date">Fecha</label>
-              <input id="filter-date" name="date" type="text" placeholder="dd/mm/yyyy">
+              <input id="filter-date" name="date" type="date">
             </div>
             <div class="filter-field">
               <label class="form-label" for="filter-time">Hora</label>
@@ -80,105 +80,13 @@
         </aside>
 
         <section class="search-results" id="search-results" aria-label="Resultados de búsqueda">
-          <article class="trip-card card">
-            <h2 class="card-title">UPC Monterrico → UPC Villa</h2>
-            <div class="trip-details">
-              <span class="trip-date">
-                <span>Feb 08, 2026</span>
-                <img src="../../img/trip-calendar.svg" alt="">
-              </span>
-              <span class="trip-time">
-                <span>10:45 AM</span>
-                <img src="../../img/trip-clock-a.svg" alt="">
-              </span>
-              <span>2 de 5 disponibles</span>
-              <span>Precio: S/ 34</span>
-              <a class="trip-link" href="detalles_viaje.html">Ver detalles del viaje</a>
-            </div>
-          </article>
-          <article class="trip-card card">
-            <h2 class="card-title">UNMSM → UNI</h2>
-            <div class="trip-details">
-              <span class="trip-date">
-                <span>Jan 09, 2026</span>
-                <img src="../../img/trip-calendar.svg" alt="">
-              </span>
-              <span class="trip-time">
-                <span>16:00 PM</span>
-                <img src="../../img/trip-clock-a.svg" alt="">
-              </span>
-              <span>4 de 5 disponibles</span>
-              <span>Precio: S/ 67</span>
-              <a class="trip-link" href="detalles_viaje.html">Ver detalles del viaje</a>
-            </div>
-          </article>
-          <article class="trip-card card">
-            <h2 class="card-title">PUCH → UNMSM</h2>
-            <div class="trip-details">
-              <span class="trip-date">
-                <span>Dec 17, 2025</span>
-                <img src="../../img/trip-calendar.svg" alt="">
-              </span>
-              <span class="trip-time">
-                <span>12:10 AM</span>
-                <img src="../../img/trip-clock-a.svg" alt="">
-              </span>
-              <span>3 de 5 disponibles</span>
-              <span>Precio: S/ 14</span>
-              <a class="trip-link" href="detalles_viaje.html">Ver detalles del viaje</a>
-            </div>
-          </article>
-          <article class="trip-card card">
-            <h2 class="card-title">UNMSM → ULIMA</h2>
-            <div class="trip-details">
-              <span class="trip-date">
-                <span>Sep 08, 2026</span>
-                <img src="../../img/trip-calendar.svg" alt="">
-              </span>
-              <span class="trip-time">
-                <span>11:30 AM</span>
-                <img src="../../img/trip-clock-a.svg" alt="">
-              </span>
-              <span>1 de 5 disponibles</span>
-              <span>Precio: S/ 39</span>
-              <a class="trip-link" href="detalles_viaje.html">Ver detalles del viaje</a>
-            </div>
-          </article>
-          <article class="trip-card card">
-            <h2 class="card-title">UTP → UCV</h2>
-            <div class="trip-details">
-              <span class="trip-date">
-                <span>Sep 20, 2026</span>
-                <img src="../../img/trip-calendar.svg" alt="">
-              </span>
-              <span class="trip-time">
-                <span>09:00 AM</span>
-                <img src="../../img/trip-clock-a.svg" alt="">
-              </span>
-              <span>4 de 8 disponibles</span>
-              <span>Precio: S/ 24</span>
-              <a class="trip-link" href="detalles_viaje.html">Ver detalles del viaje</a>
-            </div>
-          </article>
-          <article class="trip-card card">
-            <h2 class="card-title">UPC San Isidro → UPC San Miguel</h2>
-            <div class="trip-details">
-              <span class="trip-date">
-                <span>Feb 17, 2026</span>
-                <img src="../../img/trip-calendar.svg" alt="">
-              </span>
-              <span class="trip-time">
-                <span>15:30 PM</span>
-                <img src="../../img/trip-clock-a.svg" alt="">
-              </span>
-              <span>3 de 8 disponibles</span>
-              <span>Precio: S/ 26</span>
-              <a class="trip-link" href="detalles_viaje.html">Ver detalles del viaje</a>
-            </div>
-          </article>
+          <p class="search-empty-state" id="search-empty-state" hidden>No hay viajes que coincidan con los filtros.</p>
         </section>
       </div>
     </main>
 
+    <script src="../../js/localstorage.js"></script>
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/trips.js"></script>
   </body>
 </html>

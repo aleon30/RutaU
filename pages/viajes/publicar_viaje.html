@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ffffff">
-    <title>RutaU | Viajes planeados</title>
+    <title>RutaU | Publicar viaje</title>
     <link rel="stylesheet" href="../../css/tokens.css">
     <link rel="stylesheet" href="../../css/styles.css">
   </head>
@@ -23,8 +23,8 @@
       </a>
       <nav class="help-nav" id="help-nav" aria-label="Navegación principal">
         <a class="button button-primary" href="buscar_viaje.html">Buscar viaje</a>
-        <a class="button button-primary" href="viajes_planeados.html" aria-current="page">Viajes planeados</a>
-        <a class="button button-primary" href="publicar_viaje.html">Publicar viaje</a>
+        <a class="button button-primary" href="viajes_planeados.html">Viajes planeados</a>
+        <a class="button button-primary" href="publicar_viaje.html" aria-current="page">Publicar viaje</a>
       </nav>
       <div class="help-user-actions" id="help-user-actions">
         <a class="help-notifications" id="help-notifications" href="../user/notificaciones.html" aria-label="Notificaciones">
@@ -37,145 +37,66 @@
       </div>
     </header>
 
-    <main class="planned-main" id="planned-main">
-      <h1 class="page-title planned-title" id="planned-title">Mis viajes planeados</h1>
+    <main class="publish-main" id="publish-main">
+      <h1 class="page-title publish-title">Publicar viaje</h1>
 
-      <div class="planned-layout" id="planned-layout">
-        <section class="planned-results-column" id="planned-results-column" aria-label="Mis viajes">
-          <div class="trip-tabs" id="trip-tabs" role="tablist" aria-label="Filtrar viajes por estado">
-            <button
-              class="trip-tab is-active"
-              type="button"
-              role="tab"
-              id="tab-upcoming"
-              aria-selected="true"
-              aria-controls="trip-list"
-              data-trip-filter="upcoming"
-            >
-              Próximos
-            </button>
-            <button
-              class="trip-tab"
-              type="button"
-              role="tab"
-              id="tab-past"
-              aria-selected="false"
-              aria-controls="trip-list"
-              data-trip-filter="past"
-              tabindex="-1"
-            >
-              Pasados
-            </button>
-            <button
-              class="trip-tab"
-              type="button"
-              role="tab"
-              id="tab-canceled"
-              aria-selected="false"
-              aria-controls="trip-list"
-              data-trip-filter="canceled"
-              tabindex="-1"
-            >
-              Cancelados
-            </button>
+      <form class="publish-card card" id="trip-publish-form">
+        <div class="publish-form-grid">
+          <div class="publish-field">
+            <label class="form-label" for="trip-origin">Lugar de salida</label>
+            <input class="form-control" id="trip-origin" name="origin" type="text" placeholder="Ej. UPC Monterrico" required>
           </div>
-
-          <div class="planned-results" id="trip-list" role="tabpanel" aria-labelledby="tab-upcoming">
-            <article class="planned-trip-card card" data-trip-status="confirmed" data-trip-date="2026-02-08">
-              <div class="planned-trip-primary">
-                <h2 class="card-title">UPC Monterrico → UPC Villa</h2>
-                <div class="planned-trip-schedule">
-                  <time datetime="2026-02-08">Feb 08, 2026</time>
-                  <time datetime="2026-02-08T10:45">10:45 AM</time>
-                </div>
-              </div>
-              <a class="planned-details-button" href="detalles_viaje.html">Ver detalles del viaje</a>
-              <p class="planned-trip-vehicle">Toyota Corolla <span aria-hidden="true">|</span> Blanco <span aria-hidden="true">|</span> ABC-123</p>
-              <p class="planned-trip-driver">Conductor: Diego Martinez Vargas</p>
-              <span class="planned-trip-status is-confirmed">Confirmado</span>
-            </article>
-
-            <article class="planned-trip-card card" data-trip-status="confirmed" data-trip-date="2026-02-10">
-              <div class="planned-trip-primary">
-                <h2 class="card-title">Miraflores → UPC Villa</h2>
-                <div class="planned-trip-schedule">
-                  <time datetime="2026-02-10">Feb 10, 2026</time>
-                  <time datetime="2026-02-10T09:15">09:15 AM</time>
-                </div>
-              </div>
-              <a class="planned-details-button" href="detalles_viaje.html">Ver detalles del viaje</a>
-              <p class="planned-trip-vehicle">Kia Sportage <span aria-hidden="true">|</span> Gris <span aria-hidden="true">|</span> XYZ-789</p>
-              <p class="planned-trip-driver">Conductor: Valeria Fernandez Salazar</p>
-              <span class="planned-trip-status is-confirmed">Confirmado</span>
-            </article>
-
-            <article class="planned-trip-card card" data-trip-status="pending" data-trip-date="2026-02-14">
-              <div class="planned-trip-primary">
-                <h2 class="card-title">Miraflores → UPC Villa</h2>
-                <div class="planned-trip-schedule">
-                  <time datetime="2026-02-14">Feb 14, 2026</time>
-                  <time datetime="2026-02-14T15:00">15:00 PM</time>
-                </div>
-              </div>
-              <a class="planned-details-button" href="detalles_viaje.html">Ver detalles del viaje</a>
-              <p class="planned-trip-vehicle">Hyundai Elantra <span aria-hidden="true">|</span> Negro <span aria-hidden="true">|</span> DEF-456</p>
-              <p class="planned-trip-driver">Conductor: Nicolas Torres Rojas</p>
-              <span class="planned-trip-status is-pending">Pendiente</span>
-            </article>
-
-            <p class="planned-empty-state" id="trip-empty-state" hidden>No tienes viajes en esta categoría.</p>
+          <div class="publish-field">
+            <label class="form-label" for="trip-destination">Destino</label>
+            <input class="form-control" id="trip-destination" name="destination" type="text" placeholder="Ej. Miraflores" required>
           </div>
-        </section>
-
-        <aside class="planned-sidebar" id="planned-sidebar">
-          <a class="new-trip-button" id="new-trip-button" href="buscar_viaje.html">Buscar un nuevo viaje</a>
-
-          <section class="trip-calendar" id="trip-calendar" aria-label="Calendario de viajes">
-            <div class="calendar-header" id="calendar-header">
-              <button class="calendar-arrow" type="button" aria-label="Mes anterior" data-calendar-step="-1">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
-              </button>
-              <label class="visually-hidden" for="calendar-month">Mes</label>
-              <select id="calendar-month" aria-label="Mes">
-                <option value="0">Jan</option>
-                <option value="1" selected>Feb</option>
-                <option value="2">Mar</option>
-                <option value="3">Apr</option>
-                <option value="4">May</option>
-                <option value="5">Jun</option>
-                <option value="6">Jul</option>
-                <option value="7">Aug</option>
-                <option value="8">Sep</option>
-                <option value="9">Oct</option>
-                <option value="10">Nov</option>
-                <option value="11">Dec</option>
-              </select>
-              <label class="visually-hidden" for="calendar-year">Año</label>
-              <select id="calendar-year" aria-label="Año">
-                <option>2024</option>
-                <option>2025</option>
-                <option selected>2026</option>
-                <option>2027</option>
-                <option>2028</option>
-              </select>
-              <button class="calendar-arrow" type="button" aria-label="Mes siguiente" data-calendar-step="1">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
-              </button>
-            </div>
-            <div class="calendar-weekdays" id="calendar-weekdays" aria-hidden="true">
-              <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
-            </div>
-            <div class="calendar-days" id="calendar-days" role="grid" aria-label="Días del mes"></div>
-          </section>
-
-          <section class="trip-help-card card" id="trip-help-card" aria-labelledby="trip-help-title">
-            <h2 class="card-title" id="trip-help-title">¿Necesitas ayuda?</h2>
-            <p>Revisa nuestras preguntas frecuentes o contactanos.</p>
-            <a href="../help/ayuda.html">Ir al Centro de Ayuda</a>
-          </section>
-        </aside>
-      </div>
+          <div class="publish-field">
+            <label class="form-label" for="trip-date">Fecha</label>
+            <input class="form-control" id="trip-date" name="date" type="date" required>
+          </div>
+          <div class="publish-field">
+            <label class="form-label" for="trip-seats">Asientos disponibles</label>
+            <input class="form-control" id="trip-seats" name="seats" type="number" min="1" step="1" required>
+          </div>
+          <div class="publish-field">
+            <label class="form-label" for="trip-departure-time">Hora de salida</label>
+            <input class="form-control" id="trip-departure-time" name="departureTime" type="time" required>
+          </div>
+          <div class="publish-field">
+            <label class="form-label" for="trip-arrival-time">Hora estimada de llegada</label>
+            <input class="form-control" id="trip-arrival-time" name="arrivalTime" type="time" required>
+          </div>
+          <div class="publish-field">
+            <label class="form-label" for="trip-price">Precio por asiento (S/)</label>
+            <input class="form-control" id="trip-price" name="price" type="number" min="0.01" step="0.01" required>
+          </div>
+          <div class="publish-field">
+            <label class="form-label" for="trip-driver-name">Nombre del conductor</label>
+            <input class="form-control" id="trip-driver-name" name="driverName" type="text" autocomplete="name" required>
+          </div>
+          <div class="publish-field">
+            <label class="form-label" for="trip-university">Universidad</label>
+            <input class="form-control" id="trip-university" name="university" type="text" value="UPC" required>
+          </div>
+          <div class="publish-field">
+            <label class="form-label" for="trip-vehicle-model">Modelo del carro</label>
+            <input class="form-control" id="trip-vehicle-model" name="vehicleModel" type="text" placeholder="Ej. Toyota Corolla" required>
+          </div>
+          <div class="publish-field">
+            <label class="form-label" for="trip-vehicle-color">Color del carro</label>
+            <input class="form-control" id="trip-vehicle-color" name="vehicleColor" type="text" placeholder="Ej. Blanco" required>
+          </div>
+          <div class="publish-field">
+            <label class="form-label" for="trip-license-plate">Placa</label>
+            <input class="form-control" id="trip-license-plate" name="licensePlate" type="text" placeholder="Ej. ABC-123" required>
+          </div>
+          <button class="publish-submit" type="submit">Publicar viaje</button>
+        </div>
+      </form>
     </main>
 
+    <script src="../../js/localstorage.js"></script>
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/trips.js"></script>
   </body>
 </html>

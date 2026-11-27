@@ -31,7 +31,7 @@
           <img src="../../img/help-bell.svg" alt="">
         </a>
         <span class="help-greeting">¡Hola, Paula!</span>
-        <a class="help-avatar" id="help-avatar" href="perfil.html" aria-label="Ver perfil de Paula">
+        <a class="help-avatar" id="help-avatar" href="perfil.html" aria-label="Ver mi perfil">
           <img src="../../img/help-user-avatar.png" alt="">
         </a>
       </div>
@@ -42,31 +42,48 @@
         <img
           class="profile-photo" id="profile-photo"
           src="../../img/profile-paula.jpeg"
-          alt="Paula Angela Gonzales Garcia"
+          alt="Foto de perfil"
         >
         <form class="profile-form" id="profile-form">
           <div class="profile-fields">
             <label class="profile-field">
               <span class="form-label">Nombres</span>
-              <input class="form-control" name="givenName" type="text" value="Paula Angela" readonly required>
+              <input
+                class="form-control"
+                id="profile-first-name"
+                name="givenName"
+                type="text"
+                autocomplete="given-name"
+                readonly
+                required
+              >
             </label>
             <label class="profile-field">
               <span class="form-label">Apellidos</span>
-              <input class="form-control" name="familyName" type="text" value="Gonzales Garcia" readonly required>
+              <input
+                class="form-control"
+                id="profile-last-name"
+                name="familyName"
+                type="text"
+                autocomplete="family-name"
+                readonly
+                required
+              >
             </label>
             <label class="profile-field">
               <span class="form-label">Correo universitario</span>
               <input
                 class="form-control"
+                id="profile-email"
                 name="email"
                 type="email"
-                value="u202310423@upc.edu.pe"
                 readonly
                 required
               >
             </label>
           </div>
           <button class="profile-edit-button" type="button" id="edit-profile">Editar perfil</button>
+          <button class="profile-edit-button" type="button" id="logout-button">Cerrar sesión</button>
           <div class="profile-edit-actions" id="profile-edit-actions" hidden>
             <button class="profile-cancel-button" type="button" id="cancel-profile">Cancelar</button>
             <button class="profile-save-button" id="profile-save-button" type="submit">Guardar cambios</button>
@@ -129,5 +146,7 @@
       </div>
     </main>
 
+    <script src="../../js/localstorage.js"></script>
+    <script src="../../js/auth.js"></script>
   </body>
 </html>
