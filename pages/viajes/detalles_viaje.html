@@ -37,6 +37,7 @@
       </div>
     </header>
 
+    <p class="trip-detail-status" id="trip-detail-status" role="status" hidden>No se encontró el viaje solicitado.</p>
     <main class="details-layout" id="details-layout">
       <section class="driver-card card" id="driver-card" aria-labelledby="driver-title">
         <h1 class="card-title" id="driver-title">Datos del conductor</h1>
@@ -45,21 +46,21 @@
         <dl class="driver-fields" id="driver-fields">
           <div class="driver-field">
             <dt>NOMBRES Y APELLIDOS</dt>
-            <dd>Luciana Vargas Paredes</dd>
+            <dd id="detail-driver-name">Luciana Vargas Paredes</dd>
           </div>
           <div class="driver-field">
             <dt>UNIVERSIDAD</dt>
-            <dd>UPC</dd>
+            <dd id="detail-driver-university">UPC</dd>
           </div>
           <div class="driver-field">
             <dt>VIAJES REALIZADOS</dt>
-            <dd>27</dd>
+            <dd id="detail-driver-trips">27</dd>
           </div>
           <div class="driver-field">
             <dt>RATING</dt>
             <dd class="driver-rating" id="driver-rating">
               <img src="../../img/review-star-1.svg" alt="">
-              <span>4.95</span>
+              <span id="detail-driver-rating">4.95</span>
             </dd>
           </div>
         </dl>
@@ -71,27 +72,27 @@
           <dl class="journey-fields" id="journey-fields">
             <div>
               <dt>RUTA</dt>
-              <dd>UPC Monterrico → UPC San Miguel</dd>
+              <dd id="detail-route">UPC Monterrico → UPC San Miguel</dd>
             </div>
             <div>
               <dt>FECHA</dt>
-              <dd>Oct 17, 2026</dd>
+              <dd id="detail-date">Oct 17, 2026</dd>
             </div>
             <div>
               <dt>HORA DE SALIDA</dt>
-              <dd>10:00 AM</dd>
+              <dd id="detail-departure-time">10:00 AM</dd>
             </div>
             <div>
               <dt>TIEMPO DE LLEGADA ESTIMADO</dt>
-              <dd>11:10 AM</dd>
+              <dd id="detail-arrival-time">11:10 AM</dd>
             </div>
             <div>
               <dt>ASIENTOS DISPONIBLES</dt>
-              <dd>1 de 4 disponibles</dd>
+              <dd id="detail-seats">1 de 4 disponibles</dd>
             </div>
             <div>
               <dt>PRECIO</dt>
-              <dd>13 PER</dd>
+              <dd id="detail-price">13 PER</dd>
             </div>
           </dl>
         </section>
@@ -102,15 +103,15 @@
             <dl class="vehicle-fields" id="vehicle-fields">
               <div>
                 <dt>MODELO DEL CARRO:</dt>
-                <dd>Toyota Corolla</dd>
+                <dd id="detail-vehicle-model">Toyota Corolla</dd>
               </div>
               <div>
                 <dt>COLOR:</dt>
-                <dd>Blanco</dd>
+                <dd id="detail-vehicle-color">Blanco</dd>
               </div>
               <div>
                 <dt>PLACA:</dt>
-                <dd>ANX-766</dd>
+                <dd id="detail-license-plate">ANX-766</dd>
               </div>
             </dl>
           </section>
@@ -136,11 +137,45 @@
               </ul>
             </section>
 
-            <button class="reserve-button" id="reserve-button" type="button">Reservar viaje</button>
+            <div class="reservation-controls" id="reservation-controls">
+              <p class="reservation-status" id="reservation-status" role="status" aria-live="polite" hidden></p>
+              <button class="reserve-button" id="reserve-button" type="button">Reservar viaje</button>
+              <button
+                class="reservation-cancel-button"
+                id="cancel-reservation-button"
+                type="button"
+                hidden
+              >
+                Cancelar viaje
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </main>
 
+    <dialog
+      class="reservation-dialog"
+      id="cancel-reservation-dialog"
+      aria-labelledby="cancel-reservation-title"
+      aria-describedby="cancel-reservation-description"
+    >
+      <h2 id="cancel-reservation-title">¿Deseas cancelar este viaje?</h2>
+      <p id="cancel-reservation-description">
+        Se liberará tu asiento para que otra persona pueda reservarlo.
+      </p>
+      <div class="reservation-dialog-actions">
+        <button class="reservation-keep-button" id="keep-reservation-button" type="button">
+          Mantener reserva
+        </button>
+        <button class="reservation-confirm-button" id="confirm-cancel-reservation" type="button">
+          Sí, cancelar viaje
+        </button>
+      </div>
+    </dialog>
+
+    <script src="../../js/localstorage.js"></script>
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/trips.js"></script>
   </body>
 </html>
